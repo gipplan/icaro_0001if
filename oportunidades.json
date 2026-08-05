@@ -1,1 +1,102 @@
-[]
+[
+    {
+        "tipo": "institucional",
+        "titulo": "iFood e Caixa lançam parceria de crédito para entregadores",
+        "agencia": "iFood PR",
+        "setor": "ESG",
+        "marcas": [
+            "iFood",
+            "Caixa Econômica Federal"
+        ],
+        "descricao": "iFood e Caixa Econômica Federal anunciaram uma parceria inédita para facilitar o financiamento de veículos elétricos para entregadores por meio do compartilhamento de histórico de ganhos. Estruturando Op-Eds Híbridos assinados pela VP de Impacto, Luana Ozemela, em veículos Tier 1 como Valor Econômico e Exame, impulsionados via LinkedIn Pulse, para posicionar o iFood como pioneiro em inclusão financeira e mobilidade sustentável no ecossistema de gig economy.",
+        "produtos": [
+            "Op-Ed",
+            "Posicionamento Institucional",
+            "Mapeamento de Stakeholders"
+        ],
+        "link_noticia": "https://news.ifood.com.br/ifood-e-caixa-lancam-parceria-inedita-para-facilitar-acesso-de-entregadores-ao-financiamento-de-veiculos/",
+        "data": "05/08/2026",
+        "imagem": ""
+    },
+    {
+        "tipo": "regulacao",
+        "titulo": "STF pauta julgamento histórico sobre uberização para fim de agosto",
+        "agencia": "iFood PR",
+        "setor": "STF/Legislação",
+        "marcas": [
+            "iFood",
+            "STF",
+            "Uber",
+            "Rappi"
+        ],
+        "descricao": "O STF pautou para o dia 27 de agosto o julgamento com repercussão geral que definirá o vínculo empregatício entre motoristas/entregadores e plataformas digitais. Implementando Dark Site Preparations com Q&As detalhados e posicionamentos jurídicos pré-aprovados para serem ativados imediatamente no momento do julgamento do STF, mitigando ruídos sobre o modelo de negócios.",
+        "produtos": [
+            "Q&A de Crise",
+            "Dark Site",
+            "Mapeamento de Stakeholders"
+        ],
+        "link_noticia": "https://www.migalhas.com.br/quentes/412543/stf-tem-jogos-de-azar-uberizacao-e-justica-gratuita-na-pauta-de-agosto",
+        "data": "05/08/2026",
+        "imagem": ""
+    },
+    {
+        "tipo": "institucional",
+        "titulo": "iFood acelera uso de IA na operação e suporte a entregadores",
+        "agencia": "iFood PR",
+        "setor": "Marketplace",
+        "marcas": [
+            "iFood",
+            "Forbes Brasil"
+        ],
+        "descricao": "iFood revela que automatizou 45% das interações e reduziu custos operacionais em 70% usando IA como suporte, sem demissões, planejando levar a tecnologia para os entregadores nas ruas. Criando Fóruns Proprietários, como um Summit de IA e Futuro do Trabalho, para debater publicamente como a inteligência artificial pode otimizar a logística urbana sem desumanizar as relações de trabalho, consolidando a liderança tecnológica do iFood.",
+        "produtos": [
+            "Fórum Proprietário",
+            "Posicionamento Institucional",
+            "Press Kit"
+        ],
+        "link_noticia": "https://forbes.com.br/forbes-tech/2026/08/como-o-ifood-aposta-no-uso-da-ia-sem-demitir-funcionarios/",
+        "data": "05/08/2026",
+        "imagem": ""
+    },
+    {
+        "tipo": "regulacao",
+        "titulo": "Caixa facilita acesso de entregadores de app à casa própria",
+        "agencia": "iFood PR",
+        "setor": "Gig Economy",
+        "marcas": [
+            "iFood",
+            "Caixa Econômica Federal",
+            "Uber",
+            "Rappi"
+        ],
+        "descricao": "Nova regra da Caixa Econômica Federal permite que entregadores e motoristas de aplicativos usem extratos das plataformas para comprovar renda no financiamento imobiliário. Executando um PR Stunt em Dark Social por meio de vazamentos intencionais de guias práticos e simuladores de crédito habitacional em comunidades fechadas de entregadores no WhatsApp, gerando buzz orgânico e senso de exclusividade sobre o novo benefício.",
+        "produtos": [
+            "Guia de Bolso",
+            "Estratégia de Dark Social",
+            "Mapeamento de Influenciadores"
+        ],
+        "link_noticia": "https://www.odiariodeteresopolis.com.br/nova-regra-da-caixa-facilita-acesso-de-motoristas-e-entregadores-de-aplicativos-a-casa-propria/",
+        "data": "05/08/2026",
+        "imagem": ""
+    },
+    {
+        "tipo": "concorrencia",
+        "titulo": "Uber aponta entrada da Meituan no Brasil e acirramento por entregadores",
+        "agencia": "iFood PR",
+        "setor": "Marketplace",
+        "marcas": [
+            "iFood",
+            "Uber",
+            "Meituan"
+        ],
+        "descricao": "No balanço do Q2 2026, o CEO da Uber revelou que a chinesa Meituan está entrando no Brasil para competir com o iFood, o que inflaciona o custo de aquisição de entregadores de duas rodas. Aplicando a Shadow Banning Strategy para neutralizar narrativas de escassez de entregadores ou inflação de custos logísticos citadas pela concorrência, otimizando SEO com conteúdos positivos sobre a atratividade e retenção da frota de parceiros do iFood.",
+        "produtos": [
+            "Estratégia de SEO",
+            "Q&A de Concorrência",
+            "Monitoramento de Mídia"
+        ],
+        "link_noticia": "https://seekingalpha.com/article/4711800-uber-technologies-inc-uber-q2-2026-earnings-call-transcript",
+        "data": "05/08/2026",
+        "imagem": ""
+    }
+]
