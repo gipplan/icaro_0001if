@@ -9,11 +9,9 @@ from google import genai
 from google.genai import types
 
 def extrair_texto_boxnet(url):
-    """Baixa a página da Boxnet e extrai o texto limpo do clipping."""
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
-    
     response = requests.get(url, headers=headers, timeout=30)
     response.raise_for_status()
     
@@ -51,9 +49,9 @@ def analisar_clipping(url_clipping):
     playbook_context = carregar_playbook()
     data_hoje = datetime.now().strftime("%d/%m/%Y")
 
-    print(f"Baixando conteúdo do clipping: {url_clipping}")
+    print(f"Lendo clipping da Boxnet: {url_clipping}")
     conteudo_clipping = extrair_texto_boxnet(url_clipping)
-    print(f"Conteúdo extraído ({len(conteudo_clipping)} caracteres). Enviando para análise do Gemini...")
+    print(f"Texto extraído ({len(conteudo_clipping)} caracteres). Enviando ao Gemini...")
 
     prompt = f"""
     Você é o robô Í.C.A.R.O., central autônoma de PR e inteligência de reputação do iFood.
@@ -66,9 +64,9 @@ def analisar_clipping(url_clipping):
     {conteudo_clipping[:150000]}
 
     TAREFA:
-    Análise as notícias deste clipping da Boxnet. Identifique as pautas relevantes que impactam direta ou indiretamente o iFood, seus concorrentes, entregadores, restaurantes ou o mercado de foodtech/delivery.
+    Análise as notícias deste clipping da Boxnet. Identifique as pautas relevantes que impactam o iFood, seus concorrentes, entregadores, restaurantes ou o mercado de foodtech.
 
-    Classifique cada pauta em uma das 6 frentes estratégicas do playbook:
+    Classifique cada pauta em uma das categorias:
     - `regulacao`: Leis, STF, MPT, Trabalho Autônomo.
     - `parceiros`: Restaurantes, PMEs, Comissões, Repasses.
     - `tecnologia`: Algoritmos, Bloqueios, Golpe da Maquininha, Segurança, IA.
@@ -78,10 +76,10 @@ def analisar_clipping(url_clipping):
     - `crise`: Imagem, Riscos Graves e Urgências.
 
     FORMATO DE SAÍDA OBRIGATÓRIO (JSON Puro):
-    Retorne uma lista JSON com as pautas encontradas.
+    Retorne uma lista JSON válida com as pautas encontradas.
     [
       {{
-        "titulo": "Manchete/Título da notícia no clipping",
+        "titulo": "Manchete ou título da notícia no clipping",
         "descricao": "Resumo executivo do fato e recomendação estratégica de PR alinhada ao playbook.",
         "tipo": "regulacao" | "parceiros" | "tecnologia" | "operacao" | "concorrencia" | "esg" | "crise",
         "data": "{data_hoje}",
@@ -110,24 +108,22 @@ def analisar_clipping(url_clipping):
     novas_pautas = json.loads(texto_resposta)
     pautas_existentes = carregar_oportunidades_existentes()
 
-    # Lógica de Merge: Adiciona novas pautas evitando duplicatas por título
     titulos_existentes = {p.get("titulo", "").strip().lower() for p in pautas_existentes}
     
     pautas_adicionadas = 0
     for pauta in novas_pautas:
         titulo_limpo = pauta.get("titulo", "").strip().lower()
         if titulo_limpo not in titulos_existentes:
-            pautas_existentes.insert(0, pauta) # Adiciona no topo
+            pautas_existentes.insert(0, pauta)
             titulos_existentes.add(titulo_limpo)
             pautas_adicionadas += 1
 
-    # Mantém um teto máximo de 50 pautas para manter o JSON leve
     pautas_finais = pautas_existentes[:50]
 
     with open("oportunidades.json", "w", encoding="utf-8") as f:
         json.dump(pautas_finais, f, ensure_ascii=False, indent=2)
 
-    print(f"Sucesso! {pautas_adicionadas} novas pautas do clipping foram incorporadas ao portal (Total acumulado: {len(pautas_finais)}).")
+    print(f"Sucesso! {pautas_adicionadas} novas pautas incorporadas do clipping (Total no portal: {len(pautas_finais)}).")
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
