@@ -6,6 +6,16 @@ import requests
 from google import genai
 from google.genai import types
 
+# Tenta carregar a biblioteca de busca de imagens como segunda opção
+try:
+    from duckduckgo_search import DDGS
+    DDG_DISPONIVEL = True
+except ImportError:
+    DDG_DISPONIVEL = False
+
+# Fallback final estável do ecossistema iFood caso todas as tentativas falhem
+IMAGEM_FALLBACK_DEFAULT = "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=800&q=80"
+
 def carregar_playbook():
     """Carrega as diretrizes estratégicas de PR do iFood."""
     try:
@@ -16,8 +26,8 @@ def carregar_playbook():
 
 def validar_ou_gerar_link(link_original, titulo_noticia):
     """
-    Testa se o link retornado pela API responde com status de sucesso.
-    Caso esteja quebrado ou seja inválido, gera um fallback com busca direta no Google.
+    Testa se o link da notícia retornado pela API responde com status de sucesso.
+    Caso esteja quebrado, gera um fallback com busca direta no Google.
     """
     if link_original and link_original.startswith("http"):
         try:
@@ -29,6 +39,37 @@ def validar_ou_gerar_link(link_original, titulo_noticia):
             
     query = urllib.parse.quote(f"{titulo_noticia} iFood")
     return f"https://www.google.com/search?q={query}"
+
+def obter_imagem_valida(imagem_original, categoria="institucional"):
+    """
+    Lógica de imagens em 2 etapas:
+    1ª Opção: Testa e usa a imagem retornada pela notícia original.
+    2ª Opção: Faz busca por imagens do termo 'iFood' + categoria.
+    Fallback: Utiliza imagem genérica de entrega/tecnologia.
+    """
+    # --- OPÇÃO 1: Validar imagem capturada da notícia ---
+    if imagem_original and imagem_original.startswith("http"):
+        try:
+            res = requests.head(imagem_original, timeout=2, allow_redirects=True)
+            tipo_conteudo = res.headers.get("content-type", "").lower()
+            if res.status_code < 400 and ("image" in tipo_conteudo or "jpg" in imagem_original or "png" in imagem_original):
+                return imagem_original
+        except Exception:
+            pass
+
+    # --- OPÇÃO 2: Busca por imagem com termo 'iFood' ---
+    if DDG_DISPONIVEL:
+        try:
+            termo_busca = f"iFood {categoria} brasil"
+            with DDGS() as ddgs:
+                resultados = list(ddgs.images(termo_busca, max_results=1))
+                if resultados and "image" in resultados[0]:
+                    return resultados[0]["image"]
+        except Exception as e:
+            print(f"⚠️ Aviso na busca secundária de imagem: {e}")
+
+    # --- FALLBACK FINAL ---
+    return IMAGEM_FALLBACK_DEFAULT
 
 def gerar_oportunidades():
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -88,7 +129,7 @@ DIRETRIZES DE SAÍDA (JSON STRICT):
    - "produtos": array com 1 a 3 entregáveis de PR (ex: ["Op-Ed", "Posicionamento Institucional", "Mapeamento de Stakeholders"])
    - "link_noticia": URL REAL E EXATA extraída da busca. NUNCA invente ou altere o slug.
    - "data": data de hoje no formato DD/MM/AAAA
-   - "imagem": URL de imagem da notícia/banco de imagens ou string vazia ""
+   - "imagem": URL de imagem da notícia (se houver) ou string vazia ""
 """
 
     print("Enviando requisição para a API do Gemini usando o modelo 3.5 Flash...")
@@ -114,12 +155,19 @@ DIRETRIZES DE SAÍDA (JSON STRICT):
     try:
         novas_oportunidades = json.loads(texto_resposta)
         
-        # Pós-processamento: Sanitização de links
-        print("🔗 Validador de Links: Checando integridade das URLs capturadas...")
+        # Pós-processamento: Sanitização de links e tratamento duplo de imagens
+        print("🔗 Processando e validando URLs e imagens das pautas...")
         for item in novas_oportunidades:
             link_original = item.get("link_noticia", "")
             titulo = item.get("titulo", "")
+            imagem_original = item.get("imagem", "")
+            categoria = item.get("tipo", "institucional")
+            
+            # Valida ou gera o link da fonte
             item["link_noticia"] = validar_ou_gerar_link(link_original, titulo)
+            
+            # Aplica a estratégia em 2 opções para imagem
+            item["imagem"] = obter_imagem_valida(imagem_original, categoria)
 
         historico = []
         if os.path.exists('oportunidades.json'):
@@ -139,7 +187,7 @@ DIRETRIZES DE SAÍDA (JSON STRICT):
         with open('oportunidades.json', 'w', encoding='utf-8') as f:
             json.dump(historico, f, ensure_ascii=False, indent=4)
             
-        print("Sucesso! As novas pautas do iFood com links validados foram salvas em 'oportunidades.json'.")
+        print("Sucesso! As novas pautas com links e imagens validados foram salvas em 'oportunidades.json'.")
         
     except json.JSONDecodeError:
         print("Erro: A resposta da API não foi um JSON válido. Resposta recebida:")
