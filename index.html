@@ -46,7 +46,6 @@
     <!-- NAVBAR FIXO INSTITUCIONAL -->
     <header class="sticky top-0 z-50 bg-white border-b border-gray-200/80 shadow-sm backdrop-blur-md bg-white/90">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-            <!-- Brand & Hub Identity -->
             <div class="flex items-center gap-4">
                 <a href="#" class="flex items-center gap-3">
                     <img src="ifood_logo_color_red.svg" alt="iFood PR" class="h-8 w-auto" onerror="this.onerror=null; this.src='https://institucional.ifood.com.br/wp-content/uploads/2026/06/sobre-banner2-768x768-copiar.png';">
@@ -60,11 +59,10 @@
                 </div>
             </div>
 
-            <!-- Status Indicator & Refresh -->
             <div class="flex items-center gap-3">
                 <div id="status-pill" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>Monitoramento Ativo</span>
+                    <span>Monitoramento Ativo (6 Frentes)</span>
                 </div>
                 <button onclick="carregarOportunidades()" class="p-2 text-gray-500 hover:text-ifood-red hover:bg-ifood-red-light rounded-full transition-colors" title="Atualizar dados">
                     <i class="fa-solid fa-rotate-right text-sm"></i>
@@ -82,13 +80,13 @@
             <div class="max-w-2xl">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-semibold mb-4 border border-white/20">
                     <i class="fa-solid fa-bolt text-ifood-red"></i>
-                    <span>Radar de Oportunidades & Gestão de Reputação</span>
+                    <span>Radar de Reputação & Inteligência de PR</span>
                 </div>
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-                    Inteligência de PR em Tempo Real para o <span class="text-ifood-red">iFood</span>
+                    Visão 360° de PR para o <span class="text-ifood-red">iFood</span>
                 </h1>
                 <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
-                    Análise em tempo real sobre STF, regulação do trabalho por app, concorrência e reputação institucional. Respostas estratégicas alinhadas ao Playbook Corporativo.
+                    Monitoramento contínuo de STF, Restaurantes PMEs, Governança Algorítmica, Operações de Praça, Concorrência e Agenda ESG.
                 </p>
 
                 <!-- KPI Quick Bar -->
@@ -114,27 +112,36 @@
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <!-- BARRA SUPERIOR: Categorias & Pesquisa -->
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-4">
-            <!-- Filter Pills - Categorias -->
+            <!-- Filter Pills - 6 Categorias + Todas + Crise -->
             <div class="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 hide-scrollbar" id="filtro-categoria">
                 <button onclick="filtrarCategoria('todos')" data-cat="todos" class="btn-filtro-cat active px-4 py-2 rounded-full text-xs font-bold transition-all bg-ifood-red text-white shadow-sm hover:bg-ifood-red-dark">
-                    Todas as Pautas
+                    Todas
                 </button>
                 <button onclick="filtrarCategoria('regulacao')" data-cat="regulacao" class="btn-filtro-cat px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
                     <i class="fa-solid fa-gavel mr-1.5 text-xs"></i>Regulação & STF
                 </button>
+                <button onclick="filtrarCategoria('parceiros')" data-cat="parceiros" class="btn-filtro-cat px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
+                    <i class="fa-solid fa-store mr-1.5 text-xs"></i>Restaurantes & PMEs
+                </button>
+                <button onclick="filtrarCategoria('tecnologia')" data-cat="tecnologia" class="btn-filtro-cat px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
+                    <i class="fa-solid fa-microchip mr-1.5 text-xs"></i>Algoritmos & Fraudes
+                </button>
+                <button onclick="filtrarCategoria('operacao')" data-cat="operacao" class="btn-filtro-cat px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
+                    <i class="fa-solid fa-person-biking mr-1.5 text-xs"></i>Trabalhista & Praças
+                </button>
                 <button onclick="filtrarCategoria('concorrencia')" data-cat="concorrencia" class="btn-filtro-cat px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
                     <i class="fa-solid fa-chart-line mr-1.5 text-xs"></i>Concorrência
                 </button>
-                <button onclick="filtrarCategoria('institucional')" data-cat="institucional" class="btn-filtro-cat px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
-                    <i class="fa-solid fa-leaf mr-1.5 text-xs"></i>Institucional & ESG
+                <button onclick="filtrarCategoria('esg')" data-cat="esg" class="btn-filtro-cat px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
+                    <i class="fa-solid fa-leaf mr-1.5 text-xs"></i>ESG & Impacto
                 </button>
                 <button onclick="filtrarCategoria('crise')" data-cat="crise" class="btn-filtro-cat px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
-                    <i class="fa-solid fa-shield-halved mr-1.5 text-xs"></i>Gestão de Crise
+                    <i class="fa-solid fa-shield-halved mr-1.5 text-xs"></i>Crise
                 </button>
             </div>
 
             <!-- Search Bar -->
-            <div class="relative w-full lg:w-72">
+            <div class="relative w-full lg:w-64">
                 <input type="text" id="input-busca" oninput="aplicarFiltros()" placeholder="Buscar pauta, marca ou termo..." class="w-full pl-9 pr-4 py-2 bg-white border border-gray-200 rounded-full text-xs font-medium text-gray-900 placeholder-gray-400 focus:outline-none focus:border-ifood-red focus:ring-1 focus:ring-ifood-red transition-all shadow-sm">
                 <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-gray-400 text-xs"></i>
             </div>
@@ -213,13 +220,15 @@
 
         const IMAGENS_INSTITUCIONAIS = {
             regulacao: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/entregadorportalifood-news-1024x650.webp',
+            parceiros: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/ifood-empresa-de-delivery.webp',
+            tecnologia: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/ifood-tecnologia.webp',
+            operacao: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/entregadorportalifood-news-1024x650.webp',
             concorrencia: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/ifood-tecnologia.webp',
-            institucional: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/ifood-empresa-de-delivery.webp',
+            esg: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/ifood_beneficio.webp',
             crise: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/ifood_beneficio.webp',
             default: 'https://institucional.ifood.com.br/wp-content/uploads/2023/12/banner-1024x611-1.jpg'
         };
 
-        // Função de utilidade para converter data DD/MM/AAAA em Objeto Date
         function parseDataBR(dataStr) {
             if (!dataStr) return new Date(0);
             const partes = dataStr.split('/');
@@ -227,7 +236,6 @@
             return new Date(partes[2], partes[1] - 1, partes[0]);
         }
 
-        // Determina a frescura/período da pauta com relação à data mais recente capturada
         function calcularFrescura(dataStr, dataMaisRecente) {
             const dataPauta = parseDataBR(dataStr);
             const dataRef = dataMaisRecente ? parseDataBR(dataMaisRecente) : new Date();
@@ -254,8 +262,6 @@
                 if (!resposta.ok) throw new Error('Arquivo oportunidades.json não encontrado.');
                 
                 todasOportunidades = await resposta.json();
-
-                // Inverter para mostrar mais recentes primeiro
                 todasOportunidades = [...todasOportunidades].reverse();
 
                 atualizarKPIs();
@@ -289,7 +295,6 @@
             const termoInput = document.getElementById('input-busca').value;
             const termoBusca = termoInput ? termoInput.toLowerCase().trim() : '';
 
-            // Data de referência mais recente no arquivo
             const dataMaisRecente = todasOportunidades.length > 0 ? todasOportunidades[0].data : null;
 
             const pautasFiltradas = todasOportunidades.filter(item => {
@@ -316,15 +321,17 @@
 
         function criarCardHTML(item, dataMaisRecente) {
             const configCategoria = {
-                regulacao: { bg: 'bg-amber-100', text: 'text-amber-800', border: 'border-amber-200', label: 'Regulação / STF', icon: 'fa-gavel' },
+                regulacao: { bg: 'bg-amber-100', text: 'text-amber-800', border: 'border-amber-200', label: 'Regulação & STF', icon: 'fa-gavel' },
+                parceiros: { bg: 'bg-orange-100', text: 'text-orange-800', border: 'border-orange-200', label: 'Restaurantes & PMEs', icon: 'fa-store' },
+                tecnologia: { bg: 'bg-purple-100', text: 'text-purple-800', border: 'border-purple-200', label: 'Algoritmos & Fraudes', icon: 'fa-microchip' },
+                operacao: { bg: 'bg-cyan-100', text: 'text-cyan-800', border: 'border-cyan-200', label: 'Trabalhista & Praças', icon: 'fa-person-biking' },
                 concorrencia: { bg: 'bg-blue-100', text: 'text-blue-800', border: 'border-blue-200', label: 'Concorrência', icon: 'fa-chart-line' },
-                institucional: { bg: 'bg-emerald-100', text: 'text-emerald-800', border: 'border-emerald-200', label: 'Institucional', icon: 'fa-leaf' },
+                esg: { bg: 'bg-emerald-100', text: 'text-emerald-800', border: 'border-emerald-200', label: 'ESG & Impacto', icon: 'fa-leaf' },
                 crise: { bg: 'bg-rose-100', text: 'text-rose-800', border: 'border-rose-200', label: 'Gestão de Crise', icon: 'fa-shield-halved' }
             };
 
-            const catConfig = configCategoria[item.tipo] || configCategoria.institucional;
+            const catConfig = configCategoria[item.tipo] || configCategoria.regulacao;
 
-            // Lógica do Indicador Visual de Data (Vermelho = Hoje, Preto = Semana, Cinza = +1 Semana)
             const frescura = calcularFrescura(item.data, dataMaisRecente);
             let badgeDataEstilo = "bg-gray-500 text-white font-medium";
             let pontoCor = "bg-gray-300";
@@ -354,7 +361,6 @@
             return `
                 <article class="bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group">
                     
-                    <!-- Imagem de Capa -->
                     <div class="relative h-44 w-full bg-gray-100 overflow-hidden">
                         <img src="${imagemSrc}" 
                              alt="${item.titulo}" 
@@ -362,7 +368,6 @@
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                         
-                        <!-- Badge de Categoria -->
                         <div class="absolute top-3 left-3">
                             <span class="${catConfig.bg} ${catConfig.text} ${catConfig.border} text-[11px] font-bold px-3 py-1 rounded-full border shadow-sm flex items-center gap-1.5 backdrop-blur-md">
                                 <i class="fa-solid ${catConfig.icon}"></i>
@@ -370,14 +375,12 @@
                             </span>
                         </div>
 
-                        <!-- Badge Indicador Visual de Data -->
                         <div class="absolute bottom-3 right-3 ${badgeDataEstilo} text-[10px] px-2.5 py-1 rounded-full backdrop-blur-md flex items-center gap-1.5">
                             <span class="w-1.5 h-1.5 rounded-full ${pontoCor}"></span>
                             <span>${item.data || 'Hoje'}</span>
                         </div>
                     </div>
 
-                    <!-- Corpo do Card -->
                     <div class="p-5 flex-1 flex flex-col justify-between">
                         <div>
                             <div class="flex flex-wrap items-center gap-1.5 mb-2">
@@ -396,7 +399,6 @@
                             </div>
                         </div>
 
-                        <!-- Rodapé com Entregáveis e Link -->
                         <div class="pt-3 border-t border-gray-100 flex flex-col gap-3">
                             <div class="flex flex-wrap gap-1.5">
                                 ${produtosBadges}
