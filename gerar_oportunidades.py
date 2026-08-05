@@ -1,198 +1,160 @@
+1. playbook.md (Atualizado com as 6 Frentes Estratégicas)
+Markdown
+# Playbook de Inteligência de PR & Gestão de Reputação | iFood (Í.C.A.R.O.)
+
+> **Versão:** 2.0 (Expandida)  
+> **Diretiva de Uso:** Fonte da verdade corporativa para o motor de IA e para a tomada de decisão da equipe de Comunicação Corporativa e Public Affairs.
+
+---
+
+## 1. Diretrizes Institucionais & Guardrails
+
+* **Posicionamento Institucional:** O iFood é uma empresa brasileira de tecnologia que fomenta o ecossistema de alimentação e entregas, aliando inovação, desenvolvimento socioeconômico e diálogo contínuo com a sociedade e instâncias governamentais.
+* **Tom de Voz:** Propositivo, transparente, fundamentado em dados auditáveis, focado na construção de pontes e com alto rigor técnico.
+* **Guardrails (Proibições de PR):**
+  * Não adotar tom confrontacional com instituições públicas, tribunais superiores (STF/TST), órgãos reguladores ou sindicatos.
+  * Não especular sobre decisões judiciais em andamento sem parecer técnico da equipe jurídica.
+  * Evitar adjetivações emocionais ou acusações diretas contra concorrentes.
+  * Nunca divulgar dados financeiros confidenciais ou métricas operacionais não auditadas publicamente.
+
+---
+
+## 2. Matriz das 6 Frentes Estratégicas de Observação
+
+### A. Regulação do Trabalho por Aplicativo & STF (`regulacao`)
+* **Foco:** Julgamentos no STF, projetos de lei de regulamentação do trabalho autônomo, negociações no Ministério do Trabalho e acordos coletivos.
+* **Posição Oficial:** Apoio à criação de um marco regulatório nacional que garanta proteção social, previdência e ganhos dignos, mantendo a autonomia e flexibilidade de horários do entregador.
+* **Entregáveis:** Nota Oficial Institucional, Q&A para Porta-Vozes, Briefing de Background para Colunistas.
+
+### B. Ecossistema de Restaurantes & PMEs (`parceiros`)
+* **Foco:** Alterações em taxas de comissão, prazos de repasse financeiro, contratos de exclusividade, migração para canais próprios (WhatsApp/Delivry) e apoio a pequenos e médios estabelecimentos.
+* **Posição Oficial:** O iFood é um parceiro impulsionador do setor de alimentação fora do lar, oferecendo tecnologia, inteligência de dados e visibilidade para que pequenos negócios cresçam com rentabilidade.
+* **Entregáveis:** Comunicado a Parceiros, Relatório de Impacto Econômico, Case Study de PME.
+
+### C. Governança Algorítmica, Tecnologia & Fraudes (`tecnologia`)
+* **Foco:** Transparência de algoritmos (alocação de pedidos e rotas), bloqueios de contas, "golpe da maquininha", segurança da informação, LGPD e Inteligência Artificial.
+* **Posição Oficial:** Compromisso com a governança algorítmica ética, tolerância zero a fraudes e investimento constante em biometria e camadas de proteção para consumidores, entregadores e restaurantes.
+* **Entregáveis:** Nota Explicativa Técnica, Guia de Prevenção a Golpes, Artigo de Opinião sobre Tecnologia Ética.
+
+### D. Operação Local, Diálogo Sindical & Segurança (`operacao`)
+* **Foco:** Paralisações regionais de entregadores ("breques"), pontos de apoio (Espaços iFood), condições de trabalho sob eventos climáticos extremos e seguros de saúde/acidente.
+* **Posição Oficial:** Diálogo aberto e contínuo com lideranças locais e sindicatos, priorizando a segurança física e o bem-estar operacional dos entregadores parceiros.
+* **Entregáveis:** Posicionamento Local de Praça, Balanço de Cobertura de Seguros, Informativo de Infraestrutura.
+
+### E. Concorrência, Mercado & Quick-Commerce (`concorrencia`)
+* **Foco:** Termos de Compromisso do CADE, movimentações de concorrentes no setor de delivery, expansão no segmento de supermercados (iFood Mercado) e inovação logística (drones/robôs).
+* **Posição Oficial:** Atuação em estrita conformidade com as regras de livre concorrência e com as determinações do CADE, promovendo um mercado diverso e dinâmico.
+* **Entregáveis:** Briefing Técnico de Mercado, Posicionamento Mercadológico, Press Release de Inovação.
+
+### F. Sustentabilidade, Impacto Social & ESG (`esg`)
+* **Foco:** Transição para frota elétrica (iFood Mover), meta de descarbonização, redução do uso de plásticos e iniciativas de formação e escolaridade (iFood Decola).
+* **Posição Oficial:** Liderança da agenda ESG na logística da América Latina, investindo na descarbonização da cadeia e no desenvolvimento educacional do ecossistema.
+* **Entregáveis:** Pitch para Editorias de ESG, Balanço de Impacto Ambiental, Sugestão de Pauta Social.
+
+---
+
+## 3. Matriz Taxonômica de Categorias no Sistema
+
+| Código da Categoria | Nome Amigável (Interface) | Ícone da Interface |
+| :--- | :--- | :--- |
+| `regulacao` | Regulação & STF | `fa-gavel` |
+| `parceiros` | Restaurantes & PMEs | `fa-store` |
+| `tecnologia` | Algoritmos & Fraudes | `fa-microchip` |
+| `operacao` | Trabalhista & Operação | `fa-person-biking` |
+| `concorrencia` | Concorrência & Mercado | `fa-chart-line` |
+| `esg` | ESG & Sustentabilidade | `fa-leaf` |
+| `crise` | Gestão de Crise | `fa-shield-halved` |
+2. gerar_oportunidades.py (Script de Varredura Automatizada)
+Python
 import os
 import json
 import re
-import urllib.parse
-import requests
+from datetime import datetime
 from google import genai
 from google.genai import types
 
-# Tenta carregar a biblioteca de busca de imagens como segunda opção
-try:
-    from duckduckgo_search import DDGS
-    DDG_DISPONIVEL = True
-except ImportError:
-    DDG_DISPONIVEL = False
-
-# Fallback final estável do ecossistema iFood caso todas as tentativas falhem
-IMAGEM_FALLBACK_DEFAULT = "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=800&q=80"
-
 def carregar_playbook():
-    """Carrega as diretrizes estratégicas de PR do iFood."""
-    try:
-        with open('playbook.md', 'r', encoding='utf-8') as f:
+    path = "playbook.md"
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
             return f.read()
-    except FileNotFoundError:
-        return "Nenhum playbook personalizado encontrado. Siga as diretrizes de Diretor Sênior de PR do iFood."
+    return "Playbook padrão não encontrado."
 
-def validar_ou_gerar_link(link_original, titulo_noticia):
-    """
-    Testa se o link da notícia retornado pela API responde com status de sucesso.
-    Caso esteja quebrado, gera um fallback com busca direta no Google.
-    """
-    if link_original and link_original.startswith("http"):
-        try:
-            res = requests.head(link_original, timeout=2, allow_redirects=True)
-            if res.status_code < 400:
-                return link_original
-        except Exception:
-            pass
-            
-    query = urllib.parse.quote(f"{titulo_noticia} iFood")
-    return f"https://www.google.com/search?q={query}"
-
-def obter_imagem_valida(imagem_original, categoria="institucional"):
-    """
-    Lógica de imagens em 2 etapas:
-    1ª Opção: Testa e usa a imagem retornada pela notícia original.
-    2ª Opção: Faz busca por imagens do termo 'iFood' + categoria.
-    Fallback: Utiliza imagem genérica de entrega/tecnologia.
-    """
-    # --- OPÇÃO 1: Validar imagem capturada da notícia ---
-    if imagem_original and imagem_original.startswith("http"):
-        try:
-            res = requests.head(imagem_original, timeout=2, allow_redirects=True)
-            tipo_conteudo = res.headers.get("content-type", "").lower()
-            if res.status_code < 400 and ("image" in tipo_conteudo or "jpg" in imagem_original or "png" in imagem_original):
-                return imagem_original
-        except Exception:
-            pass
-
-    # --- OPÇÃO 2: Busca por imagem com termo 'iFood' ---
-    if DDG_DISPONIVEL:
-        try:
-            termo_busca = f"iFood {categoria} brasil"
-            with DDGS() as ddgs:
-                resultados = list(ddgs.images(termo_busca, max_results=1))
-                if resultados and "image" in resultados[0]:
-                    return resultados[0]["image"]
-        except Exception as e:
-            print(f"⚠️ Aviso na busca secundária de imagem: {e}")
-
-    # --- FALLBACK FINAL ---
-    return IMAGEM_FALLBACK_DEFAULT
-
-def gerar_oportunidades():
+def executar_varredura():
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        raise ValueError("Chave da API não encontrada nas variáveis de ambiente.")
-    
-    # Suporte a buscas personalizadas enviadas via GitHub Actions / busca.html
-    marca_alvo = os.environ.get("MARCA_ALVO", "").strip()
-    
-    client = genai.Client(api_key=api_key)
-    
-    print("🔍 Diagnosticando modelos disponíveis para a sua chave de API...")
-    try:
-        modelos_disponiveis = [m.name for m in client.models.list() if "gemini" in m.name]
-        print(f"Modelos encontrados: {modelos_disponiveis}")
-    except Exception as e:
-        print(f"Aviso: Não foi possível listar os modelos. Erro: {e}")
-    
-    playbook_texto = carregar_playbook()
+        raise ValueError("A variável de ambiente GEMINI_API_KEY não foi encontrada.")
 
-    # Define o escopo com base em busca personalizada ou rotina diária
-    if marca_alvo:
-        foco_varredura = f"foco prioritário e aprofundado no tema/termo '{marca_alvo}' e suas implicações para o iFood"
-    else:
-        foco_varredura = "foco no ecossistema do iFood, regulação de trabalho por aplicativo (STF, MTE, Congresso), concorrência (Rappi, Zé Delivery, Uber) e reputação corporativa"
+    client = genai.Client(api_key=api_key)
+    playbook_context = carregar_playbook()
+    data_hoje = datetime.now().strftime("%d/%m/%Y")
 
     prompt = f"""
-Atue como Í.C.A.R.O. (iFood Corporate PR Edition), o motor de inteligência e curadoria editorial corporativa.
-Execute a varredura comercial diária e cruzamento de dados de hoje com {foco_varredura}. Foque nas 5 a 10 pautas mais quentes do dia no total.
+    Você é o robô Í.C.A.R.O., a central autônoma de inteligência de PR e reputação do iFood.
+    Data da varredura: {data_hoje}
 
-REGRA DE VERACIDADE ESTRITA: Você SÓ deve incluir pautas se houver fatos factuais e comprovados na mídia nas últimas 48h. Se não houver fatos reais, NÃO INVENTE, NÃO ALUCINE e NÃO INCLUA pautas fictícias.
+    DIRETRIZES DO PLAYBOOK CORPORATIVO:
+    {playbook_context}
 
-Identifique oportunidades e riscos nas seguintes frentes estratégicas do iFood:
-- Regulação, STF e Legislação (Gig Economy, trabalho por aplicativo, tributação)
-- Concorrência e Mercado (Rappi, Zé Delivery, Uber, Mercado Livre, Daki)
-- Inovação, Logística e Marketplace
-- Gestão de Crise, Reputação Corporativa e ESG
+    INSTRUÇÕES DE PESQUISA:
+    Faça uma busca na web por notícias e acontecimentos recentes no Brasil relacionados ao ecossistema do iFood e ao setor de delivery/tecnologia.
+    Varra obrigatoriamente as 6 frentes estratégicas de observação:
+    1. Regulação do Trabalho, STF, MPT e Leis (`regulacao`)
+    2. Relação com Restaurantes, PMEs, Comissões e Repasses (`parceiros`)
+    3. Governança Algorítmica, Bloqueios, Golpe da Maquininha e IA (`tecnologia`)
+    4. Paralisações de Entregadores, Pontos de Apoio e Clima (`operacao`)
+    5. CADE, Concorrência, Supermercados e Mercado (`concorrencia`)
+    6. Frota Elétrica, Redução de Plástico e Projetos Sociais (`esg`)
+    7. Casos de Urgência Imagem / Crise Grave (`crise`)
 
-DIRETRIZES PARA A "TÁTICA SUGERIDA" (NÍVEL DIRETOR DE PR):
-Atue como um Diretor Sênior de Comunicação Corporativa do iFood. Suas recomendações não podem ser óbvias ou operacionais (NUNCA sugira "fazer press release" ou "postar nas redes").
-Sua tática sempre deve começar com um verbo no gerúndio e justificar o impacto no negócio/reputação.
-Use EXCLUSIVAMENTE as estratégias e diretrizes do playbook do iFood abaixo:
+    FORMATO DE SAÍDA OBRIGATÓRIO (JSON Puro):
+    Retorne uma lista JSON com até 8 oportunidades detectadas.
+    Cada item do array deve obrigatoriamente conter a seguinte estrutura:
+    [
+      {{
+        "titulo": "Título conciso e direto sobre a pauta",
+        "descricao": "Resumo do fato e análise do impacto reputacional/estratégico para o iFood.",
+        "tipo": "regulacao" | "parceiros" | "tecnologia" | "operacao" | "concorrencia" | "esg" | "crise",
+        "data": "{data_hoje}",
+        "setor": "Sub-área específica (ex: STF, Fraudes, PMEs, CADE, ESG)",
+        "marcas": ["iFood", "MarcaConcorrenteOuParceiro"],
+        "produtos": ["Nome do Entregável de PR Sugerido 1", "Nome do Entregável 2"],
+        "link_noticia": "URL real e direta da notícia encontrada",
+        "imagem": "URL válida da imagem da notícia ou string vazia ''"
+      }}
+    ]
 
---- INÍCIO DO PLAYBOOK ---
-{playbook_texto}
---- FIM DO PLAYBOOK ---
+    ATENÇÃO: Responda APENAS com o código JSON válido, sem marcadores ```json ou explicações externas.
+    """
 
-DIRETRIZES DE SAÍDA (JSON STRICT):
-1. Entregue a resposta EXCLUSIVAMENTE em formato de array JSON válido, sem markdown, sem textos antes ou depois.
-2. Estrutura de cada objeto: 
-   - "tipo": categoria ("regulacao", "concorrencia", "crise" ou "institucional")
-   - "titulo": título curto e impactante sobre o fato
-   - "agencia": "iFood PR"
-   - "setor": frente temática (ex: 'Gig Economy', 'STF/Legislação', 'Marketplace', 'ESG')
-   - "marcas": array com entidades envolvidas (ex: ["iFood", "STF"], ["iFood", "Rappi"])
-   - "descricao": Fato em 1 frase + Tática sugerida em gerúndio baseada no playbook
-   - "produtos": array com 1 a 3 entregáveis de PR (ex: ["Op-Ed", "Posicionamento Institucional", "Mapeamento de Stakeholders"])
-   - "link_noticia": URL REAL E EXATA extraída da busca. NUNCA invente ou altere o slug.
-   - "data": data de hoje no formato DD/MM/AAAA
-   - "imagem": URL de imagem da notícia (se houver) ou string vazia ""
-"""
-
-    print("Enviando requisição para a API do Gemini usando o modelo 3.5 Flash...")
-    
     response = client.models.generate_content(
-        model='gemini-3.5-flash',
+        model="gemini-3.5-flash",
         contents=prompt,
         config=types.GenerateContentConfig(
-            temperature=0.2,
-            tools=[{"google_search": {}}]
+            tools=[types.Tool(google_search=types.GoogleSearch())],
+            temperature=0.2
         )
     )
+
+    texto_resposta = response.text.strip()
     
-    texto_resposta = response.text
-    
-    if "```json" in texto_resposta:
-        texto_resposta = texto_resposta.split("```json")[1].split("```")[0].strip()
-    elif "```" in texto_resposta:
-        texto_resposta = texto_resposta.split("```")[1].split("```")[0].strip()
-        
-    texto_resposta = texto_resposta.strip()
+    # Limpeza do JSON
+    texto_resposta = re.sub(r'^```json\s*', '', texto_resposta)
+    texto_resposta = re.sub(r'^```\s*', '', texto_resposta)
+    texto_resposta = re.sub(r'\s*```$', '', texto_resposta)
 
     try:
-        novas_oportunidades = json.loads(texto_resposta)
-        
-        # Pós-processamento: Sanitização de links e tratamento duplo de imagens
-        print("🔗 Processando e validando URLs e imagens das pautas...")
-        for item in novas_oportunidades:
-            link_original = item.get("link_noticia", "")
-            titulo = item.get("titulo", "")
-            imagem_original = item.get("imagem", "")
-            categoria = item.get("tipo", "institucional")
-            
-            # Valida ou gera o link da fonte
-            item["link_noticia"] = validar_ou_gerar_link(link_original, titulo)
-            
-            # Aplica a estratégia em 2 opções para imagem
-            item["imagem"] = obter_imagem_valida(imagem_original, categoria)
-
-        historico = []
-        if os.path.exists('oportunidades.json'):
-            with open('oportunidades.json', 'r', encoding='utf-8') as f:
-                conteudo = f.read()
-                if conteudo.strip():
-                    try:
-                        historico = json.loads(conteudo)
-                    except json.JSONDecodeError:
-                        print("Aviso: O arquivo antigo estava vazio. Iniciando um novo.")
-        
-        if isinstance(historico, list) and isinstance(novas_oportunidades, list):
-            historico.extend(novas_oportunidades)
-        else:
-            historico = novas_oportunidades
-            
-        with open('oportunidades.json', 'w', encoding='utf-8') as f:
-            json.dump(historico, f, ensure_ascii=False, indent=4)
-            
-        print("Sucesso! As novas pautas com links e imagens validados foram salvas em 'oportunidades.json'.")
-        
-    except json.JSONDecodeError:
-        print("Erro: A resposta da API não foi um JSON válido. Resposta recebida:")
+        oportunidades = json.loads(texto_resposta)
+    except json.JSONDecodeError as e:
+        print("Erro ao decodificar JSON gerado pelo Gemini. Conteúdo bruto:")
         print(texto_resposta)
-        raise
+        raise e
+
+    # Persistência no oportunidades.json
+    with open("oportunidades.json", "w", encoding="utf-8") as f:
+        json.dump(oportunidades, f, ensure_ascii=False, indent=2)
+
+    print(f"Sucesso! {len(oportunidades)} pautas capturadas e salvas em oportunidades.json")
 
 if __name__ == "__main__":
-    gerar_oportunidades()
+    executar_varredura()
