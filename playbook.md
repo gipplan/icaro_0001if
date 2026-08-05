@@ -1,67 +1,64 @@
 # Playbook de Inteligência de PR & Gestão de Reputação | iFood (Í.C.A.R.O.)
 
-> **Versão:** 1.0  
-> **Última Atualização:** [Data Atual]  
-> **Diretiva de Uso:** Este documento serve como fonte da verdade corporativa para a API do Í.C.A.R.O. e para formuladores de estratégia de PR.
+> **Versão:** 2.0 (Expandida)  
+> **Diretiva de Uso:** Fonte da verdade corporativa para o motor de IA e para a tomada de decisão da equipe de Comunicação Corporativa e Public Affairs.
 
 ---
 
-## 1. Diretrizes Institucionais & Tom de Voz
+## 1. Diretrizes Institucionais & Guardrails
 
-* **Posicionamento Geral:** O iFood é uma empresa brasileira de tecnologia que apoia o ecossistema de restaurantes e entregadores, promovendo inovação, sustentabilidade e diálogo transparente com a sociedade e órgãos reguladores.
-* **Tom de Voz:** Transparente, propositivo, institucional, focado em dados e fundamentado em impacto socioeconômico real.
-* **Proibições (Guardrails):**
-  * Nunca adotar tom confrontacional com instituições públicas ou judiciárias (STF, MPT, Executivo).
-  * Evitar adjetivações emocionais ou ilações sem respaldo de dados auditáveis.
-  * Não citar dados financeiros internos confidenciais que não constem em relatórios públicos de transparência.
-
----
-
-## 2. Matriz Temática Estratégica & Diretrizes de Resposta
-
-### A. Regulação do Trabalho por Aplicativo & STF
-* **Pauta Chave:** Julgamentos no STF sobre vínculo empregatício, projetos de lei de regulamentação do trabalho autônomo e negociações com o Ministério do Trabalho.
-* **Posição Oficial:** Apoio integral a uma regulamentação socialmente justa, que garanta proteção social, previdência e ganhos mínimos dignos para os entregadores, preservando a autonomia e a flexibilidade da atividade autônoma.
-* **Pilares de Argumentação:**
-  * Proteção social e inclusão previdenciária.
-  * Preservação da autonomia de horários do entregador.
-  * Diálogo permanente com o governo e entidades representativas.
-
-### B. Concorrência & Mercado
-* **Pauta Chave:** Exclusividade com restaurantes, decisões do CADE, taxas e entrada/movimentação de players concorrentes no setor de delivery.
-* **Posição Oficial:** O iFood atua em estrita conformidade com as leis de defesa da concorrência e com os acordos celebrados junto ao CADE, fomentando um mercado dinâmico e saudável para o ecossistema de alimentação.
-* **Pilares de Argumentação:**
-  * Conformidade total com os Termos de Compromisso de Desempenho (TCD) do CADE.
-  * Investimento contínuo no crescimento e digitalização de pequenos e médios restaurantes.
-
-### C. Gestão de Crise & Segurança
-* **Pauta Chave:** Paralisações de entregadores, falhas operacionais sistêmicas, incidentes de segurança da informação ou episódios de discriminação em entregas.
-* **Posição Oficial:** Priorização imediata do acolhimento humano, apuração rigorosa dos fatos, tolerância zero a desvios de conduta e comunicação proativa sobre as medidas corretivas adotadas.
-* **Pilares de Argumentação:**
-  * Tolerância zero com discriminação ou violência no ecossistema.
-  * Canais abertos e contínuos de suporte e escuta ativa.
-
-### D. Institucional & ESG
-* **Pauta Chave:** Descarbonização das entregas (iFood Mover), transição para veículos elétricos, redução de resíduos plásticos e programas de educação de entregadores (iFood Decola).
-* **Posição Oficial:** Liderança na transição sustentável do setor de delivery e compromisso de longo prazo com a formação e desenvolvimento do trabalhador.
+* **Posicionamento Institucional:** O iFood é uma empresa brasileira de tecnologia que fomenta o ecossistema de alimentação e entregas, aliando inovação, desenvolvimento socioeconômico e diálogo contínuo com a sociedade e instâncias governamentais.
+* **Tom de Voz:** Propositivo, transparente, fundamentado em dados auditáveis, focado na construção de pontes e com alto rigor técnico.
+* **Guardrails (Proibições de PR):**
+  * Não adotar tom confrontacional com instituições públicas, tribunais superiores (STF/TST), órgãos reguladores ou sindicatos.
+  * Não especular sobre decisões judiciais em andamento sem parecer técnico da equipe jurídica.
+  * Evitar adjetivações emocionais ou acusações diretas contra concorrentes.
+  * Nunca divulgar dados financeiros confidenciais ou métricas operacionais não auditadas publicamente.
 
 ---
 
-## 3. Matriz de Priorização & Entregáveis Recomendados
+## 2. Matriz das 6 Frentes Estratégicas de Observação
 
-| Categoria | Nível de Risco | Entregáveis Padrão de PR |
+### A. Regulação do Trabalho por Aplicativo & STF (`regulacao`)
+* **Foco:** Julgamentos no STF, projetos de lei de regulamentação do trabalho autônomo, negociações no Ministério do Trabalho e acordos coletivos.
+* **Posição Oficial:** Apoio à criação de um marco regulatório nacional que garanta proteção social, previdência e ganhos dignos, mantendo a autonomia e flexibilidade de horários do entregador.
+* **Entregáveis:** Nota Oficial Institucional, Q&A para Porta-Vozes, Briefing de Background para Colunistas.
+
+### B. Ecossistema de Restaurantes & PMEs (`parceiros`)
+* **Foco:** Alterações em taxas de comissão, prazos de repasse financeiro, contratos de exclusividade, migração para canais próprios (WhatsApp/Delivry) e apoio a pequenos e médios estabelecimentos.
+* **Posição Oficial:** O iFood é um parceiro impulsionador do setor de alimentação fora do lar, oferecendo tecnologia, inteligência de dados e visibilidade para que pequenos negócios cresçam com rentabilidade.
+* **Entregáveis:** Comunicado a Parceiros, Relatório de Impacto Econômico, Case Study de PME.
+
+### C. Governança Algorítmica, Tecnologia & Fraudes (`tecnologia`)
+* **Foco:** Transparência de algoritmos (alocação de pedidos e rotas), bloqueios de contas, "golpe da maquininha", segurança da informação, LGPD e Inteligência Artificial.
+* **Posição Oficial:** Compromisso com a governança algorítmica ética, tolerância zero a fraudes e investimento constante em biometria e camadas de proteção para consumidores, entregadores e restaurantes.
+* **Entregáveis:** Nota Explicativa Técnica, Guia de Prevenção a Golpes, Artigo de Opinião sobre Tecnologia Ética.
+
+### D. Operação Local, Diálogo Sindical & Segurança (`operacao`)
+* **Foco:** Paralisações regionais de entregadores ("breques"), pontos de apoio (Espaços iFood), condições de trabalho sob eventos climáticos extremos e seguros de saúde/acidente.
+* **Posição Oficial:** Diálogo aberto e contínuo com lideranças locais e sindicatos, priorizando a segurança física e o bem-estar operacional dos entregadores parceiros.
+* **Entregáveis:** Posicionamento Local de Praça, Balanço de Cobertura de Seguros, Informativo de Infraestrutura.
+
+### E. Concorrência, Mercado & Quick-Commerce (`concorrencia`)
+* **Foco:** Termos de Compromisso do CADE, movimentações de concorrentes no setor de delivery, expansão no segmento de supermercados (iFood Mercado) e inovação logística (drones/robôs).
+* **Posição Oficial:** Atuação em estrita conformidade com as regras de livre concorrência e com as determinações do CADE, promovendo um mercado diverso e dinâmico.
+* **Entregáveis:** Briefing Técnico de Mercado, Posicionamento Mercadológico, Press Release de Inovação.
+
+### F. Sustentabilidade, Impacto Social & ESG (`esg`)
+* **Foco:** Transição para frota elétrica (iFood Mover), meta de descarbonização, redução do uso de plásticos e iniciativas de formação e escolaridade (iFood Decola).
+* **Posição Oficial:** Liderança da agenda ESG na logística da América Latina, investindo na descarbonização da cadeia e no desenvolvimento educacional do ecossistema.
+* **Entregáveis:** Pitch para Editorias de ESG, Balanço de Impacto Ambiental, Sugestão de Pauta Social.
+
+---
+
+## 3. Matriz Taxonômica de Categorias no Sistema
+
+| Código da Categoria | Nome Amigável (Interface) | Ícone da Interface |
 | :--- | :--- | :--- |
-| **Regulação & STF** | **Crítico** | Nota Oficial à Imprensa, Q&A Interno para Porta-Vozes, Briefing para Colunistas |
-| **Crise Operacional / Imagem** | **Crítico** | Posicionamento de Crise, Roteiro de Atendimento SAC/Social, Nota Institucional |
-| **Concorrência / CADE** | **Alto** | Briefing Técnico de Contradição, Posição Institucional |
-| **Institucional & ESG** | **Médio / Oportunidade** | Pitch de Artigo de Opinião (Op-Ed), Sugestão de Pauta, Case Study |
-
----
-
-## 4. Estrutura de Output Esperada (Para Robô de PR / API)
-
-Ao gerar uma análise para o arquivo `oportunidades.json`, a IA deve obrigatoriamente retornar os entregáveis alinhados a esta taxonomia:
-* **`regulacao`**: Focar em análise de impacto normativo e sugestão de nota institucional.
-* **`concorrencia`**: Focar em diferenciais de produto e posicionamento de mercado.
-* **`institucional`**: Focar em dados de impacto social, ESG e cases.
-* **`crise`**: Focar na contenção imediata, apuração e alinhamento com porta-vozes.
+| `regulacao` | Regulação & STF | `fa-gavel` |
+| `parceiros` | Restaurantes & PMEs | `fa-store` |
+| `tecnologia` | Algoritmos & Fraudes | `fa-microchip` |
+| `operacao` | Trabalhista & Operação | `fa-person-biking` |
+| `concorrencia` | Concorrência & Mercado | `fa-chart-line` |
+| `esg` | ESG & Sustentabilidade | `fa-leaf` |
+| `crise` | Gestão de Crise | `fa-shield-halved` |
