@@ -75,7 +75,6 @@
 
     <!-- HERO SECTION INSTITUCIONAL -->
     <section class="relative bg-ifood-dark text-white overflow-hidden">
-        <!-- Banner Image Overlay -->
         <div class="absolute inset-0 z-0 opacity-25 bg-cover bg-center" style="background-image: url('https://institucional.ifood.com.br/wp-content/uploads/2023/12/banner-1024x611-1.jpg');"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-ifood-dark via-ifood-dark/90 to-transparent z-0"></div>
 
@@ -174,7 +173,6 @@
         let todasOportunidades = [];
         let categoriaAtiva = 'todos';
 
-        // Mapeamento de imagens institucionais do iFood como fallbacks por categoria
         const IMAGENS_INSTITUCIONAIS = {
             regulacao: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/entregadorportalifood-news-1024x650.webp',
             concorrencia: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/ifood-tecnologia.webp',
@@ -193,14 +191,13 @@
             `;
 
             try {
-                // Adiciona parâmetro de tempo para evitar cache do navegador
                 const resposta = await fetch(`oportunidades.json?t=${Date.now()}`);
                 if (!resposta.ok) throw new Error('Arquivo oportunidades.json não encontrado.');
                 
                 todasOportunidades = await resposta.json();
                 
-                // Ordenar por data mais recente
-                todasOportunidades.reverse();
+                // Inverter ordem para que as mais recentes fiquem no topo
+                todasOportunidades = [...todasOportunidades].reverse();
 
                 atualizarKPIs();
                 renderizarCards();
@@ -210,7 +207,7 @@
                     <div class="col-span-full bg-red-50 border border-red-200 text-red-700 p-6 rounded-2xl text-center my-8">
                         <i class="fa-solid fa-triangle-exclamation text-2xl mb-2"></i>
                         <h4 class="font-bold text-sm">Não foi possível carregar as oportunidades</h4>
-                        <p class="text-xs mt-1">Verifique se o arquivo oportunidades.json existe ou aguarde a primeira execução do robô.</p>
+                        <p class="text-xs mt-1">Verifique se o arquivo oportunidades.json existe na raiz do repositório.</p>
                     </div>
                 `;
             }
@@ -230,11 +227,12 @@
         function renderizarCards() {
             const container = document.getElementById('cards-container');
             const emptyState = document.getElementById('empty-state');
-            const termoBusca = document.getElementById('input-busca').value.toLowerCase().strip();
+            const termoInput = document.getElementById('input-busca').value;
+            const termoBusca = termoInput ? termoInput.toLowerCase().trim() : '';
 
             const pautasFiltradas = todasOportunidades.filter(item => {
                 const bateCategoria = (categoriaAtiva === 'todos') || (item.tipo === categoriaAtiva);
-                const textoCompleto = `${item.titulo} ${item.descricao} ${item.setor} ${(item.marcas || []).join(' ')}`.toLowerCase();
+                const textoCompleto = `${item.titulo || ''} ${item.descricao || ''} ${item.setor || ''} ${(item.marcas || []).join(' ')}`.toLowerCase();
                 const bateBusca = !termoBusca || textoCompleto.includes(termoBusca);
                 return bateCategoria && bateBusca;
             });
@@ -250,7 +248,6 @@
         }
 
         function criarCardHTML(item) {
-            // Definição de Cores e Ícones por Categoria
             const configCategoria = {
                 regulacao: { bg: 'bg-amber-100', text: 'text-amber-800', border: 'border-amber-200', label: 'Regulação / STF', icon: 'fa-gavel' },
                 concorrencia: { bg: 'bg-blue-100', text: 'text-blue-800', border: 'border-blue-200', label: 'Concorrência', icon: 'fa-chart-line' },
@@ -260,7 +257,6 @@
 
             const catConfig = configCategoria[item.tipo] || configCategoria.institucional;
             
-            // Imagem Principal ou Fallback Institucional
             const imagemSrc = (item.imagem && item.imagem.trim() !== '') 
                 ? item.imagem 
                 : (IMAGENS_INSTITUCIONAIS[item.tipo] || IMAGENS_INSTITUCIONAIS.default);
@@ -278,7 +274,7 @@
             return `
                 <article class="bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group">
                     
-                    <!-- Card Header Image -->
+                    <!-- Imagem de Capa -->
                     <div class="relative h-44 w-full bg-gray-100 overflow-hidden">
                         <img src="${imagemSrc}" 
                              alt="${item.titulo}" 
@@ -286,7 +282,7 @@
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                         
-                        <!-- Category Badge Over Image -->
+                        <!-- Badge de Categoria -->
                         <div class="absolute top-3 left-3">
                             <span class="${catConfig.bg} ${catConfig.text} ${catConfig.border} text-[11px] font-bold px-3 py-1 rounded-full border shadow-sm flex items-center gap-1.5 backdrop-blur-md">
                                 <i class="fa-solid ${catConfig.icon}"></i>
@@ -294,27 +290,24 @@
                             </span>
                         </div>
 
-                        <!-- Date Badge -->
+                        <!-- Badge de Data -->
                         <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-semibold px-2 py-0.5 rounded">
                             <i class="fa-regular fa-calendar mr-1"></i>${item.data || 'Hoje'}
                         </div>
                     </div>
 
-                    <!-- Card Body -->
+                    <!-- Corpo do Card -->
                     <div class="p-5 flex-1 flex flex-col justify-between">
                         <div>
-                            <!-- Brands & Sector -->
                             <div class="flex flex-wrap items-center gap-1.5 mb-2">
                                 ${marcasBadges}
                                 <span class="text-[10px] text-gray-400 font-medium ml-auto">${item.setor || ''}</span>
                             </div>
 
-                            <!-- Title -->
                             <h2 class="text-base font-bold text-gray-900 group-hover:text-ifood-red transition-colors line-clamp-2 mb-3 leading-snug">
                                 ${item.titulo}
                             </h2>
 
-                            <!-- Fact & Suggested PR Strategy -->
                             <div class="bg-gray-50 border border-gray-100 rounded-xl p-3 mb-4">
                                 <p class="text-xs text-gray-700 leading-relaxed">
                                     ${item.descricao}
@@ -322,7 +315,7 @@
                             </div>
                         </div>
 
-                        <!-- Card Footer: PR Deliverables & Source Link -->
+                        <!-- Rodapé com Entregáveis e Link -->
                         <div class="pt-3 border-t border-gray-100 flex flex-col gap-3">
                             <div class="flex flex-wrap gap-1.5">
                                 ${produtosBadges}
@@ -342,7 +335,6 @@
         function filtrarCategoria(cat) {
             categoriaAtiva = cat;
             
-            // Atualizar classes dos botões
             document.querySelectorAll('.btn-filtro').forEach(btn => {
                 if (btn.dataset.cat === cat) {
                     btn.className = "btn-filtro active px-4 py-2 rounded-full text-xs font-bold transition-all bg-ifood-red text-white shadow-sm hover:bg-ifood-red-dark";
@@ -358,7 +350,6 @@
             renderizarCards();
         }
 
-        // Inicialização ao carregar a página
         document.addEventListener('DOMContentLoaded', carregarOportunidades);
     </script>
 </body>
