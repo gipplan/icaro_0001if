@@ -7,7 +7,7 @@ from google.genai import types
 
 def carregar_playbook():
     """Lê o arquivo de conhecimento do iFood."""
-    caminho_playbook = 'playbook_0001if.md'
+    caminho_playbook = 'playbook.md'
     if os.path.exists(caminho_playbook):
         with open(caminho_playbook, 'r', encoding='utf-8') as f:
             return f.read()
@@ -72,12 +72,12 @@ REGRAS OBRIGATÓRIAS DE SAÍDA:
     client = genai.Client(api_key=api_key)
 
     print("🔍 Realizando varredura web com Google Search Grounding...")
-    response = client.models.generate_content(
-        model='gemini-2.5-flash',
+  response = client.models.generate_content(
+        model='gemini-3.5-flash',
         contents=prompt,
         config=types.GenerateContentConfig(
-            tools=[types.Tool(google_search=types.GoogleSearch())], # Habilita a Busca Nativa do Google
-            temperature=0.2,
+            temperature=0.4,
+            tools=[{"google_search": {}}]
         )
     )
 
