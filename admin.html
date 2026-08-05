@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Gestão - I.C.A.R.O. | Grupo In Press</title>
+    <title>Painel de Gestão - I.C.A.R.O. | iFood Corporate PR</title>
     <!-- Google Fonts: Lora (Serif) & Plus Jakarta Sans (Sans-serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +16,10 @@
             theme: {
                 extend: {
                     colors: {
-                        inpress: {
-                            red: '#E00300',
-                            chumbo: '#575756',
-                            dark: '#111111'
+                        ifood: {
+                            red: '#EA1D2C',      // Vermelho oficial iFood
+                            chumbo: '#575756',   // Chumbo corporativo
+                            dark: '#111111'      // Preto de apoio
                         }
                     }
                 }
@@ -35,20 +35,20 @@
         article:hover .admin-controls { opacity: 1; }
     </style>
 </head>
-<body class="bg-stone-50 text-inpress-dark font-sans-custom min-h-screen flex flex-col justify-between relative">
+<body class="bg-stone-50 text-ifood-dark font-sans-custom min-h-screen flex flex-col justify-between relative">
 
     <!-- Header Editorial Compacto (Modo Admin) -->
-    <header class="relative py-6 px-8 shadow-sm bg-stone-900 border-b-4 border-inpress-red z-30">
+    <header class="relative py-6 px-8 shadow-sm bg-stone-900 border-b-4 border-ifood-red z-30">
         <div class="max-w-6xl mx-auto flex justify-between items-center relative z-10">
             <div class="flex items-center gap-4">
-                <img src="logo.png" alt="Grupo In Press" class="h-8 object-contain brightness-0 invert" onerror="this.style.display='none'; document.getElementById('fallbackTitle').classList.remove('hidden')">
-                <span id="fallbackTitle" class="hidden text-sm font-bold text-white tracking-widest uppercase font-sans-custom">Grupo <span class="text-inpress-red">In</span> Press</span>
+                <img src="logo.png" alt="iFood PR" class="h-8 object-contain brightness-0 invert" onerror="this.style.display='none'; document.getElementById('fallbackTitle').classList.remove('hidden')">
+                <span id="fallbackTitle" class="hidden text-sm font-bold text-white tracking-widest uppercase font-sans-custom">iFood <span class="text-ifood-red">PR</span></span>
                 <div class="h-6 w-px bg-stone-700"></div>
                 <h1 class="text-xl font-bold font-editorial text-white tracking-widest uppercase">I.C.A.R.O. <span class="text-stone-400 font-sans-custom text-xs font-normal ml-2">Painel de Curadoria Editorial</span></h1>
             </div>
             
-            <a href="index.html" class="text-xs font-bold text-white hover:text-inpress-red transition-colors tracking-widest uppercase border border-stone-700 px-4 py-2 rounded">
-                Voltar à Visão Executiva ↗
+            <a href="index.html" class="text-xs font-bold text-white hover:text-ifood-red transition-colors tracking-widest uppercase border border-stone-700 px-4 py-2 rounded">
+                Voltar ao Radar ↗
             </a>
         </div>
     </header>
@@ -56,8 +56,8 @@
     <!-- Sub-Header Técnico -->
     <div class="max-w-6xl mx-auto px-4 mt-8 w-full">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-stone-300 pb-2 gap-4">
-            <span class="text-xs font-bold tracking-widest text-inpress-chumbo uppercase font-sans-custom">Gerenciamento da Base de Dados</span>
-            <span class="text-xs font-bold tracking-widest text-stone-400 uppercase font-sans-custom">Oportunidades Carregadas: <span id="contadorCards" class="text-inpress-dark">0</span></span>
+            <span class="text-xs font-bold tracking-widest text-ifood-chumbo uppercase font-sans-custom">Gerenciamento da Base de Dados</span>
+            <span class="text-xs font-bold tracking-widest text-stone-400 uppercase font-sans-custom">Oportunidades Carregadas: <span id="contadorCards" class="text-ifood-dark">0</span></span>
         </div>
     </div>
 
@@ -70,13 +70,13 @@
 
     <!-- Rodapé -->
     <footer class="bg-white border-t border-stone-200 py-6 px-8 text-center shadow-sm">
-        <div class="max-w-6xl mx-auto text-xs text-inpress-chumbo tracking-wider">
-            <p>Modo Administrador | I.C.A.R.O.</p>
+        <div class="max-w-6xl mx-auto text-xs text-ifood-chumbo tracking-wider">
+            <p>Modo Administrador | I.C.A.R.O. Engine - iFood Edition</p>
         </div>
     </footer>
 
     <!-- BOTÃO FIXO DE EXPORTAÇÃO -->
-    <button onclick="exportarJSON()" class="fixed bottom-6 right-6 bg-inpress-red hover:bg-red-700 text-white font-bold py-4 px-6 rounded-full shadow-2xl transition-transform hover:scale-105 z-50 flex items-center gap-3 tracking-wider text-sm font-sans-custom border border-red-500">
+    <button onclick="exportarJSON()" class="fixed bottom-6 right-6 bg-ifood-red hover:bg-red-700 text-white font-bold py-4 px-6 rounded-full shadow-2xl transition-transform hover:scale-105 z-50 flex items-center gap-3 tracking-wider text-sm font-sans-custom border border-red-500">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
         Salvar & Exportar JSON
     </button>
@@ -139,7 +139,7 @@
             if (!texto) return { fato: "", rec: "" };
             let partes = texto.split(/\.(?=\s)/);
             if (partes.length === 1) {
-                const regexGerundio = /,\s*(mostrando|abrindo|exigindo|gerando|visando|propondo|direcionando|demandando|sinalizando|reforçando|consolidando|oferecendo|permitindo|ajudando|preparando)/i;
+                const regexGerundio = /,\s*(mostrando|abrindo|exigindo|gerando|visando|propondo|direcionando|demandando|sinalizando|reforçando|consolidando|oferecendo|permitindo|ajudando|preparando|articulando|estruturando|liderando|neutralizando)/i;
                 const match = texto.match(regexGerundio);
                 if (match) {
                     const index = texto.indexOf(match[0]);
@@ -159,7 +159,7 @@
             if (!rec || rec.trim() === "") return fato;
             
             const primeiraPalavraRec = rec.split(' ')[0].toLowerCase();
-            const gerundiosComuns = ['mostrando', 'abrindo', 'exigindo', 'gerando', 'visando', 'propondo', 'direcionando', 'demandando', 'sinalizando', 'reforçando', 'consolidando', 'oferecendo', 'permitindo', 'ajudando', 'preparando'];
+            const gerundiosComuns = ['mostrando', 'abrindo', 'exigindo', 'gerando', 'visando', 'propondo', 'direcionando', 'demandando', 'sinalizando', 'reforçando', 'consolidando', 'oferecendo', 'permitindo', 'ajudando', 'preparando', 'articulando', 'estruturando', 'liderando', 'neutralizando'];
             
             if (gerundiosComuns.includes(primeiraPalavraRec)) {
                 let fatoLimpo = fato.endsWith('.') ? fato.slice(0, -1) : fato;
@@ -183,25 +183,34 @@
                 return;
             }
 
+            // Mapa de cores por categoria do iFood
+            const tipoMap = {
+                'regulacao': { label: 'REGULAÇÃO / GOV', color: 'bg-ifood-red text-white' },
+                'concorrencia': { label: 'CONCORRÊNCIA', color: 'bg-stone-800 text-white' },
+                'crise': { label: 'ALERTA DE CRISE', color: 'bg-orange-600 text-white' },
+                'institucional': { label: 'PR INSTITUCIONAL', color: 'bg-emerald-600 text-white' }
+            };
+
             dados.forEach((item, index) => {
-                const isMacro = (item.tipo === 'setor');
+                const tipoAtual = (item.tipo || "").toLowerCase();
+                const configTipo = tipoMap[tipoAtual] || { label: 'RADAR DIÁRIO', color: 'bg-ifood-dark text-white' };
+                
                 const textoOriginal = item.descricao ? item.descricao : "";
                 const { fato, rec } = separarContextoERecomendacao(textoOriginal);
                 const marcasTexto = item.marcas ? item.marcas.map(m => limparMarca(m)).join(', ') : "Sem marcas";
                 
-                const tagSuperior = isMacro ? 'ALERTA MACRO' : (item.agencia === 'In Press Porter Novelli' ? 'IN PRESS' : 'FLEISHMANHILLARD');
-                const corTagSuperior = isMacro ? 'bg-inpress-red text-white' : 'bg-inpress-dark/95 text-white';
-                const tituloCard = (isMacro && item.titulo) ? item.titulo : marcasTexto;
+                const tagSuperior = configTipo.label;
+                const corTagSuperior = configTipo.color;
+                const tituloCard = item.titulo ? item.titulo : marcasTexto;
 
                 // Lógica de fallback para a Imagem
                 const marcaPrincipal = item.marcas && item.marcas.length > 0 ? limparMarca(item.marcas[0]) : "business";
                 const seedMarca = Math.abs(gerarHash(marcaPrincipal)) % 1000;
-                const setorLimpo = item.setor ? item.setor.toLowerCase().split(' ')[0].replace(/[^a-z]/g, '') : "office";
-                const termoBusca = isMacro ? "economy,business" : `${marcaPrincipal.toLowerCase().replace(/[^a-z0-9]/g, '')},${setorLimpo}`;
+                const setorLimpo = item.setor ? item.setor.toLowerCase().split(' ')[0].replace(/[^a-z]/g, '') : "delivery";
+                const termoBusca = `${marcaPrincipal.toLowerCase().replace(/[^a-z0-9]/g, '')},${setorLimpo},economy`;
                 const imagemFinal = (item.imagem && item.imagem.trim() !== '') 
                     ? item.imagem 
                     : `https://loremflickr.com/600/400/${encodeURIComponent(termoBusca)}/all?lock=${seedMarca}`;
-
 
                 // Construção do Card com Overlay de Admin
                 const card = `
@@ -222,13 +231,13 @@
                             <div class="h-32 relative bg-stone-100 flex-shrink-0 overflow-hidden border-b border-stone-200">
                                 <div class="absolute inset-0 bg-stone-800/10 mix-blend-multiply"></div>
                                 <img src="${imagemFinal}" alt="Cover" class="w-full h-full object-cover grayscale-[15%]">
-                                <span class="absolute top-4 left-4 ${corTagSuperior} text-[9px] font-extrabold px-2 py-1 tracking-widest uppercase rounded-sm z-10">
+                                <span class="absolute top-4 left-4 ${corTagSuperior} text-[9px] font-extrabold px-2 py-1 tracking-widest uppercase rounded-sm z-10 shadow-md">
                                     ${tagSuperior}
                                 </span>
                             </div>
                             
                             <div class="p-5 flex-grow flex flex-col">
-                                <h3 class="text-xl font-bold font-editorial text-inpress-dark leading-tight mb-3 line-clamp-2">
+                                <h3 class="text-xl font-bold font-editorial text-ifood-dark leading-tight mb-3 line-clamp-2">
                                     ${tituloCard}
                                 </h3>
                                 
@@ -240,7 +249,7 @@
                                 </div>
 
                                 <div class="bg-stone-50 p-3 rounded border border-stone-100">
-                                    <span class="text-[9px] font-bold text-inpress-red uppercase tracking-widest block mb-1">Tática Sugerida</span>
+                                    <span class="text-[9px] font-bold text-ifood-red uppercase tracking-widest block mb-1">Tática Sugerida</span>
                                     <p class="text-xs text-stone-600 leading-snug font-editorial italic line-clamp-3">
                                         "${rec}"
                                     </p>
@@ -251,16 +260,15 @@
                         <!-- Visão de Edição do Card (Escondida por Padrão) -->
                         <div id="edit-mode-${index}" class="hidden flex-col h-full bg-stone-50 p-5 absolute inset-0 z-40 border-2 border-stone-900 rounded-md shadow-xl">
                             <div class="flex justify-between items-center mb-4 pb-2 border-b border-stone-200">
-                                <span class="text-xs font-bold text-stone-900 uppercase tracking-widest">Editando Card #${index + 1}</span>
+                                <span class="text-xs font-bold text-stone-900 uppercase tracking-widest">Editando Fato #${index + 1}</span>
                                 <button onclick="fecharEditor(${index})" class="text-stone-400 hover:text-stone-800 font-bold">✕</button>
                             </div>
                             
                             <div class="space-y-4 flex-grow overflow-y-auto pr-2 custom-scrollbar pb-4">
-                                ${isMacro ? `
                                 <div>
-                                    <label class="text-[9px] font-bold text-stone-500 uppercase tracking-widest block mb-1">Título Macro</label>
+                                    <label class="text-[9px] font-bold text-stone-500 uppercase tracking-widest block mb-1">Título / Tema Principal</label>
                                     <input type="text" id="edit-titulo-${index}" value="${item.titulo || ''}" class="w-full text-xs p-2.5 border border-stone-300 rounded font-sans-custom focus:border-stone-900 focus:outline-none focus:ring-1 focus:ring-stone-900 transition-shadow">
-                                </div>` : ''}
+                                </div>
                                 
                                 <div>
                                     <label class="text-[9px] font-bold text-stone-500 uppercase tracking-widest block mb-1">URL da Imagem (Opcional)</label>
@@ -273,7 +281,7 @@
                                 </div>
                                 
                                 <div>
-                                    <label class="text-[9px] font-bold text-stone-500 uppercase tracking-widest block mb-1">Tática Sugerida</label>
+                                    <label class="text-[9px] font-bold text-stone-500 uppercase tracking-widest block mb-1">Tática Sugerida (PR)</label>
                                     <textarea id="edit-rec-${index}" rows="3" class="w-full text-xs p-2.5 border border-stone-300 rounded font-sans-custom focus:border-stone-900 focus:outline-none focus:ring-1 focus:ring-stone-900 transition-shadow resize-none">${rec}</textarea>
                                 </div>
                             </div>
@@ -315,11 +323,9 @@
         function salvarEdicao(index) {
             const item = dadosOportunidades[index];
             
-            // Salva o título (se for Macro)
-            if (item.tipo === 'setor') {
-                const novoTitulo = document.getElementById(`edit-titulo-${index}`).value;
-                item.titulo = novoTitulo;
-            }
+            // Salva o título 
+            const novoTitulo = document.getElementById(`edit-titulo-${index}`).value;
+            item.titulo = novoTitulo;
             
             // Salva a nova Imagem
             const novaImagem = document.getElementById(`edit-imagem-${index}`).value;
@@ -330,7 +336,7 @@
             const novaRec = document.getElementById(`edit-rec-${index}`).value;
             item.descricao = mesclarFatoERecomendacao(novoFato, novaRec);
             
-            // Atualiza Interface (Já vai re-ordenar se salvar os dados modificados, pois os dados já estão no array. A ordem do array é mantida.)
+            // Atualiza Interface
             renderizarTimelineAdmin(dadosOportunidades);
         }
 
@@ -360,7 +366,7 @@
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
             
-            alert("Base de dados exportada com sucesso! Substitua o arquivo 'oportunidades.json' na sua pasta raiz pelo arquivo baixado.");
+            alert("Base de dados exportada com sucesso! Substitua o arquivo 'oportunidades.json' no seu repositório pelo arquivo recém-baixado.");
         }
     </script>
     
