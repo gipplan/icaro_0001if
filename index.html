@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing de Inteligência - Grupo In Press</title>
+    <!-- Google Fonts: Lora (Serif) & Plus Jakarta Sans (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        inpress: {
+                            red: '#E00300',      // Vermelho oficial
+                            chumbo: '#575756',   // Chumbo oficial
+                            dark: '#111111'      // Preto de apoio
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .font-editorial { font-family: 'Fraunces', Georgia, serif; }
+        .font-sans-custom { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-stone-50 text-inpress-dark font-sans-custom min-h-screen flex flex-col justify-between">
+
+    <!-- BARREIRA DE SENHA -->
+    <div id="passwordBarrier" class="fixed inset-0 bg-stone-950 flex flex-col items-center justify-center z-[9999] px-4">
+        <div class="bg-stone-900 border border-stone-850 p-10 rounded-2xl max-w-md w-full text-center shadow-2xl relative overflow-hidden">
+            <svg class="absolute -right-10 -bottom-10 h-48 w-48 text-stone-800/40 pointer-events-none" viewBox="0 0 100 100">
+                <circle cx="100" cy="100" r="20" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                <circle cx="100" cy="100" r="100" fill="none" stroke="currentColor" stroke-width="0.5"/>
+            </svg>
+
+            <span class="text-3xl mb-4 block">🔒</span>
+            <h2 class="text-xl font-bold font-editorial text-white mb-2">Acesso Restrito</h2>
+            <p class="text-xs text-stone-400 mb-6 font-sans-custom tracking-wide">PAINEL DE INTELIGÊNCIA EDITORIAL DO GRUPO IN PRESS</p>
+            
+            <input id="sitePassword" type="password" placeholder="Digite a chave de acesso..." 
+                   class="w-full p-3 bg-stone-950 border border-stone-700 rounded-lg text-white text-center focus:outline-none focus:border-inpress-red mb-4 transition-all text-sm tracking-widest font-sans-custom">
+            
+            <button onclick="verificarSenha()" class="w-full bg-inpress-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors text-sm uppercase tracking-wider font-sans-custom">
+                Desbloquear Briefing
+            </button>
+            <p id="msgErro" class="text-xs text-red-400 mt-3 hidden font-semibold">Chave incorreta. Tente novamente.</p>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div>
+        <!-- Header Editorial Corporativo -->
+        <header class="relative py-8 px-8 bg-cover bg-center z-30" style="background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(28, 25, 23, 0.95)), url('http://googleusercontent.com/image_collection/image_retrieval/1646351935261000525_0');">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <svg class="absolute -right-12 -top-12 h-56 w-56 text-stone-100/10 pointer-events-none hidden md:block" viewBox="0 0 100 100">
+                    <circle cx="100" cy="0" r="15" fill="none" stroke="currentColor" stroke-width="0.4"/>
+                    <circle cx="100" cy="0" r="30" fill="none" stroke="currentColor" stroke-width="0.4"/>
+                    <circle cx="100" cy="0" r="45" fill="none" stroke="currentColor" stroke-width="0.4"/>
+                    <circle cx="100" cy="0" r="60" fill="none" stroke="currentColor" stroke-width="0.4"/>
+                    <circle cx="100" cy="0" r="75" fill="none" stroke="currentColor" stroke-width="0.4"/>
+                    <circle cx="100" cy="0" r="90" fill="none" stroke="currentColor" stroke-width="0.4"/>
+                    <circle cx="100" cy="0" r="105" fill="none" stroke="currentColor" stroke-width="0.4"/>
+                </svg>
+            </div>
+
+            <div class="max-w-6xl mx-auto flex flex-col items-center relative z-10">
+                <div class="w-full flex justify-start items-center mb-6">
+                    <img src="logo.png" alt="Grupo In Press" class="h-10 md:h-12 object-contain brightness-0 invert" onerror="this.style.display='none'; document.getElementById('fallbackTitle').classList.remove('hidden')">
+                    <span id="fallbackTitle" class="hidden text-base font-bold text-white tracking-widest uppercase font-sans-custom">Grupo <span class="text-inpress-red">In</span> Press</span>
+                </div>
+                
+                <div class="flex flex-col items-center text-center max-w-3xl w-full pb-4">
+                    <div class="pt-2">
+                        <h2 class="text-5xl md:text-7xl font-extrabold font-editorial text-white tracking-widest leading-none mb-4">
+                            I.C.A.R.O.
+                        </h2>
+                        <p class="text-[10px] md:text-xs text-stone-300 font-bold tracking-widest uppercase leading-tight border-t border-white/20 pt-4 pb-2 w-full">
+                            Inteligência em Comunicação, Análise, Riscos e Oportunidades
+                        </p>
+                        
+                        <!-- Aviso de Alucinação IA -->
+                        <div class="mt-2 inline-flex items-center gap-2 bg-inpress-red/10 border border-inpress-red/30 text-stone-300 px-4 py-2 rounded-lg backdrop-blur-sm max-w-2xl text-left">
+                            <svg class="h-5 w-5 text-inpress-red flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <span class="text-[9px] md:text-[10px] font-medium tracking-wide leading-snug">
+                                O Sistema I.C.A.R.O. utiliza o Gemini para automação e pode conter alucinações. Lembre-se de conferir os dados antes de usá-los e alerte o time de planejamento.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- NOVO: Barra de Filtros FIXA NO TOPO (Sticky) -->
+        <div class="sticky top-0 z-[100] w-full bg-[#292929] border-b border-stone-800 shadow-xl py-4 px-4 transition-all">
+            <div class="max-w-6xl mx-auto flex flex-wrap gap-3 justify-center items-center">
+                
+                <!-- Filtro: Origem da Oportunidade (Visões) -->
+                <div class="relative inline-block text-left w-full md:w-auto min-w-[150px] flex-grow max-w-[200px]">
+                    <button id="dropdownBtnTipos" onclick="toggleDropdown(event, 'dropdownMenuTipos')" class="w-full bg-white/10 hover:bg-white/15 text-white text-xs p-2.5 rounded-lg border border-white/20 focus:outline-none focus:border-inpress-red flex justify-between items-center font-semibold tracking-wide transition-all">
+                        <span id="dropdownLabelTipos" class="truncate font-bold">Visão: Todas</span>
+                        <svg class="h-4 w-4 text-stone-300 ml-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="dropdownMenuTipos" class="hidden absolute left-0 sm:right-0 mt-2 w-full sm:w-56 rounded-lg shadow-lg bg-white border border-stone-200 z-[101] max-h-60 overflow-y-auto">
+                        <div class="p-2 space-y-1">
+                            <label class="flex items-center gap-2 p-2 hover:bg-stone-50 rounded cursor-pointer text-xs text-stone-700 transition-colors">
+                                <input type="checkbox" value="marca" class="filtro-tipo-checkbox w-4 h-4 rounded text-inpress-red focus:ring-red-500 bg-white border-stone-300" onchange="filtrarGeral()">
+                                <span class="font-semibold tracking-wide">Foco em Marcas</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2 hover:bg-stone-50 rounded cursor-pointer text-xs text-stone-700 transition-colors">
+                                <input type="checkbox" value="setor" class="filtro-tipo-checkbox w-4 h-4 rounded text-inpress-red focus:ring-red-500 bg-white border-stone-300" onchange="filtrarGeral()">
+                                <span class="font-semibold tracking-wide">Radar Setorial (Macro)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filtro 1: Agência -->
+                <select id="filtroAgencia" class="bg-white/10 hover:bg-white/15 text-white text-xs p-2.5 rounded-lg border border-white/20 focus:outline-none focus:border-inpress-red font-semibold tracking-wide transition-all w-full md:w-auto min-w-[150px] flex-grow max-w-[200px] cursor-pointer">
+                    <option value="" class="bg-stone-900 text-white">Todas as Agências</option>
+                    <option value="In Press Porter Novelli" class="bg-stone-900 text-white">In Press</option>
+                    <option value="FleishmanHillard" class="bg-stone-900 text-white">FleishmanHillard</option>
+                </select>
+                
+                <!-- Filtro 2: Cliente -->
+                <div class="relative inline-block text-left w-full md:w-auto min-w-[160px] flex-grow max-w-[200px]">
+                    <button id="dropdownBtn" onclick="toggleDropdown(event, 'dropdownMenu')" class="w-full bg-white/10 hover:bg-white/15 text-white text-xs p-2.5 rounded-lg border border-white/20 focus:outline-none focus:border-inpress-red flex justify-between items-center font-semibold tracking-wide transition-all">
+                        <span id="dropdownLabel" class="truncate text-stone-300">Todos os Clientes</span>
+                        <svg class="h-4 w-4 text-stone-300 ml-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="dropdownMenu" class="hidden absolute left-0 sm:right-0 mt-2 w-full sm:w-64 rounded-lg shadow-lg bg-white border border-stone-200 z-[101] max-h-60 overflow-y-auto">
+                        <div id="clientesContainer" class="p-2 space-y-1">
+                            <p class="text-[10px] text-stone-400 p-2">Carregando marcas...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filtro 3: Serviços -->
+                <div class="relative inline-block text-left w-full md:w-auto min-w-[160px] flex-grow max-w-[200px]">
+                    <button id="dropdownBtnServicos" onclick="toggleDropdown(event, 'dropdownMenuServicos')" class="w-full bg-white/10 hover:bg-white/15 text-white text-xs p-2.5 rounded-lg border border-white/20 focus:outline-none focus:border-inpress-red flex justify-between items-center font-semibold tracking-wide transition-all">
+                        <span id="dropdownLabelServicos" class="truncate text-stone-300">Todos os Serviços</span>
+                        <svg class="h-4 w-4 text-stone-300 ml-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="dropdownMenuServicos" class="hidden absolute left-0 sm:right-0 mt-2 w-full sm:w-64 rounded-lg shadow-lg bg-white border border-stone-200 z-[101] max-h-60 overflow-y-auto">
+                        <div id="servicosContainer" class="p-2 space-y-1">
+                            <p class="text-[10px] text-stone-400 p-2">Carregando serviços...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campo de Busca por Texto -->
+                <div class="relative inline-block w-full md:w-auto min-w-[200px] flex-grow max-w-[280px]">
+                    <input type="text" id="campoBusca" oninput="filtrarGeral()" placeholder="Pesquisar pautas..." 
+                           class="w-full bg-white/10 hover:bg-white/15 text-white placeholder:text-stone-300/70 text-xs p-2.5 pl-9 rounded-lg border border-white/20 focus:outline-none focus:border-inpress-red focus:bg-white/15 font-semibold tracking-wide transition-all">
+                    <svg class="absolute left-3 top-2.5 h-4 w-4 text-stone-300/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Sub-Header Editorial (Filtros de Data Interativos) -->
+        <div class="max-w-6xl mx-auto px-4 mt-8">
+            <div class="flex justify-end border-b border-stone-300 pb-2">
+                <div class="flex flex-wrap items-center gap-6 text-[10px] font-bold uppercase tracking-wider font-sans-custom select-none" id="filtrosTempo">
+                    <button onclick="setFiltroTempo('hoje')" id="btn-hoje" class="flex items-center gap-1.5 transition-all text-stone-400 hover:text-inpress-dark">
+                        <div class="w-2.5 h-2.5 rounded-full bg-inpress-red"></div> Hoje
+                    </button>
+                    <button onclick="setFiltroTempo('semana')" id="btn-semana" class="flex items-center gap-1.5 transition-all text-stone-400 hover:text-inpress-dark">
+                        <div class="w-2.5 h-2.5 rounded-full bg-inpress-dark"></div> Últimos 7 Dias
+                    </button>
+                    <button onclick="setFiltroTempo('todas')" id="btn-todas" class="flex items-center gap-1.5 transition-all text-inpress-dark border-b-2 border-inpress-dark pb-0.5">
+                        <div class="w-2.5 h-2.5 rounded-full bg-stone-300"></div> Todas
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container Principal (Briefing Grid) -->
+        <main class="max-w-6xl mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="timelineContainer">
+                <p class="text-stone-400 italic text-center col-span-full py-12">Carregando curadoria de inteligência...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-white border-t border-stone-200 py-8 px-8 text-center mt-16 shadow-sm">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-inpress-chumbo tracking-wider">
+            <p>© 2026 Grupo In Press | I.C.A.R.O. Todos os direitos reservados.</p>
+            <a href="busca.html" class="inline-flex items-center gap-1.5 text-inpress-chumbo hover:text-inpress-red transition-colors font-bold uppercase tracking-wider">
+                <span>Busca Ativa Sob Demanda</span>
+                <span class="text-[10px]">🔑</span>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // --- SISTEMA DE SEGURANÇA ---
+        function gerarHash(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = (hash << 5) - hash + char;
+                hash = hash & hash; 
+            }
+            return hash.toString();
+        }
+
+        const HASH_CORRETO = "-1356189163"; 
+
+        function verificarSenha() {
+            const senhaDigitada = document.getElementById("sitePassword").value;
+            const hashDigitado = gerarHash(senhaDigitada);
+            const msgErro = document.getElementById("msgErro");
+
+            if (hashDigitado === HASH_CORRETO) {
+                sessionStorage.setItem("site_desbloqueado", "true");
+                document.getElementById("passwordBarrier").classList.add("hidden");
+            } else {
+                msgErro.classList.remove("hidden");
+            }
+        }
+
+        // --- SISTEMA DE MENUS DROPDOWN ---
+        function toggleDropdown(event, menuId) {
+            event.stopPropagation();
+            const menus = ['dropdownMenu', 'dropdownMenuServicos', 'dropdownMenuTipos'];
+            menus.forEach(id => {
+                const menuElement = document.getElementById(id);
+                if (id === menuId) {
+                    menuElement.classList.toggle('hidden');
+                } else {
+                    menuElement.classList.add('hidden');
+                }
+            });
+        }
+
+        document.addEventListener('click', () => {
+            const menus = ['dropdownMenu', 'dropdownMenuServicos', 'dropdownMenuTipos'];
+            menus.forEach(id => {
+                const m = document.getElementById(id);
+                if (m) m.classList.add('hidden');
+            });
+        });
+
+        document.getElementById('dropdownMenu').addEventListener('click', (event) => { event.stopPropagation(); });
+        document.getElementById('dropdownMenuServicos').addEventListener('click', (event) => { event.stopPropagation(); });
+        document.getElementById('dropdownMenuTipos').addEventListener('click', (event) => { event.stopPropagation(); });
+
+        let dadosOportunidades = [];
+        let filtroTempoAtual = 'todas';
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (sessionStorage.getItem("site_desbloqueado") === "true") {
+                document.getElementById("passwordBarrier").classList.add("hidden");
+            }
+            document.getElementById("sitePassword").addEventListener("keypress", (event) => {
+                if (event.key === "Enter") verificarSenha();
+            });
+            document.getElementById('filtroAgencia').addEventListener('change', filtrarGeral);
+
+            // Adicionado parâmetro de tempo (?t=) para quebrar o cache do navegador e garantir os dados mais recentes
+            fetch(`oportunidades.json?t=${new Date().getTime()}`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Arquivo JSON inacessível.');
+                    return response.json();
+                })
+                .then(dados => {
+                    dadosOportunidades = dados;
+                    inicializarDropdownClientes(dadosOportunidades);
+                    inicializarDropdownServicos(dadosOportunidades);
+                    filtrarGeral();
+                })
+                .catch(err => {
+                    console.error("Erro ao carregar banco:", err);
+                    const container = document.getElementById('timelineContainer');
+                    if (container) {
+                        container.innerHTML = `<p class="text-red-500 italic text-center col-span-full py-12">Nenhuma oportunidade registrada na curadoria.</p>`;
+                    }
+                });
+        });
+
+        function limparMarca(nome) {
+            return nome.replace(/\s*\(.*?\)\s*/g, '').trim();
+        }
+
+        function inicializarDropdownClientes(dados) {
+            const container = document.getElementById('clientesContainer');
+            if (!container) return;
+            const marcasUnicas = new Set();
+            dados.forEach(item => {
+                if (item.marcas) {
+                    item.marcas.forEach(marca => marcasUnicas.add(limparMarca(marca)));
+                }
+            });
+            const listaOrdenada = Array.from(marcasUnicas).sort((a, b) => a.localeCompare(b));
+            if (listaOrdenada.length === 0) return;
+            
+            container.innerHTML = listaOrdenada.map(marca => `
+                <label class="flex items-center gap-2 p-2 hover:bg-stone-50 rounded cursor-pointer text-xs text-stone-700 transition-colors">
+                    <input type="checkbox" value="${marca}" onchange="filtrarGeral()" class="w-4 h-4 rounded text-inpress-red focus:ring-red-500 bg-white border-stone-300">
+                    <span class="truncate font-semibold tracking-wide">${marca}</span>
+                </label>
+            `).join('');
+        }
+
+        function inicializarDropdownServicos(dados) {
+            const container = document.getElementById('servicosContainer');
+            if (!container) return;
+            const servicosUnicos = new Set();
+            dados.forEach(item => {
+                if (item.produtos) {
+                    item.produtos.forEach(servico => servicosUnicos.add(servico.trim()));
+                }
+            });
+            const listaOrdenada = Array.from(servicosUnicos).sort((a, b) => a.localeCompare(b));
+            if (listaOrdenada.length === 0) return;
+
+            container.innerHTML = listaOrdenada.map(servico => `
+                <label class="flex items-center gap-2 p-2 hover:bg-stone-50 rounded cursor-pointer text-xs text-stone-700 transition-colors">
+                    <input type="checkbox" value="${servico}" onchange="filtrarGeral()" class="w-4 h-4 rounded text-inpress-red focus:ring-red-500 bg-white border-stone-300">
+                    <span class="truncate font-semibold tracking-wide">${servico}</span>
+                </label>
+            `).join('');
+        }
+
+        function calcularDiferencaDias(dataStr) {
+            if (!dataStr) return -1;
+            try {
+                let dia, mes, ano;
+                
+                if (dataStr.includes('-') && dataStr.split('-')[0].length === 4) {
+                    [ano, mes, dia] = dataStr.split('-');
+                } else {
+                    const partes = dataStr.split(/[\/\-]/);
+                    dia = partes[0];
+                    mes = partes[1];
+                    ano = partes[2];
+                }
+
+                const dataCard = new Date(parseInt(ano), parseInt(mes) - 1, parseInt(dia));
+                const dataHoje = new Date();
+                
+                dataCard.setHours(0,0,0,0);
+                dataHoje.setHours(0,0,0,0);
+                
+                const msPorDia = 24 * 60 * 60 * 1000;
+                const diferenca = Math.round((dataHoje - dataCard) / msPorDia);
+                
+                return diferenca < 0 ? 0 : diferenca;
+            } catch (e) {
+                return -1;
+            }
+        }
+
+        function determinarBordaCard(diasDiferenca) {
+            if (diasDiferenca === 0) {
+                return "border-inpress-red border-[1.5px] shadow-[0_0_12px_rgba(224,3,0,0.15)] hover:shadow-[0_0_15px_rgba(224,3,0,0.25)]";
+            } else if (diasDiferenca > 0 && diasDiferenca <= 7) {
+                return "border-inpress-dark border-[1.5px] hover:shadow-lg";
+            } else {
+                return "border-stone-200 hover:border-stone-400 shadow-sm hover:shadow-md";
+            }
+        }
+
+        function setFiltroTempo(novoFiltro) {
+            filtroTempoAtual = novoFiltro;
+            const botoes = ['btn-hoje', 'btn-semana', 'btn-todas'];
+            botoes.forEach(id => {
+                const btn = document.getElementById(id);
+                btn.className = "flex items-center gap-1.5 transition-all text-stone-400 hover:text-inpress-dark";
+            });
+            const btnAtivo = document.getElementById(`btn-${novoFiltro}`);
+            btnAtivo.className = "flex items-center gap-1.5 transition-all text-inpress-dark border-b-2 border-inpress-dark pb-0.5";
+            filtrarGeral();
+        }
+
+        function separarContextoERecomendacao(texto) {
+            if (!texto) return { fato: "", rec: "" };
+            
+            let partes = texto.split(/\.(?=\s)/);
+            
+            if (partes.length === 1) {
+                const regexGerundio = /,\s*(mostrando|abrindo|exigindo|gerando|visando|propondo|direcionando|demandando|sinalizando|reforçando|consolidando|oferecendo|permitindo|ajudando|preparando)/i;
+                const match = texto.match(regexGerundio);
+                
+                if (match) {
+                    const index = texto.indexOf(match[0]);
+                    const fato = texto.substring(0, index).trim() + ".";
+                    const gerundioCapitalizado = match[1].charAt(0).toUpperCase() + match[1].slice(1);
+                    const rec = gerundioCapitalizado + " " + texto.substring(index + match[0].length).trim();
+                    return { fato, rec };
+                }
+                
+                return { 
+                    fato: partes[0].trim(), 
+                    rec: "Estruturar ações táticas de relacionamento e monitoramento de canais digitais." 
+                };
+            }
+            
+            const fato = partes.shift() + ".";
+            const rec = partes.join(". ") + (partes.length > 0 && !texto.endsWith(".") ? "." : "");
+            return { fato: fato.trim(), rec: rec.trim() };
+        }
+
+        function renderizarTimeline(dados) {
+            const container = document.getElementById('timelineContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            if (dados.length === 0) {
+                container.innerHTML = `<p class="text-stone-400 italic text-center col-span-full py-12">Nenhuma oportunidade disponível para os critérios filtrados.</p>`;
+                return;
+            }
+
+            dados.forEach(item => {
+                const isMacro = (item.tipo === 'setor');
+                
+                const textoOriginal = item.descricao ? item.descricao : "";
+                const { fato, rec } = separarContextoERecomendacao(textoOriginal);
+                
+                const tagsServicos = item.produtos ? item.produtos.map(p => `
+                    <span class="bg-inpress-dark text-white px-2 py-0.5 rounded-sm">${p}</span>
+                `).join('') : "";
+                
+                const marcasTexto = item.marcas ? item.marcas.map(m => limparMarca(m)).join(', ') : "Sem marcas";
+                const linkValidado = item.link_noticia || (item.marcas ? `https://news.google.com/search?q=${encodeURIComponent(item.marcas.map(m => limparMarca(m)).join('+'))}+when:7d` : "#");
+
+                const diferencaDias = calcularDiferencaDias(item.data);
+                const classeBordaCard = determinarBordaCard(diferencaDias);
+
+                const tagSuperior = isMacro ? 'ALERTA MACRO' : (item.agencia === 'In Press Porter Novelli' ? 'IN PRESS' : 'FLEISHMANHILLARD');
+                const corTagSuperior = isMacro ? 'bg-inpress-red text-white' : 'bg-inpress-dark/95 text-white';
+                const tituloCard = (isMacro && item.titulo) ? item.titulo : marcasTexto;
+                
+                const blocoMarcasMacro = isMacro ? `
+                    <div class="mt-2 mb-1 p-2 bg-stone-100 rounded border border-stone-200">
+                        <span class="text-[9px] font-bold text-stone-500 uppercase tracking-widest block mb-0.5">Marcas Ativáveis:</span>
+                        <span class="text-xs font-bold text-inpress-red font-sans-custom">${marcasTexto}</span>
+                    </div>
+                ` : '';
+
+                const marcaPrincipal = item.marcas && item.marcas.length > 0 ? limparMarca(item.marcas[0]) : "business";
+                const seedMarca = Math.abs(gerarHash(marcaPrincipal)) % 1000;
+                const setorLimpo = item.setor ? item.setor.toLowerCase().split(' ')[0].replace(/[^a-z]/g, '') : "office";
+                const termoBuscaImagem = isMacro ? "economy,business" : `${marcaPrincipal.toLowerCase().replace(/[^a-z0-9]/g, '')},${setorLimpo}`;
+
+                const imagemFinal = (item.imagem && item.imagem.startsWith('http') && !item.imagem.includes('placeholder')) 
+                    ? item.imagem 
+                    : `https://loremflickr.com/600/400/${encodeURIComponent(termoBuscaImagem)}/all?lock=${seedMarca}`;
+
+                const card = `
+                    <article class="bg-white rounded-md overflow-hidden transition-all flex flex-col justify-between relative ${classeBordaCard} group hover:-translate-y-0.5 duration-300">
+                        
+                        <svg class="absolute -right-10 -bottom-10 h-32 w-32 text-stone-100 pointer-events-none group-hover:text-red-50/20 transition-colors" viewBox="0 0 100 100">
+                            <circle cx="100" cy="100" r="20" fill="none" stroke="currentColor" stroke-width="0.3"/>
+                            <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.3"/>
+                            <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.3"/>
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.3"/>
+                        </svg>
+
+                        <div class="relative z-10">
+                            <div class="h-56 relative bg-stone-100 flex-shrink-0 overflow-hidden">
+                                <img src="${imagemFinal}" alt="${tituloCard}" class="w-full h-full object-cover grayscale-[15%] group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700">
+                                <span class="absolute top-4 left-4 ${corTagSuperior} text-[10px] font-extrabold px-2.5 py-1 tracking-widest uppercase">
+                                    ${tagSuperior}
+                                </span>
+                            </div>
+                            
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-inpress-chumbo font-sans-custom">${item.setor || ""}</span>
+                                    <span class="text-[10px] font-bold text-inpress-chumbo uppercase tracking-wider font-sans-custom">${item.data || ""}</span>
+                                </div>
+                                
+                                <h3 class="text-2xl font-normal font-editorial text-inpress-dark leading-snug mb-2">
+                                    ${tituloCard}
+                                </h3>
+                                
+                                ${blocoMarcasMacro}
+                                
+                                <div class="mt-4 mb-5 space-y-4">
+                                    <div>
+                                        <span class="text-[9px] font-bold text-inpress-chumbo block mb-1 uppercase tracking-widest font-sans-custom">O Fato</span>
+                                        <p class="text-sm text-inpress-dark leading-relaxed font-sans-custom font-normal">
+                                            ${fato}
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-stone-50 p-4 rounded-md border border-stone-150">
+                                        <div class="flex items-center gap-1.5 mb-2">
+                                            <span class="text-[10px] font-bold text-inpress-red uppercase tracking-widest font-sans-custom">Tática Sugerida</span>
+                                            <div class="h-px bg-red-100 flex-grow"></div>
+                                        </div>
+                                        <p class="text-sm text-inpress-chumbo leading-relaxed font-editorial italic mb-4">
+                                            "${rec}"
+                                        </p>
+                                        
+                                        <div class="flex flex-wrap gap-1.5 text-[9px] font-bold uppercase tracking-wide font-sans-custom">
+                                            ${tagsServicos}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="px-6 py-4 bg-stone-50 border-t border-stone-100 flex justify-between items-center group-hover:bg-red-50/20 transition-colors relative z-10">
+                            <span class="text-[9px] font-bold tracking-widest text-inpress-chumbo uppercase font-sans-custom">
+                                ${isMacro ? 'Radar Macro Setorial' : (item.agencia === 'In Press Porter Novelli' ? 'In Press P.N.' : 'FleishmanHillard')}
+                            </span>
+                            <a href="${linkValidado}" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-inpress-dark hover:text-inpress-red tracking-wider transition-colors font-sans-custom">
+                                Ver Fonte ↗
+                            </a>
+                        </div>
+                    </article>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        function filtrarGeral() {
+            const checkboxesTipos = Array.from(document.querySelectorAll('.filtro-tipo-checkbox:checked'));
+            const tiposSelecionados = checkboxesTipos.map(cb => cb.value);
+            
+            const labelTipos = document.getElementById('dropdownLabelTipos');
+            if (labelTipos) {
+                if (tiposSelecionados.length === 0 || tiposSelecionados.length === 2) {
+                    labelTipos.innerText = "Visão: Todas";
+                    labelTipos.classList.remove('text-inpress-red');
+                } else if (tiposSelecionados.includes('marca')) {
+                    labelTipos.innerText = "Visão: Marcas";
+                    labelTipos.classList.add('text-inpress-red');
+                } else if (tiposSelecionados.includes('setor')) {
+                    labelTipos.innerText = "Visão: Radar Macro";
+                    labelTipos.classList.add('text-inpress-red');
+                }
+            }
+
+            const fAgencia = document.getElementById('filtroAgencia');
+            const agencia = fAgencia ? fAgencia.value : "";
+
+            const checkboxesClientes = Array.from(document.querySelectorAll('#clientesContainer input:checked'));
+            const clientesSelecionados = checkboxesClientes.map(cb => cb.value);
+
+            const labelClientes = document.getElementById('dropdownLabel');
+            if (labelClientes) {
+                if (clientesSelecionados.length === 0) {
+                    labelClientes.innerText = "Todos os Clientes";
+                    labelClientes.classList.add('text-stone-300');
+                    labelClientes.classList.remove('text-white');
+                } else {
+                    labelClientes.innerText = clientesSelecionados.length === 1 ? clientesSelecionados[0] : `Clientes (${clientesSelecionados.length})`;
+                    labelClientes.classList.remove('text-stone-300');
+                    labelClientes.classList.add('text-white');
+                }
+            }
+
+            const checkboxesServicos = Array.from(document.querySelectorAll('#servicosContainer input:checked'));
+            const servicosSelecionados = checkboxesServicos.map(cb => cb.value);
+
+            const labelServicos = document.getElementById('dropdownLabelServicos');
+            if (labelServicos) {
+                if (servicosSelecionados.length === 0) {
+                    labelServicos.innerText = "Todos os Serviços";
+                    labelServicos.classList.add('text-stone-300');
+                    labelServicos.classList.remove('text-white');
+                } else {
+                    labelServicos.innerText = servicosSelecionados.length === 1 ? servicosSelecionados[0] : `Serviços (${servicosSelecionados.length})`;
+                    labelServicos.classList.remove('text-stone-300');
+                    labelServicos.classList.add('text-white');
+                }
+            }
+
+            const fBusca = document.getElementById('campoBusca');
+            const termoBusca = fBusca ? fBusca.value.toLowerCase().trim() : "";
+
+            const dadosFiltrados = dadosOportunidades.filter(item => {
+                let bateTipo = true;
+                if (tiposSelecionados.length === 1) {
+                    bateTipo = item.tipo === tiposSelecionados[0] || (!item.tipo && tiposSelecionados[0] === 'marca'); 
+                }
+
+                const bateAgencia = agencia === "" || item.agencia === agencia;
+                const bateCliente = clientesSelecionados.length === 0 || (item.marcas && item.marcas.some(m => clientesSelecionados.includes(limparMarca(m))));
+                const bateServico = servicosSelecionados.length === 0 || (item.produtos && item.produtos.some(s => servicosSelecionados.includes(s.trim())));
+                
+                let bateTempo = true;
+                const diasDiferenca = calcularDiferencaDias(item.data);
+                
+                if (filtroTempoAtual === 'hoje') {
+                    bateTempo = (diasDiferenca === 0);
+                } else if (filtroTempoAtual === 'semana') {
+                    bateTempo = (diasDiferenca >= 0 && diasDiferenca <= 7);
+                }
+
+                let bateTextoBusca = true;
+                if (termoBusca !== "") {
+                    const tituloStr = (item.titulo || "").toLowerCase();
+                    const descStr = (item.descricao || "").toLowerCase();
+                    const setorStr = (item.setor || "").toLowerCase();
+                    const marcasStr = item.marcas ? item.marcas.join(" ").toLowerCase() : "";
+                    
+                    bateTextoBusca = tituloStr.includes(termoBusca) || 
+                                     descStr.includes(termoBusca) || 
+                                     setorStr.includes(termoBusca) || 
+                                     marcasStr.includes(termoBusca);
+                }
+
+                return bateTipo && bateAgencia && bateCliente && bateServico && bateTempo && bateTextoBusca;
+            });
+
+            dadosFiltrados.sort((a, b) => calcularDiferencaDias(a.data) - calcularDiferencaDias(b.data));
+
+            renderizarTimeline(dadosFiltrados);
+        }
+    </script>
+</body>
+</html>
