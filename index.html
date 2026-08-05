@@ -1,641 +1,365 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="h-full bg-[#F4F5F7]">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I.C.A.R.O. Engine - Edição iFood</title>
-    <!-- Google Fonts: Lora (Serif) & Plus Jakarta Sans (Sans-serif) -->
+    <title>Í.C.A.R.O. | iFood PR Intelligence Hub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
                     colors: {
                         ifood: {
-                            red: '#EA1D2C',      // Vermelho oficial iFood
-                            chumbo: '#575756',   // Chumbo corporativo
-                            dark: '#111111'      // Preto de apoio
+                            red: '#EA1D2C',
+                            'red-dark': '#C01422',
+                            'red-light': '#FFEAEB',
+                            dark: '#111111',
+                            gray: '#65676B',
+                            bg: '#F4F5F7',
+                            card: '#FFFFFF'
                         }
                     }
                 }
             }
         }
     </script>
-
     <style>
-        .font-editorial { font-family: 'Fraunces', Georgia, serif; }
-        .font-sans-custom { font-family: 'Montserrat', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-stone-50 text-ifood-dark font-sans-custom min-h-screen flex flex-col justify-between">
+<body class="min-h-full flex flex-col text-[#111111] antialiased bg-[#F4F5F7]">
 
-    <!-- BARREIRA DE SENHA -->
-    <div id="passwordBarrier" class="fixed inset-0 bg-stone-950 flex flex-col items-center justify-center z-[9999] px-4">
-        <div class="bg-stone-900 border border-stone-850 p-10 rounded-2xl max-w-md w-full text-center shadow-2xl relative overflow-hidden">
-            <svg class="absolute -right-10 -bottom-10 h-48 w-48 text-stone-800/40 pointer-events-none" viewBox="0 0 100 100">
-                <circle cx="100" cy="100" r="20" fill="none" stroke="currentColor" stroke-width="0.5"/>
-                <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.5"/>
-                <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.5"/>
-                <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
-                <circle cx="100" cy="100" r="100" fill="none" stroke="currentColor" stroke-width="0.5"/>
-            </svg>
-
-            <span class="text-3xl mb-4 block">🔒</span>
-            <h2 class="text-xl font-bold font-editorial text-white mb-2">Acesso Restrito</h2>
-            <p class="text-xs text-stone-400 mb-6 font-sans-custom tracking-wide">I.C.A.R.O. ENGINE | IFOOD CORPORATE PR</p>
-            
-            <input id="sitePassword" type="password" placeholder="Digite a chave de acesso..." 
-                   class="w-full p-3 bg-stone-950 border border-stone-700 rounded-lg text-white text-center focus:outline-none focus:border-ifood-red mb-4 transition-all text-sm tracking-widest font-sans-custom">
-            
-            <button onclick="verificarSenha()" class="w-full bg-ifood-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors text-sm uppercase tracking-wider font-sans-custom">
-                Desbloquear Radar
-            </button>
-            <p id="msgErro" class="text-xs text-red-400 mt-3 hidden font-semibold">Chave incorreta. Tente novamente.</p>
-        </div>
-    </div>
-
-    <!-- CONTEÚDO PRINCIPAL -->
-    <div>
-        <!-- Header Editorial Corporativo -->
-        <header class="relative py-8 px-8 bg-cover bg-center z-30" style="background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(28, 25, 23, 0.95)), url('http://googleusercontent.com/image_collection/image_retrieval/1646351935261000525_0');">
-            <div class="absolute inset-0 overflow-hidden pointer-events-none">
-                <svg class="absolute -right-12 -top-12 h-56 w-56 text-stone-100/10 pointer-events-none hidden md:block" viewBox="0 0 100 100">
-                    <circle cx="100" cy="0" r="15" fill="none" stroke="currentColor" stroke-width="0.4"/>
-                    <circle cx="100" cy="0" r="30" fill="none" stroke="currentColor" stroke-width="0.4"/>
-                    <circle cx="100" cy="0" r="45" fill="none" stroke="currentColor" stroke-width="0.4"/>
-                    <circle cx="100" cy="0" r="60" fill="none" stroke="currentColor" stroke-width="0.4"/>
-                    <circle cx="100" cy="0" r="75" fill="none" stroke="currentColor" stroke-width="0.4"/>
-                    <circle cx="100" cy="0" r="90" fill="none" stroke="currentColor" stroke-width="0.4"/>
-                    <circle cx="100" cy="0" r="105" fill="none" stroke="currentColor" stroke-width="0.4"/>
-                </svg>
-            </div>
-
-            <div class="max-w-6xl mx-auto flex flex-col items-center relative z-10">
-                <div class="w-full flex justify-start items-center mb-6">
-                    <img src="logo.png" alt="iFood PR" class="h-10 md:h-12 object-contain brightness-0 invert" onerror="this.style.display='none'; document.getElementById('fallbackTitle').classList.remove('hidden')">
-                    <span id="fallbackTitle" class="hidden text-base font-bold text-white tracking-widest uppercase font-sans-custom">iFood <span class="text-ifood-red">PR</span></span>
-                </div>
-                
-                <div class="flex flex-col items-center text-center max-w-3xl w-full pb-4">
-                    <div class="pt-2">
-                        <h2 class="text-5xl md:text-7xl font-extrabold font-editorial text-white tracking-widest leading-none mb-4">
-                            I.C.A.R.O.
-                        </h2>
-                        <p class="text-[10px] md:text-xs text-stone-300 font-bold tracking-widest uppercase leading-tight border-t border-white/20 pt-4 pb-2 w-full">
-                            Inteligência em Comunicação, Análise, Riscos e Oportunidades
-                        </p>
-                        
-                        <!-- Aviso de Alucinação IA -->
-                        <div class="mt-2 inline-flex items-center gap-2 bg-ifood-red/10 border border-ifood-red/30 text-stone-300 px-4 py-2 rounded-lg backdrop-blur-sm max-w-2xl text-left">
-                            <svg class="h-5 w-5 text-ifood-red flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                            </svg>
-                            <span class="text-[9px] md:text-[10px] font-medium tracking-wide leading-snug">
-                                O Sistema I.C.A.R.O. utiliza o Gemini para automação diária. Lembre-se de validar o contexto dos fatos com o time de Relações Públicas antes de executar as táticas.
-                            </span>
-                        </div>
-                    </div>
+    <!-- NAVBAR FIXO INSTITUCIONAL -->
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-200/80 shadow-sm backdrop-blur-md bg-white/90">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- Brand & Hub Identity -->
+            <div class="flex items-center gap-4">
+                <a href="#" class="flex items-center gap-3">
+                    <img src="ifood_logo_color_red.svg" alt="iFood PR" class="h-8 w-auto" onerror="this.onerror=null; this.src='https://institucional.ifood.com.br/wp-content/uploads/2026/06/sobre-banner2-768x768-copiar.png';">
+                </a>
+                <div class="h-6 w-[1px] bg-gray-200 hidden sm:block"></div>
+                <div class="hidden sm:flex items-center gap-2">
+                    <span class="bg-ifood-red-light text-ifood-red font-bold text-xs px-2.5 py-1 rounded-full uppercase tracking-wider">
+                        Í.C.A.R.O.
+                    </span>
+                    <span class="text-xs font-semibold text-gray-500">PR Intelligence Hub</span>
                 </div>
             </div>
-        </header>
 
-        <!-- Barra de Filtros FIXA NO TOPO (Sticky) -->
-        <div class="sticky top-0 z-[100] w-full bg-[#292929] border-b border-stone-800 shadow-xl py-4 px-4 transition-all">
-            <div class="max-w-6xl mx-auto flex flex-wrap gap-3 justify-center items-center">
-                
-                <!-- Filtro: Origem da Oportunidade (Visões iFood) -->
-                <div class="relative inline-block text-left w-full md:w-auto min-w-[150px] flex-grow max-w-[200px]">
-                    <button id="dropdownBtnTipos" onclick="toggleDropdown(event, 'dropdownMenuTipos')" class="w-full bg-white/10 hover:bg-white/15 text-white text-xs p-2.5 rounded-lg border border-white/20 focus:outline-none focus:border-ifood-red flex justify-between items-center font-semibold tracking-wide transition-all">
-                        <span id="dropdownLabelTipos" class="truncate font-bold">Categoria: Todas</span>
-                        <svg class="h-4 w-4 text-stone-300 ml-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="dropdownMenuTipos" class="hidden absolute left-0 sm:right-0 mt-2 w-full sm:w-56 rounded-lg shadow-lg bg-white border border-stone-200 z-[101] max-h-60 overflow-y-auto">
-                        <div class="p-2 space-y-1">
-                            <label class="flex items-center gap-2 p-2 hover:bg-stone-50 rounded cursor-pointer text-xs text-stone-700 transition-colors">
-                                <input type="checkbox" value="regulacao" class="filtro-tipo-checkbox w-4 h-4 rounded text-ifood-red focus:ring-red-500 bg-white border-stone-300" onchange="filtrarGeral()">
-                                <span class="font-semibold tracking-wide">Regulação (STF/Gov)</span>
-                            </label>
-                            <label class="flex items-center gap-2 p-2 hover:bg-stone-50 rounded cursor-pointer text-xs text-stone-700 transition-colors">
-                                <input type="checkbox" value="concorrencia" class="filtro-tipo-checkbox w-4 h-4 rounded text-ifood-red focus:ring-red-500 bg-white border-stone-300" onchange="filtrarGeral()">
-                                <span class="font-semibold tracking-wide">Concorrência (Apps)</span>
-                            </label>
-                            <label class="flex items-center gap-2 p-2 hover:bg-stone-50 rounded cursor-pointer text-xs text-stone-700 transition-colors">
-                                <input type="checkbox" value="crise" class="filtro-tipo-checkbox w-4 h-4 rounded text-ifood-red focus:ring-red-500 bg-white border-stone-300" onchange="filtrarGeral()">
-                                <span class="font-semibold tracking-wide">Gestão de Crise</span>
-                            </label>
-                            <label class="flex items-center gap-2 p-2 hover:bg-stone-50 rounded cursor-pointer text-xs text-stone-700 transition-colors">
-                                <input type="checkbox" value="institucional" class="filtro-tipo-checkbox w-4 h-4 rounded text-ifood-red focus:ring-red-500 bg-white border-stone-300" onchange="filtrarGeral()">
-                                <span class="font-semibold tracking-wide">PR Institucional</span>
-                            </label>
-                        </div>
-                    </div>
+            <!-- Status Indicator & Live Time -->
+            <div class="flex items-center gap-3">
+                <div id="status-pill" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Monitoramento Ativo</span>
                 </div>
-                
-                <!-- Filtro 2: Marcas Envolvidas -->
-                <div class="relative inline-block text-left w-full md:w-auto min-w-[160px] flex-grow max-w-[200px]">
-                    <button id="dropdownBtn" onclick="toggleDropdown(event, 'dropdownMenu')" class="w-full bg-white/10 hover:bg-white/15 text-white text-xs p-2.5 rounded-lg border border-white/20 focus:outline-none focus:border-ifood-red flex justify-between items-center font-semibold tracking-wide transition-all">
-                        <span id="dropdownLabel" class="truncate text-stone-300">Todas as Marcas/Órgãos</span>
-                        <svg class="h-4 w-4 text-stone-300 ml-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="dropdownMenu" class="hidden absolute left-0 sm:right-0 mt-2 w-full sm:w-64 rounded-lg shadow-lg bg-white border border-stone-200 z-[101] max-h-60 overflow-y-auto">
-                        <div id="clientesContainer" class="p-2 space-y-1">
-                            <p class="text-[10px] text-stone-400 p-2">Carregando entidades...</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Filtro 3: Serviços/Frentes -->
-                <div class="relative inline-block text-left w-full md:w-auto min-w-[160px] flex-grow max-w-[200px]">
-                    <button id="dropdownBtnServicos" onclick="toggleDropdown(event, 'dropdownMenuServicos')" class="w-full bg-white/10 hover:bg-white/15 text-white text-xs p-2.5 rounded-lg border border-white/20 focus:outline-none focus:border-ifood-red flex justify-between items-center font-semibold tracking-wide transition-all">
-                        <span id="dropdownLabelServicos" class="truncate text-stone-300">Frentes de PR</span>
-                        <svg class="h-4 w-4 text-stone-300 ml-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="dropdownMenuServicos" class="hidden absolute left-0 sm:right-0 mt-2 w-full sm:w-64 rounded-lg shadow-lg bg-white border border-stone-200 z-[101] max-h-60 overflow-y-auto">
-                        <div id="servicosContainer" class="p-2 space-y-1">
-                            <p class="text-[10px] text-stone-400 p-2">Carregando táticas...</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Campo de Busca por Texto -->
-                <div class="relative inline-block w-full md:w-auto min-w-[200px] flex-grow max-w-[280px]">
-                    <input type="text" id="campoBusca" oninput="filtrarGeral()" placeholder="Pesquisar fatos..." 
-                           class="w-full bg-white/10 hover:bg-white/15 text-white placeholder:text-stone-300/70 text-xs p-2.5 pl-9 rounded-lg border border-white/20 focus:outline-none focus:border-ifood-red focus:bg-white/15 font-semibold tracking-wide transition-all">
-                    <svg class="absolute left-3 top-2.5 h-4 w-4 text-stone-300/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                </div>
-
+                <button onclick="carregarOportunidades()" class="p-2 text-gray-500 hover:text-ifood-red hover:bg-ifood-red-light rounded-full transition-colors" title="Atualizar dados">
+                    <i class="fa-solid fa-rotate-right text-sm"></i>
+                </button>
             </div>
         </div>
+    </header>
 
-        <!-- Sub-Header Editorial (Filtros de Data Interativos) -->
-        <div class="max-w-6xl mx-auto px-4 mt-8">
-            <div class="flex justify-end border-b border-stone-300 pb-2">
-                <div class="flex flex-wrap items-center gap-6 text-[10px] font-bold uppercase tracking-wider font-sans-custom select-none" id="filtrosTempo">
-                    <button onclick="setFiltroTempo('hoje')" id="btn-hoje" class="flex items-center gap-1.5 transition-all text-stone-400 hover:text-ifood-dark">
-                        <div class="w-2.5 h-2.5 rounded-full bg-ifood-red"></div> Hoje
-                    </button>
-                    <button onclick="setFiltroTempo('semana')" id="btn-semana" class="flex items-center gap-1.5 transition-all text-stone-400 hover:text-ifood-dark">
-                        <div class="w-2.5 h-2.5 rounded-full bg-ifood-dark"></div> Últimos 7 Dias
-                    </button>
-                    <button onclick="setFiltroTempo('todas')" id="btn-todas" class="flex items-center gap-1.5 transition-all text-ifood-dark border-b-2 border-ifood-dark pb-0.5">
-                        <div class="w-2.5 h-2.5 rounded-full bg-stone-300"></div> Todas
-                    </button>
+    <!-- HERO SECTION INSTITUCIONAL -->
+    <section class="relative bg-ifood-dark text-white overflow-hidden">
+        <!-- Banner Image Overlay -->
+        <div class="absolute inset-0 z-0 opacity-25 bg-cover bg-center" style="background-image: url('https://institucional.ifood.com.br/wp-content/uploads/2023/12/banner-1024x611-1.jpg');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-ifood-dark via-ifood-dark/90 to-transparent z-0"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-semibold mb-4 border border-white/20">
+                    <i class="fa-solid fa-bolt text-ifood-red"></i>
+                    <span>Radar de Oportunidades & Gestão de Reputação</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+                    Inteligência de PR em Tempo Real para o <span class="text-ifood-red">iFood</span>
+                </h1>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
+                    Análise em tempo real sobre STF, regulação do trabalho por app, concorrência e reputação institucional. Respostas estratégicas alinhadas ao Playbook Corporativo.
+                </p>
+
+                <!-- KPI Quick Bar -->
+                <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10">
+                    <div>
+                        <span class="block text-2xl lg:text-3xl font-extrabold text-white" id="kpi-total">0</span>
+                        <span class="text-xs text-gray-400 font-medium">Pautas Detectadas</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl lg:text-3xl font-extrabold text-ifood-red" id="kpi-urgentes">0</span>
+                        <span class="text-xs text-gray-400 font-medium">Regulação & Crise</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl lg:text-3xl font-extrabold text-white" id="kpi-data">--/--</span>
+                        <span class="text-xs text-gray-400 font-medium">Última Varredura</span>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Container Principal (Briefing Grid) -->
-        <main class="max-w-6xl mx-auto px-4 py-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="timelineContainer">
-                <p class="text-stone-400 italic text-center col-span-full py-12">Carregando inteligência diária do I.C.A.R.O...</p>
+    <!-- CONTROLES & FILTROS -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+            <!-- Filter Pills -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 hide-scrollbar" id="filtro-categoria">
+                <button onclick="filtrarCategoria('todos')" data-cat="todos" class="btn-filtro active px-4 py-2 rounded-full text-xs font-bold transition-all bg-ifood-red text-white shadow-sm hover:bg-ifood-red-dark">
+                    Todas as Pautas
+                </button>
+                <button onclick="filtrarCategoria('regulacao')" data-cat="regulacao" class="btn-filtro px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
+                    <i class="fa-solid fa-gavel mr-1.5 text-xs"></i>Regulação & STF
+                </button>
+                <button onclick="filtrarCategoria('concorrencia')" data-cat="concorrencia" class="btn-filtro px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
+                    <i class="fa-solid fa-chart-line mr-1.5 text-xs"></i>Concorrência
+                </button>
+                <button onclick="filtrarCategoria('institucional')" data-cat="institucional" class="btn-filtro px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
+                    <i class="fa-solid fa-leaf mr-1.5 text-xs"></i>Institucional & ESG
+                </button>
+                <button onclick="filtrarCategoria('crise')" data-cat="crise" class="btn-filtro px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red">
+                    <i class="fa-solid fa-shield-halved mr-1.5 text-xs"></i>Gestão de Crise
+                </button>
             </div>
-        </main>
-    </div>
 
-    <!-- Rodapé -->
-    <footer class="bg-white border-t border-stone-200 py-8 px-8 text-center mt-16 shadow-sm">
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-ifood-chumbo tracking-wider">
-            <p>© 2026 iFood Corporate PR | I.C.A.R.O. Engine.</p>
-            <a href="busca.html" class="inline-flex items-center gap-1.5 text-ifood-chumbo hover:text-ifood-red transition-colors font-bold uppercase tracking-wider">
-                <span>Modo DEV & Busca Ativa</span>
-                <span class="text-[10px]">🔑</span>
-            </a>
+            <!-- Search Bar -->
+            <div class="relative w-full md:w-72">
+                <input type="text" id="input-busca" oninput="aplicarBusca()" placeholder="Buscar pauta, marca ou termo..." class="w-full pl-9 pr-4 py-2 bg-white border border-gray-200 rounded-full text-xs font-medium text-gray-900 placeholder-gray-400 focus:outline-none focus:border-ifood-red focus:ring-1 focus:ring-ifood-red transition-all shadow-sm">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-gray-400 text-xs"></i>
+            </div>
+        </div>
+
+        <!-- GRID DE CARDS -->
+        <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Cards gerados via JS -->
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div id="empty-state" class="hidden text-center py-16 bg-white rounded-3xl border border-dashed border-gray-200 p-8 my-8">
+            <div class="w-16 h-16 bg-ifood-red-light text-ifood-red rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-1">Nenhuma pauta encontrada</h3>
+            <p class="text-xs text-gray-500 max-w-md mx-auto">Tente ajustar seus termos de busca ou selecionar outra categoria no menu acima.</p>
+        </div>
+    </main>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-white border-t border-gray-200 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <img src="ifood_logo_color_red.svg" alt="iFood" class="h-6 w-auto opacity-80" onerror="this.onerror=null; this.src='https://institucional.ifood.com.br/wp-content/uploads/2026/06/sobre-banner2-768x768-copiar.png';">
+                <span class="text-xs text-gray-400 font-medium">© iFood Corporate Communications & PR Intelligence. Uso interno.</span>
+            </div>
+            <div class="flex items-center gap-6 text-xs text-gray-500 font-medium">
+                <a href="https://institucional.ifood.com.br/" target="_blank" class="hover:text-ifood-red transition-colors">Portal Institucional</a>
+                <a href="https://news.ifood.com.br/" target="_blank" class="hover:text-ifood-red transition-colors">iFood News</a>
+            </div>
         </div>
     </footer>
 
+    <!-- SCRIPT PRINCIPAL DO FRONT-END -->
     <script>
-        // --- SISTEMA DE SEGURANÇA ---
-        function gerarHash(str) {
-            let hash = 0;
-            for (let i = 0; i < str.length; i++) {
-                const char = str.charCodeAt(i);
-                hash = (hash << 5) - hash + char;
-                hash = hash & hash; 
-            }
-            return hash.toString();
-        }
+        let todasOportunidades = [];
+        let categoriaAtiva = 'todos';
 
-        const HASH_CORRETO = "-1356189163"; 
+        // Mapeamento de imagens institucionais do iFood como fallbacks por categoria
+        const IMAGENS_INSTITUCIONAIS = {
+            regulacao: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/entregadorportalifood-news-1024x650.webp',
+            concorrencia: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/ifood-tecnologia.webp',
+            institucional: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/ifood-empresa-de-delivery.webp',
+            crise: 'https://institucional.ifood.com.br/wp-content/uploads/2023/10/ifood_beneficio.webp',
+            default: 'https://institucional.ifood.com.br/wp-content/uploads/2023/12/banner-1024x611-1.jpg'
+        };
 
-        function verificarSenha() {
-            const senhaDigitada = document.getElementById("sitePassword").value;
-            const hashDigitado = gerarHash(senhaDigitada);
-            const msgErro = document.getElementById("msgErro");
+        async function carregarOportunidades() {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = `
+                <div class="col-span-full py-16 text-center">
+                    <div class="inline-block w-8 h-8 border-4 border-ifood-red border-t-transparent rounded-full animate-spin mb-3"></div>
+                    <p class="text-xs font-semibold text-gray-500">Sincronizando pautas com o radar do iFood...</p>
+                </div>
+            `;
 
-            if (hashDigitado === HASH_CORRETO) {
-                sessionStorage.setItem("site_desbloqueado", "true");
-                document.getElementById("passwordBarrier").classList.add("hidden");
-            } else {
-                msgErro.classList.remove("hidden");
-            }
-        }
-
-        // --- SISTEMA DE MENUS DROPDOWN ---
-        function toggleDropdown(event, menuId) {
-            event.stopPropagation();
-            const menus = ['dropdownMenu', 'dropdownMenuServicos', 'dropdownMenuTipos'];
-            menus.forEach(id => {
-                const menuElement = document.getElementById(id);
-                if (id === menuId) {
-                    menuElement.classList.toggle('hidden');
-                } else {
-                    menuElement.classList.add('hidden');
-                }
-            });
-        }
-
-        document.addEventListener('click', () => {
-            const menus = ['dropdownMenu', 'dropdownMenuServicos', 'dropdownMenuTipos'];
-            menus.forEach(id => {
-                const m = document.getElementById(id);
-                if (m) m.classList.add('hidden');
-            });
-        });
-
-        document.getElementById('dropdownMenu').addEventListener('click', (event) => { event.stopPropagation(); });
-        document.getElementById('dropdownMenuServicos').addEventListener('click', (event) => { event.stopPropagation(); });
-        document.getElementById('dropdownMenuTipos').addEventListener('click', (event) => { event.stopPropagation(); });
-
-        let dadosOportunidades = [];
-        let filtroTempoAtual = 'todas';
-
-        document.addEventListener("DOMContentLoaded", () => {
-            if (sessionStorage.getItem("site_desbloqueado") === "true") {
-                document.getElementById("passwordBarrier").classList.add("hidden");
-            }
-            document.getElementById("sitePassword").addEventListener("keypress", (event) => {
-                if (event.key === "Enter") verificarSenha();
-            });
-
-            // Adicionado parâmetro de tempo (?t=) para quebrar o cache do navegador
-            fetch(`oportunidades.json?t=${new Date().getTime()}`)
-                .then(response => {
-                    if (!response.ok) throw new Error('Arquivo JSON inacessível.');
-                    return response.json();
-                })
-                .then(dados => {
-                    dadosOportunidades = dados;
-                    inicializarDropdownClientes(dadosOportunidades);
-                    inicializarDropdownServicos(dadosOportunidades);
-                    filtrarGeral();
-                })
-                .catch(err => {
-                    console.error("Erro ao carregar banco:", err);
-                    const container = document.getElementById('timelineContainer');
-                    if (container) {
-                        container.innerHTML = `<p class="text-red-500 italic text-center col-span-full py-12">Nenhum dado capturado no radar hoje.</p>`;
-                    }
-                });
-        });
-
-        function limparMarca(nome) {
-            return nome.replace(/\s*\(.*?\)\s*/g, '').trim();
-        }
-
-        function inicializarDropdownClientes(dados) {
-            const container = document.getElementById('clientesContainer');
-            if (!container) return;
-            const marcasUnicas = new Set();
-            dados.forEach(item => {
-                if (item.marcas) {
-                    item.marcas.forEach(marca => marcasUnicas.add(limparMarca(marca)));
-                }
-            });
-            const listaOrdenada = Array.from(marcasUnicas).sort((a, b) => a.localeCompare(b));
-            if (listaOrdenada.length === 0) return;
-            
-            container.innerHTML = listaOrdenada.map(marca => `
-                <label class="flex items-center gap-2 p-2 hover:bg-stone-50 rounded cursor-pointer text-xs text-stone-700 transition-colors">
-                    <input type="checkbox" value="${marca}" onchange="filtrarGeral()" class="w-4 h-4 rounded text-ifood-red focus:ring-red-500 bg-white border-stone-300">
-                    <span class="truncate font-semibold tracking-wide">${marca}</span>
-                </label>
-            `).join('');
-        }
-
-        function inicializarDropdownServicos(dados) {
-            const container = document.getElementById('servicosContainer');
-            if (!container) return;
-            const servicosUnicos = new Set();
-            dados.forEach(item => {
-                if (item.produtos) {
-                    item.produtos.forEach(servico => servicosUnicos.add(servico.trim()));
-                }
-            });
-            const listaOrdenada = Array.from(servicosUnicos).sort((a, b) => a.localeCompare(b));
-            if (listaOrdenada.length === 0) return;
-
-            container.innerHTML = listaOrdenada.map(servico => `
-                <label class="flex items-center gap-2 p-2 hover:bg-stone-50 rounded cursor-pointer text-xs text-stone-700 transition-colors">
-                    <input type="checkbox" value="${servico}" onchange="filtrarGeral()" class="w-4 h-4 rounded text-ifood-red focus:ring-red-500 bg-white border-stone-300">
-                    <span class="truncate font-semibold tracking-wide">${servico}</span>
-                </label>
-            `).join('');
-        }
-
-        function calcularDiferencaDias(dataStr) {
-            if (!dataStr) return -1;
             try {
-                let dia, mes, ano;
+                // Adiciona parâmetro de tempo para evitar cache do navegador
+                const resposta = await fetch(`oportunidades.json?t=${Date.now()}`);
+                if (!resposta.ok) throw new Error('Arquivo oportunidades.json não encontrado.');
                 
-                if (dataStr.includes('-') && dataStr.split('-')[0].length === 4) {
-                    [ano, mes, dia] = dataStr.split('-');
-                } else {
-                    const partes = dataStr.split(/[\/\-]/);
-                    dia = partes[0];
-                    mes = partes[1];
-                    ano = partes[2];
-                }
+                todasOportunidades = await resposta.json();
+                
+                // Ordenar por data mais recente
+                todasOportunidades.reverse();
 
-                const dataCard = new Date(parseInt(ano), parseInt(mes) - 1, parseInt(dia));
-                const dataHoje = new Date();
-                
-                dataCard.setHours(0,0,0,0);
-                dataHoje.setHours(0,0,0,0);
-                
-                const msPorDia = 24 * 60 * 60 * 1000;
-                const diferenca = Math.round((dataHoje - dataCard) / msPorDia);
-                
-                return diferenca < 0 ? 0 : diferenca;
-            } catch (e) {
-                return -1;
+                atualizarKPIs();
+                renderizarCards();
+            } catch (erro) {
+                console.error("Erro ao carregar oportunidades:", erro);
+                container.innerHTML = `
+                    <div class="col-span-full bg-red-50 border border-red-200 text-red-700 p-6 rounded-2xl text-center my-8">
+                        <i class="fa-solid fa-triangle-exclamation text-2xl mb-2"></i>
+                        <h4 class="font-bold text-sm">Não foi possível carregar as oportunidades</h4>
+                        <p class="text-xs mt-1">Verifique se o arquivo oportunidades.json existe ou aguarde a primeira execução do robô.</p>
+                    </div>
+                `;
             }
         }
 
-        function determinarBordaCard(diasDiferenca) {
-            if (diasDiferenca === 0) {
-                return "border-ifood-red border-[1.5px] shadow-[0_0_12px_rgba(234,29,44,0.15)] hover:shadow-[0_0_15px_rgba(234,29,44,0.25)]";
-            } else if (diasDiferenca > 0 && diasDiferenca <= 7) {
-                return "border-ifood-dark border-[1.5px] hover:shadow-lg";
-            } else {
-                return "border-stone-200 hover:border-stone-400 shadow-sm hover:shadow-md";
+        function atualizarKPIs() {
+            document.getElementById('kpi-total').innerText = todasOportunidades.length;
+            
+            const urgentes = todasOportunidades.filter(o => o.tipo === 'regulacao' || o.tipo === 'crise').length;
+            document.getElementById('kpi-urgentes').innerText = urgentes;
+
+            if (todasOportunidades.length > 0 && todasOportunidades[0].data) {
+                document.getElementById('kpi-data').innerText = todasOportunidades[0].data;
             }
         }
 
-        function setFiltroTempo(novoFiltro) {
-            filtroTempoAtual = novoFiltro;
-            const botoes = ['btn-hoje', 'btn-semana', 'btn-todas'];
-            botoes.forEach(id => {
-                const btn = document.getElementById(id);
-                btn.className = "flex items-center gap-1.5 transition-all text-stone-400 hover:text-ifood-dark";
+        function renderizarCards() {
+            const container = document.getElementById('cards-container');
+            const emptyState = document.getElementById('empty-state');
+            const termoBusca = document.getElementById('input-busca').value.toLowerCase().strip();
+
+            const pautasFiltradas = todasOportunidades.filter(item => {
+                const bateCategoria = (categoriaAtiva === 'todos') || (item.tipo === categoriaAtiva);
+                const textoCompleto = `${item.titulo} ${item.descricao} ${item.setor} ${(item.marcas || []).join(' ')}`.toLowerCase();
+                const bateBusca = !termoBusca || textoCompleto.includes(termoBusca);
+                return bateCategoria && bateBusca;
             });
-            const btnAtivo = document.getElementById(`btn-${novoFiltro}`);
-            btnAtivo.className = "flex items-center gap-1.5 transition-all text-ifood-dark border-b-2 border-ifood-dark pb-0.5";
-            filtrarGeral();
-        }
 
-        function separarContextoERecomendacao(texto) {
-            if (!texto) return { fato: "", rec: "" };
-            
-            let partes = texto.split(/\.(?=\s)/);
-            
-            if (partes.length === 1) {
-                const regexGerundio = /,\s*(mostrando|abrindo|exigindo|gerando|visando|propondo|direcionando|demandando|sinalizando|reforçando|consolidando|oferecendo|permitindo|ajudando|preparando|articulando|estruturando|liderando|neutralizando)/i;
-                const match = texto.match(regexGerundio);
-                
-                if (match) {
-                    const index = texto.indexOf(match[0]);
-                    const fato = texto.substring(0, index).trim() + ".";
-                    const gerundioCapitalizado = match[1].charAt(0).toUpperCase() + match[1].slice(1);
-                    const rec = gerundioCapitalizado + " " + texto.substring(index + match[0].length).trim();
-                    return { fato, rec };
-                }
-                
-                return { 
-                    fato: partes[0].trim(), 
-                    rec: "Estruturar ações táticas de relacionamento e monitoramento de canais digitais." 
-                };
-            }
-            
-            const fato = partes.shift() + ".";
-            const rec = partes.join(". ") + (partes.length > 0 && !texto.endsWith(".") ? "." : "");
-            return { fato: fato.trim(), rec: rec.trim() };
-        }
-
-        function renderizarTimeline(dados) {
-            const container = document.getElementById('timelineContainer');
-            if (!container) return;
-            container.innerHTML = '';
-
-            if (dados.length === 0) {
-                container.innerHTML = `<p class="text-stone-400 italic text-center col-span-full py-12">Nenhuma oportunidade disponível para os critérios filtrados.</p>`;
+            if (pautasFiltradas.length === 0) {
+                container.innerHTML = '';
+                emptyState.classList.remove('hidden');
                 return;
             }
 
-            // Mapa de cores por categoria
-            const tipoMap = {
-                'regulacao': { label: 'REGULAÇÃO / GOV', color: 'bg-ifood-red text-white' },
-                'concorrencia': { label: 'CONCORRÊNCIA', color: 'bg-stone-800 text-white' },
-                'crise': { label: 'ALERTA DE CRISE', color: 'bg-orange-600 text-white' },
-                'institucional': { label: 'PR INSTITUCIONAL', color: 'bg-emerald-600 text-white' }
+            emptyState.classList.add('hidden');
+            container.innerHTML = pautasFiltradas.map(item => criarCardHTML(item)).join('');
+        }
+
+        function criarCardHTML(item) {
+            // Definição de Cores e Ícones por Categoria
+            const configCategoria = {
+                regulacao: { bg: 'bg-amber-100', text: 'text-amber-800', border: 'border-amber-200', label: 'Regulação / STF', icon: 'fa-gavel' },
+                concorrencia: { bg: 'bg-blue-100', text: 'text-blue-800', border: 'border-blue-200', label: 'Concorrência', icon: 'fa-chart-line' },
+                institucional: { bg: 'bg-emerald-100', text: 'text-emerald-800', border: 'border-emerald-200', label: 'Institucional', icon: 'fa-leaf' },
+                crise: { bg: 'bg-rose-100', text: 'text-rose-800', border: 'border-rose-200', label: 'Gestão de Crise', icon: 'fa-shield-halved' }
             };
 
-            dados.forEach(item => {
-                const tipoAtual = (item.tipo || "").toLowerCase();
-                const configTipo = tipoMap[tipoAtual] || { label: 'RADAR DIÁRIO', color: 'bg-ifood-dark text-white' };
-                
-                const textoOriginal = item.descricao ? item.descricao : "";
-                const { fato, rec } = separarContextoERecomendacao(textoOriginal);
-                
-                const tagsServicos = item.produtos ? item.produtos.map(p => `
-                    <span class="bg-ifood-dark text-white px-2 py-0.5 rounded-sm">${p}</span>
-                `).join('') : "";
-                
-                const marcasTexto = item.marcas ? item.marcas.map(m => limparMarca(m)).join(', ') : "Sem marcas";
-                const linkValidado = item.link_noticia || (item.marcas ? `https://news.google.com/search?q=${encodeURIComponent(item.marcas.map(m => limparMarca(m)).join('+'))}+when:7d` : "#");
+            const catConfig = configCategoria[item.tipo] || configCategoria.institucional;
+            
+            // Imagem Principal ou Fallback Institucional
+            const imagemSrc = (item.imagem && item.imagem.trim() !== '') 
+                ? item.imagem 
+                : (IMAGENS_INSTITUCIONAIS[item.tipo] || IMAGENS_INSTITUCIONAIS.default);
 
-                const diferencaDias = calcularDiferencaDias(item.data);
-                const classeBordaCard = determinarBordaCard(diferencaDias);
+            const fallbackCategoria = IMAGENS_INSTITUCIONAIS[item.tipo] || IMAGENS_INSTITUCIONAIS.default;
 
-                const tagSuperior = configTipo.label;
-                const corTagSuperior = configTipo.color;
-                const tituloCard = item.titulo ? item.titulo : marcasTexto;
-                
-                const blocoMarcasMacro = `
-                    <div class="mt-2 mb-1 p-2 bg-stone-100 rounded border border-stone-200">
-                        <span class="text-[9px] font-bold text-stone-500 uppercase tracking-widest block mb-0.5">Entidades Envolvidas:</span>
-                        <span class="text-xs font-bold text-ifood-red font-sans-custom">${marcasTexto}</span>
-                    </div>
-                `;
+            const marcasBadges = (item.marcas || []).map(m => 
+                `<span class="bg-gray-100 text-gray-700 text-[10px] font-bold px-2 py-0.5 rounded-md border border-gray-200">${m}</span>`
+            ).join(' ');
 
-                const marcaPrincipal = item.marcas && item.marcas.length > 0 ? limparMarca(item.marcas[0]) : "business";
-                const seedMarca = Math.abs(gerarHash(marcaPrincipal)) % 1000;
-                const setorLimpo = item.setor ? item.setor.toLowerCase().split(' ')[0].replace(/[^a-z]/g, '') : "delivery";
-                const termoBuscaImagem = `${marcaPrincipal.toLowerCase().replace(/[^a-z0-9]/g, '')},${setorLimpo},economy`;
+            const produtosBadges = (item.produtos || []).map(p => 
+                `<span class="bg-ifood-red-light text-ifood-red text-[10px] font-bold px-2.5 py-1 rounded-full"><i class="fa-solid fa-cube mr-1"></i>${p}</span>`
+            ).join(' ');
 
-                const imagemFinal = (item.imagem && item.imagem.startsWith('http') && !item.imagem.includes('placeholder')) 
-                    ? item.imagem 
-                    : `https://loremflickr.com/600/400/${encodeURIComponent(termoBuscaImagem)}/all?lock=${seedMarca}`;
-
-                const card = `
-                    <article class="bg-white rounded-md overflow-hidden transition-all flex flex-col justify-between relative ${classeBordaCard} group hover:-translate-y-0.5 duration-300">
+            return `
+                <article class="bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group">
+                    
+                    <!-- Card Header Image -->
+                    <div class="relative h-44 w-full bg-gray-100 overflow-hidden">
+                        <img src="${imagemSrc}" 
+                             alt="${item.titulo}" 
+                             onerror="this.onerror=null; this.src='${fallbackCategoria}';" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                         
-                        <svg class="absolute -right-10 -bottom-10 h-32 w-32 text-stone-100 pointer-events-none group-hover:text-red-50/20 transition-colors" viewBox="0 0 100 100">
-                            <circle cx="100" cy="100" r="20" fill="none" stroke="currentColor" stroke-width="0.3"/>
-                            <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.3"/>
-                            <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.3"/>
-                            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.3"/>
-                        </svg>
+                        <!-- Category Badge Over Image -->
+                        <div class="absolute top-3 left-3">
+                            <span class="${catConfig.bg} ${catConfig.text} ${catConfig.border} text-[11px] font-bold px-3 py-1 rounded-full border shadow-sm flex items-center gap-1.5 backdrop-blur-md">
+                                <i class="fa-solid ${catConfig.icon}"></i>
+                                ${catConfig.label}
+                            </span>
+                        </div>
 
-                        <div class="relative z-10">
-                            <div class="h-56 relative bg-stone-100 flex-shrink-0 overflow-hidden">
-                                <img src="${imagemFinal}" alt="${tituloCard}" class="w-full h-full object-cover grayscale-[15%] group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700">
-                                <span class="absolute top-4 left-4 ${corTagSuperior} text-[10px] font-extrabold px-2.5 py-1 tracking-widest uppercase shadow-md">
-                                    ${tagSuperior}
-                                </span>
+                        <!-- Date Badge -->
+                        <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-semibold px-2 py-0.5 rounded">
+                            <i class="fa-regular fa-calendar mr-1"></i>${item.data || 'Hoje'}
+                        </div>
+                    </div>
+
+                    <!-- Card Body -->
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <!-- Brands & Sector -->
+                            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+                                ${marcasBadges}
+                                <span class="text-[10px] text-gray-400 font-medium ml-auto">${item.setor || ''}</span>
                             </div>
-                            
-                            <div class="p-6">
-                                <div class="flex justify-between items-center mb-3">
-                                    <span class="text-[10px] font-bold uppercase tracking-widest text-ifood-chumbo font-sans-custom">${item.setor || "Foodtech"}</span>
-                                    <span class="text-[10px] font-bold text-ifood-chumbo uppercase tracking-wider font-sans-custom">${item.data || ""}</span>
-                                </div>
-                                
-                                <h3 class="text-2xl font-normal font-editorial text-ifood-dark leading-snug mb-2">
-                                    ${tituloCard}
-                                </h3>
-                                
-                                ${blocoMarcasMacro}
-                                
-                                <div class="mt-4 mb-5 space-y-4">
-                                    <div>
-                                        <span class="text-[9px] font-bold text-ifood-chumbo block mb-1 uppercase tracking-widest font-sans-custom">O Fato</span>
-                                        <p class="text-sm text-ifood-dark leading-relaxed font-sans-custom font-normal">
-                                            ${fato}
-                                        </p>
-                                    </div>
 
-                                    <div class="bg-stone-50 p-4 rounded-md border border-stone-150">
-                                        <div class="flex items-center gap-1.5 mb-2">
-                                            <span class="text-[10px] font-bold text-ifood-red uppercase tracking-widest font-sans-custom">Tática Sugerida (PR)</span>
-                                            <div class="h-px bg-red-100 flex-grow"></div>
-                                        </div>
-                                        <p class="text-sm text-ifood-chumbo leading-relaxed font-editorial italic mb-4">
-                                            "${rec}"
-                                        </p>
-                                        
-                                        <div class="flex flex-wrap gap-1.5 text-[9px] font-bold uppercase tracking-wide font-sans-custom">
-                                            ${tagsServicos}
-                                        </div>
-                                    </div>
-                                </div>
+                            <!-- Title -->
+                            <h2 class="text-base font-bold text-gray-900 group-hover:text-ifood-red transition-colors line-clamp-2 mb-3 leading-snug">
+                                ${item.titulo}
+                            </h2>
+
+                            <!-- Fact & Suggested PR Strategy -->
+                            <div class="bg-gray-50 border border-gray-100 rounded-xl p-3 mb-4">
+                                <p class="text-xs text-gray-700 leading-relaxed">
+                                    ${item.descricao}
+                                </p>
                             </div>
                         </div>
 
-                        <div class="px-6 py-4 bg-stone-50 border-t border-stone-100 flex justify-between items-center group-hover:bg-red-50/20 transition-colors relative z-10">
-                            <span class="text-[9px] font-bold tracking-widest text-ifood-chumbo uppercase font-sans-custom">
-                                Radar I.C.A.R.O. - iFood
-                            </span>
-                            <a href="${linkValidado}" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-ifood-dark hover:text-ifood-red tracking-wider transition-colors font-sans-custom">
-                                Ver Fonte ↗
+                        <!-- Card Footer: PR Deliverables & Source Link -->
+                        <div class="pt-3 border-t border-gray-100 flex flex-col gap-3">
+                            <div class="flex flex-wrap gap-1.5">
+                                ${produtosBadges}
+                            </div>
+
+                            <a href="${item.link_noticia}" target="_blank" rel="noopener noreferrer" 
+                               class="inline-flex items-center justify-between w-full text-xs font-bold text-ifood-red hover:text-ifood-red-dark bg-ifood-red-light hover:bg-red-100 px-3 py-2 rounded-xl transition-colors mt-1">
+                                <span>Acessar Matéria de Origem</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                             </a>
                         </div>
-                    </article>
-                `;
-                container.innerHTML += card;
-            });
+                    </div>
+                </article>
+            `;
         }
 
-        function filtrarGeral() {
-            const checkboxesTipos = Array.from(document.querySelectorAll('.filtro-tipo-checkbox:checked'));
-            const tiposSelecionados = checkboxesTipos.map(cb => cb.value);
+        function filtrarCategoria(cat) {
+            categoriaAtiva = cat;
             
-            const labelTipos = document.getElementById('dropdownLabelTipos');
-            if (labelTipos) {
-                if (tiposSelecionados.length === 0 || tiposSelecionados.length === 4) {
-                    labelTipos.innerText = "Categoria: Todas";
-                    labelTipos.classList.remove('text-ifood-red');
+            // Atualizar classes dos botões
+            document.querySelectorAll('.btn-filtro').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = "btn-filtro active px-4 py-2 rounded-full text-xs font-bold transition-all bg-ifood-red text-white shadow-sm hover:bg-ifood-red-dark";
                 } else {
-                    labelTipos.innerText = `Categorias (${tiposSelecionados.length})`;
-                    labelTipos.classList.add('text-ifood-red');
+                    btn.className = "btn-filtro px-4 py-2 rounded-full text-xs font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ifood-red hover:text-ifood-red";
                 }
-            }
-
-            const checkboxesClientes = Array.from(document.querySelectorAll('#clientesContainer input:checked'));
-            const clientesSelecionados = checkboxesClientes.map(cb => cb.value);
-
-            const labelClientes = document.getElementById('dropdownLabel');
-            if (labelClientes) {
-                if (clientesSelecionados.length === 0) {
-                    labelClientes.innerText = "Todas as Marcas/Órgãos";
-                    labelClientes.classList.add('text-stone-300');
-                    labelClientes.classList.remove('text-white');
-                } else {
-                    labelClientes.innerText = clientesSelecionados.length === 1 ? clientesSelecionados[0] : `Entidades (${clientesSelecionados.length})`;
-                    labelClientes.classList.remove('text-stone-300');
-                    labelClientes.classList.add('text-white');
-                }
-            }
-
-            const checkboxesServicos = Array.from(document.querySelectorAll('#servicosContainer input:checked'));
-            const servicosSelecionados = checkboxesServicos.map(cb => cb.value);
-
-            const labelServicos = document.getElementById('dropdownLabelServicos');
-            if (labelServicos) {
-                if (servicosSelecionados.length === 0) {
-                    labelServicos.innerText = "Frentes de PR";
-                    labelServicos.classList.add('text-stone-300');
-                    labelServicos.classList.remove('text-white');
-                } else {
-                    labelServicos.innerText = servicosSelecionados.length === 1 ? servicosSelecionados[0] : `Frentes (${servicosSelecionados.length})`;
-                    labelServicos.classList.remove('text-stone-300');
-                    labelServicos.classList.add('text-white');
-                }
-            }
-
-            const fBusca = document.getElementById('campoBusca');
-            const termoBusca = fBusca ? fBusca.value.toLowerCase().trim() : "";
-
-            const dadosFiltrados = dadosOportunidades.filter(item => {
-                let bateTipo = true;
-                if (tiposSelecionados.length > 0) {
-                    bateTipo = tiposSelecionados.includes((item.tipo || "").toLowerCase()); 
-                }
-
-                const bateCliente = clientesSelecionados.length === 0 || (item.marcas && item.marcas.some(m => clientesSelecionados.includes(limparMarca(m))));
-                const bateServico = servicosSelecionados.length === 0 || (item.produtos && item.produtos.some(s => servicosSelecionados.includes(s.trim())));
-                
-                let bateTempo = true;
-                const diasDiferenca = calcularDiferencaDias(item.data);
-                
-                if (filtroTempoAtual === 'hoje') {
-                    bateTempo = (diasDiferenca === 0);
-                } else if (filtroTempoAtual === 'semana') {
-                    bateTempo = (diasDiferenca >= 0 && diasDiferenca <= 7);
-                }
-
-                let bateTextoBusca = true;
-                if (termoBusca !== "") {
-                    const tituloStr = (item.titulo || "").toLowerCase();
-                    const descStr = (item.descricao || "").toLowerCase();
-                    const setorStr = (item.setor || "").toLowerCase();
-                    const marcasStr = item.marcas ? item.marcas.join(" ").toLowerCase() : "";
-                    
-                    bateTextoBusca = tituloStr.includes(termoBusca) || 
-                                     descStr.includes(termoBusca) || 
-                                     setorStr.includes(termoBusca) || 
-                                     marcasStr.includes(termoBusca);
-                }
-
-                return bateTipo && bateCliente && bateServico && bateTempo && bateTextoBusca;
             });
 
-            dadosFiltrados.sort((a, b) => calcularDiferencaDias(a.data) - calcularDiferencaDias(b.data));
-
-            renderizarTimeline(dadosFiltrados);
+            renderizarCards();
         }
+
+        function aplicarBusca() {
+            renderizarCards();
+        }
+
+        // Inicialização ao carregar a página
+        document.addEventListener('DOMContentLoaded', carregarOportunidades);
     </script>
 </body>
 </html>
