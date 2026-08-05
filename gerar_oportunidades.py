@@ -39,8 +39,8 @@ def executar_varredura():
     {playbook_context}
 
     INSTRUÇÕES DE PESQUISA:
-    Faça uma busca na web por notícias recentes relacionadas ao ecossistema do iFood e ao setor de delivery/tecnologia.
-    Varra as 6 frentes estratégicas:
+    Faça uma busca na web por notícias recentes no Brasil relacionadas ao ecossistema do iFood e delivery.
+    Varra obrigatoriamente as 6 frentes estratégicas:
     1. Regulação do Trabalho, STF, MPT (`regulacao`)
     2. Relação com Restaurantes, PMEs, Comissões (`parceiros`)
     3. Algoritmos, Bloqueios, Golpe da Maquininha, IA (`tecnologia`)
@@ -50,7 +50,7 @@ def executar_varredura():
     7. Gestão de Crise (`crise`)
 
     FORMATO DE SAÍDA OBRIGATÓRIO (JSON Puro):
-    Retorne uma lista JSON com até 8 pautas detectadas.
+    Retorne uma lista JSON válida com até 8 pautas detectadas.
     [
       {{
         "titulo": "Título conciso e direto",
@@ -85,7 +85,6 @@ def executar_varredura():
     novas_pautas = json.loads(texto_resposta)
     pautas_existentes = carregar_oportunidades_existentes()
 
-    # Preserva o histórico e adiciona apenas o que for inédito
     titulos_existentes = {p.get("titulo", "").strip().lower() for p in pautas_existentes}
     
     pautas_adicionadas = 0
@@ -101,7 +100,7 @@ def executar_varredura():
     with open("oportunidades.json", "w", encoding="utf-8") as f:
         json.dump(pautas_finais, f, ensure_ascii=False, indent=2)
 
-    print(f"Sucesso! Varredura concluída. {pautas_adicionadas} novas pautas web adicionadas ao portal.")
+    print(f"Sucesso! Varredura web concluída. {pautas_adicionadas} novas pautas adicionadas.")
 
 if __name__ == "__main__":
     executar_varredura()
