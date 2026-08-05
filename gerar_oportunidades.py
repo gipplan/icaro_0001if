@@ -1,15 +1,34 @@
 import os
 import json
 import re
+import urllib.parse
+import requests
 from google import genai
 from google.genai import types
 
 def carregar_playbook():
+    """Carrega as diretrizes estratégicas de PR do iFood."""
     try:
         with open('playbook.md', 'r', encoding='utf-8') as f:
             return f.read()
     except FileNotFoundError:
         return "Nenhum playbook personalizado encontrado. Siga as diretrizes de Diretor Sênior de PR do iFood."
+
+def validar_ou_gerar_link(link_original, titulo_noticia):
+    """
+    Testa se o link retornado pela API responde com status de sucesso.
+    Caso esteja quebrado ou seja inválido, gera um fallback com busca direta no Google.
+    """
+    if link_original and link_original.startswith("http"):
+        try:
+            res = requests.head(link_original, timeout=2, allow_redirects=True)
+            if res.status_code < 400:
+                return link_original
+        except Exception:
+            pass
+            
+    query = urllib.parse.quote(f"{titulo_noticia} iFood")
+    return f"https://www.google.com/search?q={query}"
 
 def gerar_oportunidades():
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -67,7 +86,7 @@ DIRETRIZES DE SAÍDA (JSON STRICT):
    - "marcas": array com entidades envolvidas (ex: ["iFood", "STF"], ["iFood", "Rappi"])
    - "descricao": Fato em 1 frase + Tática sugerida em gerúndio baseada no playbook
    - "produtos": array com 1 a 3 entregáveis de PR (ex: ["Op-Ed", "Posicionamento Institucional", "Mapeamento de Stakeholders"])
-   - "link_noticia": URL real da notícia ou link de busca direta do fato
+   - "link_noticia": URL REAL E EXATA extraída da busca. NUNCA invente ou altere o slug.
    - "data": data de hoje no formato DD/MM/AAAA
    - "imagem": URL de imagem da notícia/banco de imagens ou string vazia ""
 """
@@ -93,13 +112,16 @@ DIRETRIZES DE SAÍDA (JSON STRICT):
     texto_resposta = texto_resposta.strip()
 
     try:
-        # 1. Transforma o resultado de hoje em uma lista Python
         novas_oportunidades = json.loads(texto_resposta)
         
-        # 2. Prepara uma lista vazia para o histórico
+        # Pós-processamento: Sanitização de links
+        print("🔗 Validador de Links: Checando integridade das URLs capturadas...")
+        for item in novas_oportunidades:
+            link_original = item.get("link_noticia", "")
+            titulo = item.get("titulo", "")
+            item["link_noticia"] = validar_ou_gerar_link(link_original, titulo)
+
         historico = []
-        
-        # 3. Se o arquivo já existir, lê o que tem lá dentro e guarda na lista de histórico
         if os.path.exists('oportunidades.json'):
             with open('oportunidades.json', 'r', encoding='utf-8') as f:
                 conteudo = f.read()
@@ -107,22 +129,20 @@ DIRETRIZES DE SAÍDA (JSON STRICT):
                     try:
                         historico = json.loads(conteudo)
                     except json.JSONDecodeError:
-                        print("Aviso: O arquivo antigo estava vazio ou inválido. Iniciando um novo.")
+                        print("Aviso: O arquivo antigo estava vazio. Iniciando um novo.")
         
-        # 4. Junta as duas listas (a velha e a nova)
         if isinstance(historico, list) and isinstance(novas_oportunidades, list):
             historico.extend(novas_oportunidades)
         else:
             historico = novas_oportunidades
             
-        # 5. Salva a lista gigante e atualizada de volta no arquivo json, usando formatação bonita
         with open('oportunidades.json', 'w', encoding='utf-8') as f:
             json.dump(historico, f, ensure_ascii=False, indent=4)
             
-        print("Sucesso! As novas pautas do iFood foram adicionadas ao histórico do oportunidades.json.")
+        print("Sucesso! As novas pautas do iFood com links validados foram salvas em 'oportunidades.json'.")
         
     except json.JSONDecodeError:
-        print("Erro: A resposta da API não foi um JSON válido. Veja a resposta crua:")
+        print("Erro: A resposta da API não foi um JSON válido. Resposta recebida:")
         print(texto_resposta)
         raise
 
