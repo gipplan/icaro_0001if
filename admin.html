@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Gestão - I.C.A.R.O. | Grupo In Press</title>
+    <!-- Google Fonts: Lora (Serif) & Plus Jakarta Sans (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        inpress: {
+                            red: '#E00300',
+                            chumbo: '#575756',
+                            dark: '#111111'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .font-editorial { font-family: 'Fraunces', Georgia, serif; }
+        .font-sans-custom { font-family: 'Montserrat', sans-serif; }
+        /* Transição suave para os botões de admin */
+        .admin-controls { opacity: 0; transition: opacity 0.2s ease-in-out; }
+        article:hover .admin-controls { opacity: 1; }
+    </style>
+</head>
+<body class="bg-stone-50 text-inpress-dark font-sans-custom min-h-screen flex flex-col justify-between relative">
+
+    <!-- Header Editorial Compacto (Modo Admin) -->
+    <header class="relative py-6 px-8 shadow-sm bg-stone-900 border-b-4 border-inpress-red z-30">
+        <div class="max-w-6xl mx-auto flex justify-between items-center relative z-10">
+            <div class="flex items-center gap-4">
+                <img src="logo.png" alt="Grupo In Press" class="h-8 object-contain brightness-0 invert" onerror="this.style.display='none'; document.getElementById('fallbackTitle').classList.remove('hidden')">
+                <span id="fallbackTitle" class="hidden text-sm font-bold text-white tracking-widest uppercase font-sans-custom">Grupo <span class="text-inpress-red">In</span> Press</span>
+                <div class="h-6 w-px bg-stone-700"></div>
+                <h1 class="text-xl font-bold font-editorial text-white tracking-widest uppercase">I.C.A.R.O. <span class="text-stone-400 font-sans-custom text-xs font-normal ml-2">Painel de Curadoria Editorial</span></h1>
+            </div>
+            
+            <a href="index.html" class="text-xs font-bold text-white hover:text-inpress-red transition-colors tracking-widest uppercase border border-stone-700 px-4 py-2 rounded">
+                Voltar à Visão Executiva ↗
+            </a>
+        </div>
+    </header>
+
+    <!-- Sub-Header Técnico -->
+    <div class="max-w-6xl mx-auto px-4 mt-8 w-full">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-stone-300 pb-2 gap-4">
+            <span class="text-xs font-bold tracking-widest text-inpress-chumbo uppercase font-sans-custom">Gerenciamento da Base de Dados</span>
+            <span class="text-xs font-bold tracking-widest text-stone-400 uppercase font-sans-custom">Oportunidades Carregadas: <span id="contadorCards" class="text-inpress-dark">0</span></span>
+        </div>
+    </div>
+
+    <!-- Container Principal (Briefing Grid Editável) -->
+    <main class="max-w-6xl mx-auto px-4 py-8 w-full flex-grow">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="timelineContainer">
+            <p class="text-stone-400 italic text-center col-span-full py-12">Carregando curadoria de inteligência para edição...</p>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-white border-t border-stone-200 py-6 px-8 text-center shadow-sm">
+        <div class="max-w-6xl mx-auto text-xs text-inpress-chumbo tracking-wider">
+            <p>Modo Administrador | I.C.A.R.O.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FIXO DE EXPORTAÇÃO -->
+    <button onclick="exportarJSON()" class="fixed bottom-6 right-6 bg-inpress-red hover:bg-red-700 text-white font-bold py-4 px-6 rounded-full shadow-2xl transition-transform hover:scale-105 z-50 flex items-center gap-3 tracking-wider text-sm font-sans-custom border border-red-500">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+        Salvar & Exportar JSON
+    </button>
+
+    <script>
+        let dadosOportunidades = [];
+
+        // Hashing rápido de string para geração consistente de sementes (fallback)
+        function gerarHash(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = (hash << 5) - hash + char;
+                hash = hash & hash; 
+            }
+            return hash.toString();
+        }
+
+        // Função para converter string de data (DD/MM/AAAA) em Date comparável
+        function converterDataParaISODate(dataStr) {
+            if (!dataStr) return new Date(0); // Data muito antiga como fallback
+            const partes = dataStr.split('/');
+            if (partes.length === 3) {
+                // Formato ISO: AAAA-MM-DD
+                return new Date(`${partes[2]}-${partes[1]}-${partes[0]}T00:00:00`);
+            }
+            return new Date(0);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Adicionado parâmetro de tempo para forçar atualização e ignorar o cache
+            fetch(`oportunidades.json?t=${new Date().getTime()}`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Arquivo JSON inacessível.');
+                    return response.json();
+                })
+                .then(dados => {
+                    // ORDENAÇÃO: Organiza os dados da data mais recente para a mais antiga
+                    dados.sort((a, b) => {
+                        const dataA = converterDataParaISODate(a.data);
+                        const dataB = converterDataParaISODate(b.data);
+                        return dataB - dataA; // Retorna negativo se B for mais recente
+                    });
+
+                    dadosOportunidades = dados;
+                    renderizarTimelineAdmin(dadosOportunidades);
+                })
+                .catch(err => {
+                    console.error("Erro ao carregar banco:", err);
+                    document.getElementById('timelineContainer').innerHTML = `<p class="text-red-500 italic text-center col-span-full py-12">Erro ao carregar oportunidades.json.</p>`;
+                });
+        });
+
+        function limparMarca(nome) {
+            return nome.replace(/\s*\(.*?\)\s*/g, '').trim();
+        }
+
+        // --- ALGORITMOS DE TEXTO (Iguais aos do Index) ---
+        function separarContextoERecomendacao(texto) {
+            if (!texto) return { fato: "", rec: "" };
+            let partes = texto.split(/\.(?=\s)/);
+            if (partes.length === 1) {
+                const regexGerundio = /,\s*(mostrando|abrindo|exigindo|gerando|visando|propondo|direcionando|demandando|sinalizando|reforçando|consolidando|oferecendo|permitindo|ajudando|preparando)/i;
+                const match = texto.match(regexGerundio);
+                if (match) {
+                    const index = texto.indexOf(match[0]);
+                    const fato = texto.substring(0, index).trim() + ".";
+                    const gerundioCapitalizado = match[1].charAt(0).toUpperCase() + match[1].slice(1);
+                    const rec = gerundioCapitalizado + " " + texto.substring(index + match[0].length).trim();
+                    return { fato, rec };
+                }
+                return { fato: partes[0].trim(), rec: "" };
+            }
+            const fato = partes.shift() + ".";
+            const rec = partes.join(". ") + (partes.length > 0 && !texto.endsWith(".") ? "." : "");
+            return { fato: fato.trim(), rec: rec.trim() };
+        }
+
+        function mesclarFatoERecomendacao(fato, rec) {
+            if (!rec || rec.trim() === "") return fato;
+            
+            const primeiraPalavraRec = rec.split(' ')[0].toLowerCase();
+            const gerundiosComuns = ['mostrando', 'abrindo', 'exigindo', 'gerando', 'visando', 'propondo', 'direcionando', 'demandando', 'sinalizando', 'reforçando', 'consolidando', 'oferecendo', 'permitindo', 'ajudando', 'preparando'];
+            
+            if (gerundiosComuns.includes(primeiraPalavraRec)) {
+                let fatoLimpo = fato.endsWith('.') ? fato.slice(0, -1) : fato;
+                return `${fatoLimpo}, ${primeiraPalavraRec} ${rec.substring(primeiraPalavraRec.length).trim()}`;
+            }
+            
+            let fatoComPonto = fato.endsWith('.') ? fato : fato + ".";
+            return `${fatoComPonto} ${rec}`;
+        }
+
+        // --- SISTEMA DE GESTÃO DO ADMIN ---
+        function renderizarTimelineAdmin(dados) {
+            const container = document.getElementById('timelineContainer');
+            if (!container) return;
+            container.innerHTML = '';
+            
+            document.getElementById('contadorCards').innerText = dados.length;
+
+            if (dados.length === 0) {
+                container.innerHTML = `<p class="text-stone-400 italic text-center col-span-full py-12">Base de dados vazia.</p>`;
+                return;
+            }
+
+            dados.forEach((item, index) => {
+                const isMacro = (item.tipo === 'setor');
+                const textoOriginal = item.descricao ? item.descricao : "";
+                const { fato, rec } = separarContextoERecomendacao(textoOriginal);
+                const marcasTexto = item.marcas ? item.marcas.map(m => limparMarca(m)).join(', ') : "Sem marcas";
+                
+                const tagSuperior = isMacro ? 'ALERTA MACRO' : (item.agencia === 'In Press Porter Novelli' ? 'IN PRESS' : 'FLEISHMANHILLARD');
+                const corTagSuperior = isMacro ? 'bg-inpress-red text-white' : 'bg-inpress-dark/95 text-white';
+                const tituloCard = (isMacro && item.titulo) ? item.titulo : marcasTexto;
+
+                // Lógica de fallback para a Imagem
+                const marcaPrincipal = item.marcas && item.marcas.length > 0 ? limparMarca(item.marcas[0]) : "business";
+                const seedMarca = Math.abs(gerarHash(marcaPrincipal)) % 1000;
+                const setorLimpo = item.setor ? item.setor.toLowerCase().split(' ')[0].replace(/[^a-z]/g, '') : "office";
+                const termoBusca = isMacro ? "economy,business" : `${marcaPrincipal.toLowerCase().replace(/[^a-z0-9]/g, '')},${setorLimpo}`;
+                const imagemFinal = (item.imagem && item.imagem.trim() !== '') 
+                    ? item.imagem 
+                    : `https://loremflickr.com/600/400/${encodeURIComponent(termoBusca)}/all?lock=${seedMarca}`;
+
+
+                // Construção do Card com Overlay de Admin
+                const card = `
+                    <article id="card-${index}" class="bg-white rounded-md overflow-hidden transition-all flex flex-col justify-between relative border border-stone-200 shadow-sm">
+                        
+                        <!-- CONTROLES FLUTUANTES ADMIN -->
+                        <div class="admin-controls absolute top-4 right-4 z-50 flex gap-2">
+                            <button onclick="abrirEditor(${index})" class="bg-stone-900/90 hover:bg-stone-900 text-white text-[10px] px-3 py-1.5 rounded font-bold uppercase tracking-wider backdrop-blur-sm border border-stone-700 transition-colors shadow-lg">
+                                Editar ✏️
+                            </button>
+                            <button onclick="excluirCard(${index})" class="bg-red-600/90 hover:bg-red-700 text-white text-[10px] px-3 py-1.5 rounded font-bold uppercase tracking-wider backdrop-blur-sm border border-red-800 transition-colors shadow-lg">
+                                Excluir 🗑️
+                            </button>
+                        </div>
+
+                        <!-- Visão Normal do Card (Somente Leitura) -->
+                        <div id="view-mode-${index}" class="flex flex-col h-full">
+                            <div class="h-32 relative bg-stone-100 flex-shrink-0 overflow-hidden border-b border-stone-200">
+                                <div class="absolute inset-0 bg-stone-800/10 mix-blend-multiply"></div>
+                                <img src="${imagemFinal}" alt="Cover" class="w-full h-full object-cover grayscale-[15%]">
+                                <span class="absolute top-4 left-4 ${corTagSuperior} text-[9px] font-extrabold px-2 py-1 tracking-widest uppercase rounded-sm z-10">
+                                    ${tagSuperior}
+                                </span>
+                            </div>
+                            
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h3 class="text-xl font-bold font-editorial text-inpress-dark leading-tight mb-3 line-clamp-2">
+                                    ${tituloCard}
+                                </h3>
+                                
+                                <div class="mb-3 flex-grow">
+                                    <span class="text-[9px] font-bold text-stone-400 block mb-0.5 uppercase tracking-widest font-sans-custom">O Fato</span>
+                                    <p class="text-xs text-stone-700 leading-snug font-sans-custom line-clamp-3">
+                                        ${fato}
+                                    </p>
+                                </div>
+
+                                <div class="bg-stone-50 p-3 rounded border border-stone-100">
+                                    <span class="text-[9px] font-bold text-inpress-red uppercase tracking-widest block mb-1">Tática Sugerida</span>
+                                    <p class="text-xs text-stone-600 leading-snug font-editorial italic line-clamp-3">
+                                        "${rec}"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Visão de Edição do Card (Escondida por Padrão) -->
+                        <div id="edit-mode-${index}" class="hidden flex-col h-full bg-stone-50 p-5 absolute inset-0 z-40 border-2 border-stone-900 rounded-md shadow-xl">
+                            <div class="flex justify-between items-center mb-4 pb-2 border-b border-stone-200">
+                                <span class="text-xs font-bold text-stone-900 uppercase tracking-widest">Editando Card #${index + 1}</span>
+                                <button onclick="fecharEditor(${index})" class="text-stone-400 hover:text-stone-800 font-bold">✕</button>
+                            </div>
+                            
+                            <div class="space-y-4 flex-grow overflow-y-auto pr-2 custom-scrollbar pb-4">
+                                ${isMacro ? `
+                                <div>
+                                    <label class="text-[9px] font-bold text-stone-500 uppercase tracking-widest block mb-1">Título Macro</label>
+                                    <input type="text" id="edit-titulo-${index}" value="${item.titulo || ''}" class="w-full text-xs p-2.5 border border-stone-300 rounded font-sans-custom focus:border-stone-900 focus:outline-none focus:ring-1 focus:ring-stone-900 transition-shadow">
+                                </div>` : ''}
+                                
+                                <div>
+                                    <label class="text-[9px] font-bold text-stone-500 uppercase tracking-widest block mb-1">URL da Imagem (Opcional)</label>
+                                    <input type="text" id="edit-imagem-${index}" value="${item.imagem || ''}" placeholder="Cole a URL da imagem aqui..." class="w-full text-xs p-2.5 border border-stone-300 rounded font-sans-custom focus:border-stone-900 focus:outline-none focus:ring-1 focus:ring-stone-900 transition-shadow">
+                                </div>
+
+                                <div>
+                                    <label class="text-[9px] font-bold text-stone-500 uppercase tracking-widest block mb-1">O Fato (Contexto)</label>
+                                    <textarea id="edit-fato-${index}" rows="3" class="w-full text-xs p-2.5 border border-stone-300 rounded font-sans-custom focus:border-stone-900 focus:outline-none focus:ring-1 focus:ring-stone-900 transition-shadow resize-none">${fato}</textarea>
+                                </div>
+                                
+                                <div>
+                                    <label class="text-[9px] font-bold text-stone-500 uppercase tracking-widest block mb-1">Tática Sugerida</label>
+                                    <textarea id="edit-rec-${index}" rows="3" class="w-full text-xs p-2.5 border border-stone-300 rounded font-sans-custom focus:border-stone-900 focus:outline-none focus:ring-1 focus:ring-stone-900 transition-shadow resize-none">${rec}</textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-2 pt-3 border-t border-stone-200">
+                                <button onclick="salvarEdicao(${index})" class="w-full bg-stone-900 hover:bg-black text-white text-xs font-bold py-3 rounded uppercase tracking-wider transition-colors shadow-md">
+                                    Salvar Alterações
+                                </button>
+                            </div>
+                        </div>
+
+                    </article>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        // --- FUNÇÕES DE INTERAÇÃO DO ADMIN ---
+        function abrirEditor(index) {
+            document.getElementById(`view-mode-${index}`).classList.add('hidden');
+            document.getElementById(`edit-mode-${index}`).classList.remove('hidden');
+            document.getElementById(`edit-mode-${index}`).classList.add('flex');
+            
+            const card = document.getElementById(`card-${index}`);
+            const controls = card.querySelector('.admin-controls');
+            if(controls) controls.style.display = 'none';
+        }
+
+        function fecharEditor(index) {
+            document.getElementById(`edit-mode-${index}`).classList.add('hidden');
+            document.getElementById(`edit-mode-${index}`).classList.remove('flex');
+            document.getElementById(`view-mode-${index}`).classList.remove('hidden');
+            
+            const card = document.getElementById(`card-${index}`);
+            const controls = card.querySelector('.admin-controls');
+            if(controls) controls.style.display = 'flex';
+        }
+
+        function salvarEdicao(index) {
+            const item = dadosOportunidades[index];
+            
+            // Salva o título (se for Macro)
+            if (item.tipo === 'setor') {
+                const novoTitulo = document.getElementById(`edit-titulo-${index}`).value;
+                item.titulo = novoTitulo;
+            }
+            
+            // Salva a nova Imagem
+            const novaImagem = document.getElementById(`edit-imagem-${index}`).value;
+            item.imagem = novaImagem;
+
+            // Salva e Mescla Fato/Tática
+            const novoFato = document.getElementById(`edit-fato-${index}`).value;
+            const novaRec = document.getElementById(`edit-rec-${index}`).value;
+            item.descricao = mesclarFatoERecomendacao(novoFato, novaRec);
+            
+            // Atualiza Interface (Já vai re-ordenar se salvar os dados modificados, pois os dados já estão no array. A ordem do array é mantida.)
+            renderizarTimelineAdmin(dadosOportunidades);
+        }
+
+        function excluirCard(index) {
+            if(confirm("Tem certeza que deseja excluir esta oportunidade? Esta ação removerá o card da base.")) {
+                dadosOportunidades.splice(index, 1);
+                renderizarTimelineAdmin(dadosOportunidades);
+            }
+        }
+
+        // --- FUNÇÃO DE EXPORTAÇÃO ---
+        function exportarJSON() {
+            // Garante a ordenação também no JSON final salvo, pra index manter a ordem correta
+            const jsonOrdenado = [...dadosOportunidades].sort((a, b) => {
+                return converterDataParaISODate(b.data) - converterDataParaISODate(a.data);
+            });
+
+            const jsonString = JSON.stringify(jsonOrdenado, null, 4);
+            const blob = new Blob([jsonString], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'oportunidades.json';
+            
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert("Base de dados exportada com sucesso! Substitua o arquivo 'oportunidades.json' na sua pasta raiz pelo arquivo baixado.");
+        }
+    </script>
+    
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f5f5f4; border-radius: 4px;}
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+    </style>
+</body>
+</html>
