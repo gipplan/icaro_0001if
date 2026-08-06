@@ -55,13 +55,9 @@
             </div>
 
             <div class="flex items-center gap-3">
-                <button onclick="abrirModalClipping()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-ifood-red hover:bg-ifood-red-dark text-white text-xs font-bold transition-all shadow-sm">
-                    <i class="fa-solid fa-newspaper"></i>
-                    <span class="hidden sm:inline">Importar Clipping Boxnet</span>
-                    <span class="sm:hidden">Clipping</span>
-                </button>
-                <button onclick="carregarOportunidades()" class="p-2 text-gray-500 hover:text-ifood-red hover:bg-ifood-red-light rounded-full transition-colors" title="Atualizar dados">
+                <button onclick="carregarOportunidades()" class="p-2 text-gray-500 hover:text-ifood-red hover:bg-ifood-red-light rounded-full transition-colors flex items-center gap-2" title="Atualizar dados">
                     <i class="fa-solid fa-rotate-right text-sm"></i>
+                    <span class="text-xs font-bold hidden sm:inline">Sincronizar Pautas</span>
                 </button>
             </div>
         </div>
@@ -179,38 +175,6 @@
         </div>
     </main>
 
-    <!-- MODAL IMPORTAÇÃO CLIPPING BOXNET -->
-    <div id="modal-clipping" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-gray-100">
-            <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center gap-2 text-ifood-red font-bold text-sm">
-                    <i class="fa-solid fa-newspaper text-base"></i>
-                    <span>Importar Clipping Boxnet</span>
-                </div>
-                <button onclick="fecharModalClipping()" class="text-gray-400 hover:text-gray-600 p-1">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-            
-            <p class="text-xs text-gray-600 mb-4 leading-relaxed">
-                Cole a URL completa do relatório da Boxnet fornecido pela agência. O robô Í.C.A.R.O. analisará o conteúdo e incorporará as novas pautas.
-            </p>
-
-            <div class="mb-4">
-                <label class="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">URL do Clipping</label>
-                <input type="url" id="input-url-clipping" placeholder="https://bookweb.boxnet.com.br/?idContainer=..." class="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-ifood-red transition-all">
-            </div>
-
-            <div class="flex items-center justify-end gap-2 pt-2">
-                <button onclick="fecharModalClipping()" class="px-4 py-2 rounded-xl text-xs font-semibold text-gray-600 hover:bg-gray-100">Cancelar</button>
-                <button onclick="dispararAnaliseClipping()" id="btn-processar-clipping" class="px-4 py-2 rounded-xl text-xs font-bold text-white bg-ifood-red hover:bg-ifood-red-dark transition-all flex items-center gap-2">
-                    <span>Processar Pautas</span>
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- FOOTER -->
     <footer class="bg-white border-t border-gray-200 py-8 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -223,9 +187,6 @@
 
     <!-- SCRIPT FRONTEND -->
     <script>
-        const REPO_OWNER = "gipplan";
-        const REPO_NAME = "icaro_0001if";
-
         let todasOportunidades = [];
         let categoriaAtiva = 'todos';
         let periodoAtivo = 'todos';
@@ -279,7 +240,7 @@
                     <div class="col-span-full bg-red-50 border border-red-200 text-red-700 p-6 rounded-2xl text-center my-8">
                         <i class="fa-solid fa-triangle-exclamation text-2xl mb-2"></i>
                         <h4 class="font-bold text-sm">Ainda não há pautas salvas</h4>
-                        <p class="text-xs mt-1">Execute a primeira varredura no GitHub ou importe um clipping Boxnet.</p>
+                        <p class="text-xs mt-1">Nenhuma pauta foi encontrada no arquivo de dados.</p>
                     </div>
                 `;
             }
@@ -407,23 +368,6 @@
                     </div>
                 </article>
             `;
-        }
-
-        function abrirModalClipping() { document.getElementById('modal-clipping').classList.remove('hidden'); }
-        function fecharModalClipping() { document.getElementById('modal-clipping').classList.add('hidden'); }
-
-        async function dispararAnaliseClipping() {
-            const urlInput = document.getElementById('input-url-clipping').value.trim();
-
-            if (!urlInput.includes('boxnet.com.br')) {
-                alert('Por favor, insira uma URL válida da Boxnet.');
-                return;
-            }
-
-            // Removido temporariamente o uso do token para garantir o deploy.
-            alert('Integração automática temporariamente desativada. Acione o motor do Í.C.A.R.O. via painel do GitHub Actions.');
-            fecharModalClipping();
-            document.getElementById('input-url-clipping').value = '';
         }
 
         function filtrarCategoria(cat) {
