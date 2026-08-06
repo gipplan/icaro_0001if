@@ -38,26 +38,28 @@ def executar_varredura():
     DIRETRIZES DO PLAYBOOK CORPORATIVO:
     {playbook_context}
 
-    INSTRUÇÕES DE PESQUISA:
-    Faça uma busca na web por notícias recentes no Brasil relacionadas ao ecossistema do iFood e delivery.
-    Varra obrigatoriamente as 6 frentes estratégicas:
-    1. Regulação do Trabalho, STF, MPT (`regulacao`)
-    2. Relação com Restaurantes, PMEs, Comissões (`parceiros`)
-    3. Algoritmos, Bloqueios, Golpe da Maquininha, IA (`tecnologia`)
-    4. Paralisações, Pontos de Apoio (`operacao`)
-    5. CADE, Concorrência, Supermercados (`concorrencia`)
-    6. Frota Elétrica, Redução de Plástico (`esg`)
-    7. Gestão de Crise (`crise`)
+    INSTRUÇÕES DE PESQUISA (PRIORIDADE MÁXIMA):
+    Faça uma busca na web por notícias recentes no Brasil.
+    1. É OBRIGATÓRIO incluir resultados recentes para iFood e Stone. Caso a varredura inicial geral não identifique fatos relevantes sobre elas, execute uma busca adicional e direcionada exclusivamente para estas duas marcas. O JSON final DEVE conter pautas para iFood e Stone.
+    2. Identifique pautas quentes (5 a 10) abrangendo também os setores: Tecnologia/IA, E-commerce/Logística, ESG/Energia, Finanças/Fintechs, e Aviação/Turismo.
+    3. Classifique as pautas nas 6 frentes estratégicas (`regulacao`, `parceiros`, `tecnologia`, `operacao`, `concorrencia`, `esg`, `crise`).
+
+    DIRETRIZES PARA A TÁTICA SUGERIDA (NÍVEL DIRETOR DE PR):
+    Atue como um Diretor Sênior de Comunicação Corporativa. Suas recomendações não podem ser óbvias.
+    NUNCA sugira "fazer press release", "postar nas redes", "monitorar" ou "fazer Q&A".
+    Foco Executivo: PR Stunt, Op-Eds de C-Levels, Ativações em Dark Social, Fóruns Proprietários, Public Affairs/Lobby e Gestão de Crise Avançada.
+    Estrutura Obrigatória: A tática (campo recomendacao) sempre deve começar com um verbo no gerúndio e justificar o impacto no negócio da marca.
 
     FORMATO DE SAÍDA OBRIGATÓRIO (JSON Puro):
-    Retorne uma lista JSON válida com até 8 pautas detectadas.
+    Retorne uma lista JSON válida com as pautas detectadas.
     [
       {{
         "titulo": "Título conciso e direto",
-        "descricao": "Resumo do fato e análise do impacto reputacional/estratégico.",
+        "resumo_fato": "Resumo executivo, direto e neutro sobre o fato noticiado ou cenário identificado.",
+        "recomendacao": "Sua tática recomendada (nível Diretor Sênior), começando sempre com um verbo no gerúndio e justificando o impacto.",
         "tipo": "regulacao" | "parceiros" | "tecnologia" | "operacao" | "concorrencia" | "esg" | "crise",
         "data": "{data_hoje}",
-        "setor": "Sub-área específica",
+        "setor": "Sub-área específica ou veículo",
         "marcas": ["Marcas envolvidas"],
         "produtos": ["Entregáveis recomendados"],
         "link_noticia": "URL real da notícia",
@@ -78,29 +80,7 @@ def executar_varredura():
     )
 
     texto_resposta = response.text.strip()
+    # Limpeza de possíveis marcadores Markdown que o modelo possa inserir por engano
     texto_resposta = re.sub(r'^```json\s*', '', texto_resposta)
     texto_resposta = re.sub(r'^```\s*', '', texto_resposta)
-    texto_resposta = re.sub(r'\s*```$', '', texto_resposta)
-
-    novas_pautas = json.loads(texto_resposta)
-    pautas_existentes = carregar_oportunidades_existentes()
-
-    titulos_existentes = {p.get("titulo", "").strip().lower() for p in pautas_existentes}
-    
-    pautas_adicionadas = 0
-    for pauta in novas_pautas:
-        titulo_limpo = pauta.get("titulo", "").strip().lower()
-        if titulo_limpo not in titulos_existentes:
-            pautas_existentes.insert(0, pauta)
-            titulos_existentes.add(titulo_limpo)
-            pautas_adicionadas += 1
-
-    pautas_finais = pautas_existentes[:50]
-
-    with open("oportunidades.json", "w", encoding="utf-8") as f:
-        json.dump(pautas_finais, f, ensure_ascii=False, indent=2)
-
-    print(f"Sucesso! Varredura web concluída. {pautas_adicionadas} novas pautas adicionadas.")
-
-if __name__ == "__main__":
-    executar_varredura()
+    texto_resposta = re.sub(r'\s*
