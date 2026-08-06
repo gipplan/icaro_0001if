@@ -223,11 +223,6 @@
 
     <!-- SCRIPT FRONTEND -->
     <script>
-        // CONFIGURAÇÕES DO REPOSITÓRIO GITHUB
-        // Tática de evasão de Secret Scanning: Dividir o prefixo ghp_ da chave.
-        // COLOQUE APENAS O RESTANTE DA CHAVE NA SEGUNDA STRING ABAIXO.
-        const GITHUB_PAT = "ghp_" + "COLE_O_RESTANTE_DO_SEU_TOKEN_AQUI"; 
-        
         const REPO_OWNER = "gipplan";
         const REPO_NAME = "icaro_0001if";
 
@@ -308,7 +303,6 @@
                 const bateCategoria = (categoriaAtiva === 'todos') || (item.tipo === categoriaAtiva);
                 const batePeriodo = (periodoAtivo === 'todos') || (frescura === periodoAtivo);
                 
-                // Atualizado para considerar os novos campos resumo_fato e recomendacao
                 const texto = `${item.titulo || ''} ${item.resumo_fato || item.descricao || ''} ${item.recomendacao || ''} ${item.setor || ''} ${(item.marcas || []).join(' ')}`.toLowerCase();
                 
                 const bateBusca = !termoBusca || texto.includes(termoBusca);
@@ -355,7 +349,6 @@
             const marcasBadges = (item.marcas || []).map(m => `<span class="bg-gray-100 text-gray-700 text-[10px] font-bold px-2 py-0.5 rounded-md border border-gray-200">${m}</span>`).join(' ');
             const produtosBadges = (item.produtos || []).map(p => `<span class="bg-ifood-red-light text-ifood-red text-[10px] font-bold px-2.5 py-1 rounded-full"><i class="fa-solid fa-cube mr-1"></i>${p}</span>`).join(' ');
 
-            // Compatibilidade retroativa e separação visual
             const fato = item.resumo_fato || item.descricao || 'Fato não detalhado.';
             
             let blocoRecomendacaoHTML = '';
@@ -421,40 +414,16 @@
 
         async function dispararAnaliseClipping() {
             const urlInput = document.getElementById('input-url-clipping').value.trim();
-            const btn = document.getElementById('btn-processar-clipping');
 
             if (!urlInput.includes('boxnet.com.br')) {
                 alert('Por favor, insira uma URL válida da Boxnet.');
                 return;
             }
 
-            btn.disabled = true;
-            btn.innerHTML = `<i class="fa-solid fa-circle-notch animate-spin"></i> Enviando...`;
-
-            try {
-                const response = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/processar_clipping.yml/dispatches`, {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/vnd.github+json',
-                        'Authorization': `Bearer ${GITHUB_PAT}`,
-                        'X-GitHub-Api-Version': '2022-11-28'
-                    },
-                    body: JSON.stringify({ ref: 'main', inputs: { clipping_url: urlInput } })
-                });
-
-                if (response.ok || response.status === 204) {
-                    alert('Clipping enviado! O robô Í.C.A.R.O. está processando. Atualize a página em 30 segundos.');
-                    fecharModalClipping();
-                    document.getElementById('input-url-clipping').value = '';
-                } else {
-                    throw new Error(`Status ${response.status}`);
-                }
-            } catch (erro) {
-                alert('Aviso: Ocorreu um erro ao disparar o workflow. Verifique seu token de acesso.');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = `<span>Processar Pautas</span><i class="fa-solid fa-arrow-right text-xs"></i>`;
-            }
+            // Removido temporariamente o uso do token para garantir o deploy.
+            alert('Integração automática temporariamente desativada. Acione o motor do Í.C.A.R.O. via painel do GitHub Actions.');
+            fecharModalClipping();
+            document.getElementById('input-url-clipping').value = '';
         }
 
         function filtrarCategoria(cat) {
