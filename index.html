@@ -55,9 +55,9 @@
             </div>
 
             <div class="flex items-center gap-3">
-                <button onclick="carregarOportunidades()" class="p-2 text-gray-500 hover:text-ifood-red hover:bg-ifood-red-light rounded-full transition-colors flex items-center gap-2" title="Atualizar dados">
-                    <i class="fa-solid fa-rotate-right text-sm"></i>
-                    <span class="text-xs font-bold hidden sm:inline">Sincronizar Pautas</span>
+                <button onclick="carregarOportunidades()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-ifood-red hover:border-ifood-red transition-colors shadow-sm text-xs font-bold" title="Atualizar dados">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span class="hidden sm:inline">Sincronizar Pautas</span>
                 </button>
             </div>
         </div>
@@ -240,7 +240,7 @@
                     <div class="col-span-full bg-red-50 border border-red-200 text-red-700 p-6 rounded-2xl text-center my-8">
                         <i class="fa-solid fa-triangle-exclamation text-2xl mb-2"></i>
                         <h4 class="font-bold text-sm">Ainda não há pautas salvas</h4>
-                        <p class="text-xs mt-1">Nenhuma pauta foi encontrada no arquivo de dados.</p>
+                        <p class="text-xs mt-1">Verifique se o arquivo oportunidades.json está disponível no repositório.</p>
                     </div>
                 `;
             }
@@ -264,8 +264,8 @@
                 const bateCategoria = (categoriaAtiva === 'todos') || (item.tipo === categoriaAtiva);
                 const batePeriodo = (periodoAtivo === 'todos') || (frescura === periodoAtivo);
                 
+                // NOVA LÓGICA DE BUSCA: lê os novos campos do JSON
                 const texto = `${item.titulo || ''} ${item.resumo_fato || item.descricao || ''} ${item.recomendacao || ''} ${item.setor || ''} ${(item.marcas || []).join(' ')}`.toLowerCase();
-                
                 const bateBusca = !termoBusca || texto.includes(termoBusca);
 
                 return bateCategoria && batePeriodo && bateBusca;
@@ -310,18 +310,22 @@
             const marcasBadges = (item.marcas || []).map(m => `<span class="bg-gray-100 text-gray-700 text-[10px] font-bold px-2 py-0.5 rounded-md border border-gray-200">${m}</span>`).join(' ');
             const produtosBadges = (item.produtos || []).map(p => `<span class="bg-ifood-red-light text-ifood-red text-[10px] font-bold px-2.5 py-1 rounded-full"><i class="fa-solid fa-cube mr-1"></i>${p}</span>`).join(' ');
 
+            // ADAPTAÇÃO DO FORMATO DE TEXTO (Fato vs Tática)
             const fato = item.resumo_fato || item.descricao || 'Fato não detalhado.';
             
             let blocoRecomendacaoHTML = '';
             if (item.recomendacao) {
                 blocoRecomendacaoHTML = `
-                    <div class="bg-red-50 border border-red-100 rounded-xl p-3">
+                    <div class="bg-red-50 border border-red-100 rounded-xl p-3 mb-4">
                         <span class="block text-[10px] font-bold text-ifood-red uppercase tracking-wider mb-1">
                             <i class="fa-solid fa-lightbulb mr-1"></i> Tática Sugerida
                         </span>
                         <p class="text-xs text-gray-800 font-medium leading-relaxed">${item.recomendacao}</p>
                     </div>
                 `;
+            } else {
+                // Compatibilidade caso seja um JSON antigo que ainda só tenha "descricao"
+                blocoRecomendacaoHTML = `<div class="mb-4"></div>`;
             }
 
             return `
@@ -348,9 +352,9 @@
                             </div>
                             <h2 class="text-base font-bold text-gray-900 group-hover:text-ifood-red transition-colors line-clamp-2 mb-3 leading-snug">${item.titulo}</h2>
                             
-                            <!-- Divisão Fato x Tática -->
-                            <div class="flex flex-col gap-2 mb-4">
-                                <div class="bg-gray-50 border border-gray-100 rounded-xl p-3">
+                            <!-- Nova Separação Fato x Tática -->
+                            <div class="flex flex-col gap-2">
+                                <div class="bg-gray-50 border border-gray-100 rounded-xl p-3 ${item.recomendacao ? '' : 'mb-4'}">
                                     <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">O Fato</span>
                                     <p class="text-xs text-gray-700 leading-relaxed">${fato}</p>
                                 </div>
