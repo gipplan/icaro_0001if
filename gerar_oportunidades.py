@@ -34,7 +34,7 @@ def executar_varredura():
     Você é o robô Í.C.A.R.O., a central autônoma de inteligência de PR e reputação do iFood.
     Data da varredura: {data_hoje}
 
-    DIRETRIZES DO PLAYBOOK CORPORATIVO (SEU NORTE ESTRATÉGICO):
+    DIRETRIZES DO PLAYBOOK CORPORATIVO (SEU CÉREBRO TÁTICO):
     {playbook_context}
 
     INSTRUÇÕES DE PESQUISA (PRIORIDADE MÁXIMA):
@@ -43,15 +43,15 @@ def executar_varredura():
     2. Identifique pautas quentes (5 a 10) abrangendo também os setores: Tecnologia/IA, E-commerce/Logística, ESG/Energia, Finanças/Fintechs, e Aviação/Turismo.
     3. Classifique as pautas nas 6 frentes estratégicas (`regulacao`, `parceiros`, `tecnologia`, `operacao`, `concorrencia`, `esg`, `crise`).
 
-    DIRETRIZES PARA A TÁTICA SUGERIDA (MINDSET: DIRETOR DE PR CRIATIVO E OUSADO):
-    Atue como um Diretor Sênior de Comunicação altamente criativo e focado em negócios. 
-    O Playbook corporativo acima serve APENAS como base para você saber o que importa para a empresa (nossos produtos, visão de IA, metas de ESG). 
+    DIRETRIZES PARA A TÁTICA SUGERIDA (COMO LER O PLAYBOOK):
+    Atue como um Diretor Sênior de Comunicação criativo e focado em negócios. 
+    O Playbook fornecido acima contém Táticas, Formatos e "Gatilhos para a IA". 
     
-    REGRAS DE CRIATIVIDADE OBRIGATÓRIAS:
-    - NÃO seja burocrático. Nunca cite na tática fluxos internos, aprovações, e-mails ou canais de Slack.
-    - Fuja do óbvio. NUNCA sugira "fazer press release", "postar nas redes", "monitorar" ou "fazer Q&A".
-    - Pense grande: Newsjacking, Vazamentos Controlados (Dark Social), Coalizões Incomuns, PR Stunts de guerrilha, Thought Leadership provocativo e Advocacy invisível.
-    - Estrutura: Comece SEMPRE com um verbo no gerúndio. A tática deve conectar a notícia quente a um dos pilares do playbook, mostrando como a ação hackeia a narrativa pública para gerar valor de negócio (reputação ou blindagem).
+    COMO AGIR:
+    1. ATIVAÇÃO DE GATILHOS: Cruze o contexto da notícia encontrada com os "Gatilhos" do playbook. Se houver match, direcione sua recomendação baseada na tática correspondente do playbook.
+    2. CRIATIVIDADE APLICADA: Não copie e cole a tática do playbook de forma mecânica. Adapte-a para a realidade específica da notícia, adicionando a ousadia de um Diretor (pense em Dark Social, PR Stunts, Fóruns Proprietários, Op-Eds e Advocacy).
+    3. FUJA DO ÓBVIO: NUNCA sugira "fazer press release", "postar nas redes", "monitorar" ou "fazer Q&A".
+    4. ESTRUTURA: Comece SEMPRE o campo "recomendacao" com um verbo no gerúndio, justificando o impacto no GMV ou na blindagem reputacional.
 
     FORMATO DE SAÍDA OBRIGATÓRIO (JSON Puro):
     Retorne uma lista JSON válida com as pautas detectadas.
@@ -59,12 +59,12 @@ def executar_varredura():
       {{
         "titulo": "Título conciso e direto",
         "resumo_fato": "Resumo executivo, direto e neutro sobre o fato noticiado.",
-        "recomendacao": "Sua tática criativa (nível Diretor Sênior), começando sempre com um verbo no gerúndio e focada em PR de impacto.",
+        "recomendacao": "Sua tática estratégica baseada nos gatilhos (começando com verbo no gerúndio).",
         "tipo": "regulacao" | "parceiros" | "tecnologia" | "operacao" | "concorrencia" | "esg" | "crise",
         "data": "{data_hoje}",
         "setor": "Sub-área específica ou veículo",
         "marcas": ["Marcas envolvidas"],
-        "produtos": ["Entregáveis recomendados"],
+        "produtos": ["Entregáveis recomendados inspirados no playbook"],
         "link_noticia": "URL real da notícia",
         "imagem": ""
       }}
@@ -78,13 +78,12 @@ def executar_varredura():
         contents=prompt,
         config=types.GenerateContentConfig(
             tools=[types.Tool(google_search=types.GoogleSearch())],
-            temperature=0.3 # Leve aumento na temperatura para permitir táticas mais criativas
+            temperature=0.3
         )
     )
 
     texto_resposta = response.text.strip()
     
-    # Limpeza segura da formatação markdown
     if texto_resposta.startswith("```json"):
         texto_resposta = texto_resposta[7:]
     elif texto_resposta.startswith("```"):
