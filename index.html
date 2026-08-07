@@ -304,7 +304,9 @@
                 const frescura = calcularFrescura(item.data, dataMaisRecente);
                 const bateCategoria = (categoriaAtiva === 'todos') || (item.tipo === categoriaAtiva);
                 const batePeriodo = (periodoAtivo === 'todos') || (frescura === periodoAtivo);
-                const texto = `${item.titulo || ''} ${item.descricao || ''} ${item.setor || ''} ${(item.marcas || []).join(' ')}`.toLowerCase();
+                
+                // NOVO CÓDIGO DE BUSCA (Lendo os novos campos resumo_fato e recomendacao)
+                const texto = `${item.titulo || ''} ${item.resumo_fato || item.descricao || ''} ${item.recomendacao || ''} ${item.setor || ''} ${(item.marcas || []).join(' ')}`.toLowerCase();
                 const bateBusca = !termoBusca || texto.includes(termoBusca);
 
                 return bateCategoria && batePeriodo && bateBusca;
@@ -349,6 +351,23 @@
             const marcasBadges = (item.marcas || []).map(m => `<span class="bg-gray-100 text-gray-700 text-[10px] font-bold px-2 py-0.5 rounded-md border border-gray-200">${m}</span>`).join(' ');
             const produtosBadges = (item.produtos || []).map(p => `<span class="bg-ifood-red-light text-ifood-red text-[10px] font-bold px-2.5 py-1 rounded-full"><i class="fa-solid fa-cube mr-1"></i>${p}</span>`).join(' ');
 
+            // NOVO CÓDIGO DE RENDERIZAÇÃO (Separando Fato e Tática)
+            const fato = item.resumo_fato || item.descricao || 'Fato não detalhado.';
+            
+            let blocoRecomendacaoHTML = '';
+            if (item.recomendacao) {
+                blocoRecomendacaoHTML = `
+                    <div class="bg-red-50 border border-red-100 rounded-xl p-3 mb-4">
+                        <span class="block text-[10px] font-bold text-ifood-red uppercase tracking-wider mb-1">
+                            <i class="fa-solid fa-lightbulb mr-1"></i> Tática Sugerida
+                        </span>
+                        <p class="text-xs text-gray-800 font-medium leading-relaxed">${item.recomendacao}</p>
+                    </div>
+                `;
+            } else {
+                blocoRecomendacaoHTML = `<div class="mb-4"></div>`;
+            }
+
             return `
                 <article class="bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group">
                     <div class="relative h-44 w-full bg-gray-100 overflow-hidden">
@@ -372,8 +391,14 @@
                                 <span class="text-[10px] text-gray-400 font-medium ml-auto">${item.setor || ''}</span>
                             </div>
                             <h2 class="text-base font-bold text-gray-900 group-hover:text-ifood-red transition-colors line-clamp-2 mb-3 leading-snug">${item.titulo}</h2>
-                            <div class="bg-gray-50 border border-gray-100 rounded-xl p-3 mb-4">
-                                <p class="text-xs text-gray-700 leading-relaxed">${item.descricao}</p>
+                            
+                            <!-- Nova Divisão Visual da Pauta -->
+                            <div class="flex flex-col gap-2">
+                                <div class="bg-gray-50 border border-gray-100 rounded-xl p-3 ${item.recomendacao ? '' : 'mb-4'}">
+                                    <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">O Fato</span>
+                                    <p class="text-xs text-gray-700 leading-relaxed">${fato}</p>
+                                </div>
+                                ${blocoRecomendacaoHTML}
                             </div>
                         </div>
 
