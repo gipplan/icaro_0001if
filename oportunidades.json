@@ -1,5 +1,154 @@
 [
   {
+    "titulo": "Alta do Querosene de Aviação (QAV) Impacta Custos de Azul, Gol e Latam",
+    "resumo_fato": "O aumento acumulado de 49% no preço do querosene de aviação (QAV) desde o início do conflito no Irã gerou um gasto extra de R$ 5,2 bilhões para as companhias aéreas brasileiras, elevando a participação do combustível para 39% dos custos operacionais.",
+    "recomendacao": "Articulando uma parceria estratégica de cross-marketing e fidelidade com uma grande companhia aérea (como a Azul) para mitigar o impacto da alta de combustíveis, oferecendo benefícios exclusivos de delivery para passageiros frequentes e impulsionando o GMV do iFood Club.",
+    "tipo": "concorrencia",
+    "data": "07/08/2026",
+    "setor": "Aviação / Turismo",
+    "marcas": [
+      "Azul",
+      "Gol",
+      "Latam",
+      "iFood"
+    ],
+    "produtos": [
+      "Briefing Técnico de Mercado",
+      "Posicionamento Mercadológico"
+    ],
+    "link_noticia": "https://www1.folha.uol.com.br/colunas/monicabergamo/2026/08/azul-gol-e-latam-gastaram-r-52-bi-por-conta-da-guerra.shtml",
+    "imagem": ""
+  },
+  {
+    "titulo": "Setor de Energias Renováveis Lança Carta de Intenções para Eleições 2026",
+    "resumo_fato": "Entidades do setor de energias renováveis lançaram um documento conjunto defendendo que a transição energética seja o eixo central do desenvolvimento econômico do Brasil, propondo expansão de infraestrutura e segurança regulatória.",
+    "recomendacao": "Engajando ativamente na coalizão de transição energética por meio de um PR Stunt de grande escala focado na eletrificação total da nossa frota de entregas nas capitais, influenciando os planos de governo dos candidatos à presidência e consolidando o iFood como o principal parceiro privado da agenda verde nacional.",
+    "tipo": "esg",
+    "data": "07/08/2026",
+    "setor": "Energia / ESG",
+    "marcas": [
+      "Global Renewables Alliance",
+      "iFood"
+    ],
+    "produtos": [
+      "Pitch para Editorias de ESG",
+      "Balanço Ambiental"
+    ],
+    "link_noticia": "https://www.abrage.com.br/",
+    "imagem": ""
+  },
+  {
+    "titulo": "iFood Salão Impulsiona Vendas Físicas e Digitalização de PMEs",
+    "resumo_fato": "O iFood expande sua suíte de ferramentas 'iFood Salão' (incluindo Totem, garçom digital e CRM), ajudando restaurantes parceiros a aumentarem suas vendas presenciais em média 2,5 vezes e fortalecendo a digitalização de pequenos e médios estabelecimentos.",
+    "recomendacao": "Lançando um roadshow nacional de digitalização para PMEs gastronômicas em parceria com a Abrasel, demonstrando na prática o impacto do iFood Salão no faturamento físico e consolidando a marca como parceira de crescimento omnicanal dos restaurantes.",
+    "tipo": "parceiros",
+    "data": "07/08/2026",
+    "setor": "Restaurantes / PMEs",
+    "marcas": [
+      "iFood",
+      "Abrasel"
+    ],
+    "produtos": [
+      "Comunicado a Parceiros",
+      "Case Study"
+    ],
+    "link_noticia": "https://news.ifood.com.br/",
+    "imagem": ""
+  },
+  {
+    "titulo": "MCTI Defende Treinamento de Modelos de IA no Brasil para Proteger Dados Nacionais",
+    "resumo_fato": "O secretário de ciência e tecnologia do MCTI defende que o treinamento de modelos de inteligência artificial brasileiros deve ocorrer dentro do país para garantir a soberania de dados e proteger as bases nacionais contra jurisdições estrangeiras.",
+    "recomendacao": "Liderando a criação de um consórcio nacional de IA ética e soberana em parceria com universidades públicas e o MCTI, garantindo que os algoritmos de logística e recomendação do iFood sejam reconhecidos como patrimônio tecnológico nacional e protegidos de restrições regulatórias severas.",
+    "tipo": "tecnologia",
+    "data": "07/08/2026",
+    "setor": "Tecnologia / IA",
+    "marcas": [
+      "MCTI",
+      "iFood"
+    ],
+    "produtos": [
+      "Nota Explicativa Técnica",
+      "Artigo de Opinião"
+    ],
+    "link_noticia": "https://www.mobiletime.com.br/noticias/06/08/2026/brasil-precisa-treinar-seus-modelos-de-ia-no-pais-defende-secretario-do-mcti/",
+    "imagem": ""
+  },
+  {
+    "titulo": "StoneCo Divulga Resultados do 2T26 sob Expectativa de Transição de Liderança",
+    "resumo_fato": "A StoneCo anunciará seus resultados financeiros do segundo trimestre de 2026 em 13 de agosto, em meio a um período de transição após o anúncio da saída do CEO Pedro Zinner e ascensão do CFO Mateus Scherer, enquanto o mercado avalia os riscos de crédito e inadimplência.",
+    "recomendacao": "Posicionando o iFood Pago por meio de um Op-Ed exclusivo do C-Level na grande imprensa de negócios, destacando a solidez do nosso modelo de concessão de crédito baseado em dados transacionais reais de restaurantes, contrastando implicitamente com o aumento de inadimplência enfrentado por adquirentes tradicionais.",
+    "tipo": "concorrencia",
+    "data": "07/08/2026",
+    "setor": "Finanças / Fintechs",
+    "marcas": [
+      "StoneCo",
+      "iFood Pago"
+    ],
+    "produtos": [
+      "Briefing Técnico de Mercado",
+      "Posicionamento Mercadológico"
+    ],
+    "link_noticia": "https://investors.stone.co/",
+    "imagem": ""
+  },
+  {
+    "titulo": "Alerta sobre Endividamento por Parcelamento de Alimentos no Delivery",
+    "resumo_fato": "O iFood registrou mais de 1,3 milhão de pedidos parcelados nos primeiros dois meses de funcionamento do recurso, acendendo um alerta entre especialistas financeiros sobre o risco de endividamento das famílias brasileiras para consumo imediato.",
+    "recomendacao": "Lançando uma coalizão multissetorial de educação financeira em parceria com fintechs e órgãos de defesa do consumidor, promovendo um programa de crédito consciente que desassocie a marca da narrativa de endividamento das famílias de baixa renda e fortaleça a governança do iFood Pago.",
+    "tipo": "crise",
+    "data": "07/08/2026",
+    "setor": "Finanças / Consumo",
+    "marcas": [
+      "iFood",
+      "iFood Pago"
+    ],
+    "produtos": [
+      "Nota Explicativa Técnica",
+      "Guia de Prevenção a Golpes"
+    ],
+    "link_noticia": "https://news.ifood.com.br/parcelamento-no-cartao-de-credito-veja-como-funciona-nos-pedidos-do-ifood/",
+    "imagem": ""
+  },
+  {
+    "titulo": "Parceria iFood e Caixa para Financiamento de Veículos Elétricos",
+    "resumo_fato": "iFood e Caixa Econômica Federal anunciam parceria inédita para facilitar o acesso ao crédito para entregadores adquirirem motos e bicicletas elétricas, utilizando o histórico de ganhos na plataforma como comprovação financeira.",
+    "recomendacao": "Estruturando um fórum proprietário de mobilidade urbana sustentável em parceria com a Caixa e montadoras de veículos elétricos, visando posicionar o iFood como o principal viabilizador da transição energética na logística brasileira e mitigar pressões regulatórias sobre as condições de trabalho.",
+    "tipo": "operacao",
+    "data": "07/08/2026",
+    "setor": "Finanças / Sustentabilidade",
+    "marcas": [
+      "iFood",
+      "Caixa Econômica Federal"
+    ],
+    "produtos": [
+      "Posicionamento Local de Praça",
+      "Informativo de Infraestrutura"
+    ],
+    "link_noticia": "https://news.ifood.com.br/ifood-e-caixa-lancam-parceria-inedita-para-facilitar-acesso-de-entregadores-ao-financiamento-de-veiculos/",
+    "imagem": ""
+  },
+  {
+    "titulo": "Impacto Previdenciário dos Entregadores de Aplicativo no INSS",
+    "resumo_fato": "Estudo aponta que os gastos do INSS com auxílio-doença para entregadores do iFood podem atingir R$ 189 milhões por ano, gerando debates sobre a replicabilidade dessa decisão para outras plataformas de delivery e o custeio da previdência.",
+    "recomendacao": "Articulando um comitê técnico de cooperação com o Ministério da Previdência Social e o INSS para co-desenhar um modelo de custeio previdenciário sustentável e voluntário, antecipando-se a decisões judiciais desfavoráveis e blindando a reputação da marca contra narrativas de precarização do trabalho.",
+    "tipo": "regulacao",
+    "data": "07/08/2026",
+    "setor": "Previdência / Trabalho",
+    "marcas": [
+      "iFood",
+      "INSS",
+      "99Food",
+      "Rappi",
+      "Keeta"
+    ],
+    "produtos": [
+      "Nota Oficial Institucional",
+      "Briefing de Background"
+    ],
+    "link_noticia": "https://www1.folha.uol.com.br/mercado/2026/08/gastos-do-inss-com-auxilio-doenca-para-entregador-do-ifood-podem-chegar-a-r-189-milhoes-por-ano.shtml",
+    "imagem": ""
+  },
+  {
     "titulo": "STF Retoma Julgamentos com Vínculo de Emprego na Pauta de Agosto",
     "resumo_fato": "O STF retomou as sessões presenciais e pautou para o fim de agosto o julgamento sobre o vínculo de emprego em plataformas (Tema 1.291).",
     "recomendacao": "Estruturando uma estratégia de Dark Site Preparations com Q&As detalhados e posicionamentos jurídicos prontos para publicação imediata assim que o veredito for anunciado, mitigando ruídos reputacionais e protegendo a percepção de segurança jurídica da marca.",
