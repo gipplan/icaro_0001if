@@ -1,94 +1,51 @@
-# PLAYBOOK CORPORATIVO DE COMUNICAÇÃO INSTITUCIONAL (PR & PUBLIC AFFAIRS) - iFOOD
-**Versão:** FY2027 | **Atualização:** Agosto 2026
-**Classificação:** Confidencial / Uso Interno PR Hub
+# DIRETRIZES CORPORATIVAS MACRO E PUBLIC AFFAIRS
 
----
+- **Conformidade Concorrencial e Regulatória (Trabalho Autônomo e CADE):** Blindagem institucional focada na regulação do trabalho com proteção social e na promoção de concorrência justa. Atuação republicana e colaborativa junto ao STF e reguladores para mitigar riscos estruturais.
+  - *Gatilho para a IA:* Recomende esta tática ao identificar pautas do STF sobre vínculo empregatício de plataformizados, investigações antitruste (CADE) ou novos marcos regulatórios governamentais.
+  - *Formatos Entregáveis:* Advocacy Invisível, Notas de Posicionamento Oficial, Painéis Institucionais Privados.
 
-## 1. DIRETRIZES CORPORATIVAS MACRO
-- **Regulação do Trabalho:** Posicionamento estritamente favorável à regulação do trabalho autônomo com proteção social.
-- **Concorrência (CADE):** Conformidade absoluta com as diretrizes do CADE, promovendo concorrência justa e transparente.
-- **ESG:** Compromisso central com metas ambientais, sociais e de governança.
-- **Relações Institucionais (STF/Reguladores):** Postura institucional e colaborativa em processos decisórios e regulatórios.
+# IFOOD PAGO - ECOSSISTEMA FINANCEIRO E CRÉDITO B2B/B2C
 
----
+- **Thought Leadership em Inteligência de Dados e Crédito (Índice iFood Pago/FIPE):** Utilização de dados proprietários para pautar a imprensa econômica sobre o comportamento de consumo e a saúde financeira do food service, comprovando numericamente que parceiros com crédito na plataforma apresentam evolução de negócio superior.
+  - *Gatilho para a IA:* Recomende esta tática se a notícia envolver movimentos macroeconômicos de crédito para PMEs, alta de inadimplência no varejo ou lançamentos agressivos de concorrentes como Mercado Pago, Stone e PicPay.
+  - *Formatos Entregáveis:* Relatório de Original Insights, Coluna Fixa em Veículos de Negócios (Exame), Op-Ed Híbrido C-Level.
 
-## 2. ESTRATÉGIA DE NEGÓCIOS: iFOOD PAGO (FY2027)
+- **Brand Publishing e C-Level Advocacy (Modelo "Jet Ski"):** Posicionamento focado em inclusão financeira digital, atrelando a figura do CEO a veículos Tier 1 de negócios (ex: Forbes, Valor) e utilizando um Agente de IA (Toqan) para escalar e automatizar as mensagens-chave nas redes dos demais executivos da área.
+  - *Gatilho para a IA:* Recomende esta tática em cenários de questionamento sobre o modelo de negócios fintech B2B/B2C ou quando houver necessidade de reforçar a atração de grandes redes de alimentação.
+  - *Formatos Entregáveis:* Entrevistas Exclusivas de Perfil, Coluna Fixa (HSM/Fast Company), Thought Leadership Automatizado.
 
-### 2.1. Cenário e Posicionamento
-O mercado financeiro para o varejo e food service é altamente competitivo, com players tradicionais e fintechs disputando a conta principal do parceiro. O iFood Pago consolida-se como a "fintech de quem entende de restaurante", alavancando inteligência artificial e dados proprietários para oferta de crédito personalizado e integração nativa.
-- **Objetivo Central:** Posicionar o iFood Pago como a conta digital principal e motor de crescimento via crédito, reforçando a narrativa de inclusão financeira.
-- **Reputação FY26:** 1.129 inserções conquistadas (25,2% em Tier 1 e 2; 74,8% em regionais/verticais), mantendo índice de positividade acima de 60%, com picos de até 99% em marcos estratégicos.
+- **Defesa Reputacional Integrada (Hub Resolutivo iFood News):** Operação sinérgica entre PR e Customer Experience (CX) para converter gargalos operacionais (como a obrigatoriedade da conta digital, taxas e maquininhas) em narrativas educativas preventivas, inserindo links oficiais em respostas do Reclame Aqui.
+  - *Gatilho para a IA:* Recomende esta tática frente a picos de insatisfação do parceiro B2B na imprensa de tecnologia ou aumento de menções negativas em plataformas de defesa do consumidor sobre transições impostas.
+  - *Formatos Entregáveis:* Guias Educativos de Prevenção, Injeção Orgânica de Conteúdo em CX, Manuais de Fluxo de Caixa.
 
-### 2.2. Pilares de Mensagens-Chave
-1. **Autoridade em IA, Dados e Impacto Real:** Uso de dados internos provando que parceiros que utilizam crédito da plataforma apresentam evolução superior.
-2. **Expansão para o Salão (Dining) e Adquirência:** A "Maquinona" e a Conta Digital como infraestrutura financeira física.
-3. **Aceleradora de Crescimento:** Bancarização eficiente de PMEs e grandes contas com produtos como o Cartão PJ.
-4. **Soluções Financeiras App (B2C):** Expansão do crédito direto e métodos de pagamento próprios para o consumidor final.
-5. **Eficiência e Integração Nativa:** Conta Digital como espinha dorsal, crédito como motor de atração e adquirência como motor de demanda.
-6. **Autonomia do Parceiro:** Suporte financeiro sem interferência na gestão estratégica do restaurante.
+- **Expansão Regional de Adquirência (Rádio Releases e Move+):** Penetração tática focada no interior de SP, Sul e Nordeste para alavancar a "Maquinona" física, utilizando pacotes de áudio massivos e dados locais para demonstrar a rentabilidade do varejo gastronômico.
+  - *Gatilho para a IA:* Recomende esta tática quando houver expansão da concorrência de adquirentes nessas praças, pautas locais sobre finanças ou necessidade de capilaridade B2B fora do eixo Rio-SP.
+  - *Formatos Entregáveis:* Campanhas de Áudio Regionalizadas (Rádio Release), Advocacy Local B2B, Eventos Itinerantes de PR.
 
-### 2.3. Produtos Foco e Dados de Sustentação
-- **Cartão iFood Pago:** Crescimento de base de 3,5 mil para 23 mil (quase 7x) em seis meses, atingindo TPV de R$ 40 milhões (aumento de 13x). 55% dos clientes não possuíam outro cartão de crédito empresarial.
-- **Conta Digital:** Foco na transição para obrigatoriedade. Atualmente com 165 mil contas ativas, R$ 4 bilhões mensais em volume movimentado e 2 milhões de pagamentos mensais (Pix e boletos). Inovação central: ChatBank (gerente financeiro via IA).
+# IFOOD BENEFÍCIOS - TECNOLOGIA DE RETENÇÃO E BEM-ESTAR (HR TECH)
 
-### 2.4. Matriz de Porta-Vozes (iFood Pago)
-- **Bruno Henriques (CEO/COO):** Foco em narrativa institucional, inclusão financeira digital e acesso ao crédito.
-- **Pedro Macedo (CFO):** Gestão financeira, finanças e modelos de fintechs.
-- **Thomas Barth (COO):** Eficiência operacional e gestão financeira prática.
-- **Wilson Cimino (VP de Growth):** Cartão, Maquinona, expansão de contas digitais e dados sazonais/regionais.
-- **Thaís Redondo (Diretora de Pagamentos):** Inovação em pagamentos e soluções in-app.
-- **Matheus Pessanha (Head de Inovação):** Agentes de IA aplicados ao negócio.
-- **Natalia Ubilla (Diretora de RH):** Liderança feminina, atração de talentos e agilidade em fintech.
-- **Thaís Marotta (Public Affairs):** Temas regulatórios e transparência corporativa.
-- **Beatriz Pentagna (Diretora de MKT B2B):** Estratégias e campanhas, soluções para salão.
+- **Lobby Indireto e Vanguarda Regulatória (Adequação PAT e NR-1):** Posicionamento consultivo junto a CHROs focando em modernização do setor, utilizando as soluções do iFood Benefícios como ferramenta de adequação legal para o Gerenciamento de Riscos Corporativos (NR-1) e conformidade no PAT.
+  - *Gatilho para a IA:* Recomende esta tática sempre que surgirem novas regulamentações do Ministério do Trabalho, debates sobre portabilidade de benefícios ou pressões sindicais sobre saúde integral.
+  - *Formatos Entregáveis:* Public Affairs Invisível, Artigos Assinados (MIT Sloan / HSM Management), Painéis Fechados com C-Levels e CHROs.
 
----
+- **Monetização de Dados Comportamentais (Data-Assets de Bem-Estar):** Geração de autoridade orgânica a partir de insights exclusivos (Índice de Flexibilidade de Categoria, Saldo Livre, Tokenização NFC e aumento de 175% em gastos Pet) para provar a eficiência da hiper-personalização contra os modelos tradicionais legados.
+  - *Gatilho para a IA:* Recomende esta tática se CHROs ou CFOs de "Big Companies" demandarem provas de ROI para retenção de talentos ou quando a concorrência tradicional (Pluxee, Flash) lançar campanhas de guerra de preço.
+  - *Formatos Entregáveis:* Whitepapers Corporativos, Pautas de Tendências de Consumo, Índice Analítico de Retenção.
 
-## 3. ESTRATÉGIA DE NEGÓCIOS: iFOOD BENEFÍCIOS (FY2027)
+- **Demonstração de IA Agêntica para Desoneração de RH (Projeto Agilito/Ailton):** Divulgação estratégica do impacto de agentes virtuais (como o Ailton) na absorção da burocracia do RH, mudando a narrativa de "fornecedor de cartões" para o "Sistema Operacional da Cultura Corporativa".
+  - *Gatilho para a IA:* Recomende esta tática no contexto de inovação e adoção de inteligência artificial generativa em rotinas corporativas e gestão de pessoas.
+  - *Formatos Entregáveis:* Tech Showcases, Fóruns Proprietários B2B (Insight Experience), Keynote Executivo do CTO.
 
-### 3.1. Cenário e Posicionamento
-Com o setor em transição regulatória (PAT) e forte concorrência, o iFood Benefícios atua para superar a percepção de "cartão de refeição", consolidando-se como parceiro estratégico de RH na retenção de talentos através de tecnologia, dados e bem-estar.
-- **Objetivo Central:** Ser reconhecido como o "Sistema Operacional da Cultura da Empresa", com expansão agressiva focada em grandes corporações (*Big Companies*).
+- **Ecossistema de Saúde e Valor Integral (Missão "Fazer Durar"):** Posicionamento de diferenciação via integração nativa (Clube iFood gratuito) e parcerias estratégicas (Greentable in-office e Pipo Saúde), comprovando que o benefício integrado otimiza o poder de compra do trabalhador brasileiro.
+  - *Gatilho para a IA:* Recomende esta tática durante pautas econômicas sobre redução do poder de compra, inflação de alimentos ou adoção de infraestrutura física de bem-estar (freezers/seguros) no ambiente de trabalho presencial.
+  - *Formatos Entregáveis:* PR Stunt (Lançamento Físico), Eventos VIP da Rede de Aliados (Imersão iFood Experience), Conteúdo Patrocinado B2B.
 
-### 3.2. Pilares de Mensagens-Chave
-1. **Liderança em Tecnologia e IA-First:** Protagonismo em inteligência preditiva e desburocratização do RH.
-2. **Autonomia Corporativa e Autoridade de Marca:** Posicionamento de marca independente e parceira de inteligência.
-3. **Ecossistema e Valor Integral (Missão "Fazer Durar"):** Integração nativa com o app, viabilizando otimização do poder de compra com clube de benefícios e rede de parceiros.
+# TECNOLOGIA E INOVAÇÃO (CORE BIZ E OPERAÇÕES PR)
 
-### 3.3. Frentes Analíticas e Data-Assets (PR)
-Uso massivo de insights proprietários para gerar autoridade junto a C-Levels (CHROs/CFOs):
-- Índice de Flexibilidade de Categoria e Saldo Livre.
-- Dados de consumo e saúde mental associados ao Gerenciamento de Riscos Ocupacionais (NR-1).
-- Tendências multiespécies (aumento de 175% em gastos Pet) e digitalização via tokenização (NFC).
-- Marco histórico: R$ 1 bilhão em pagamentos processados mensalmente e crescimento anual de 71%.
+- **Gestão de Risco Operacional e Blindagem Algorítmica:** Respostas ágeis, controladas por regras rígidas de fluxo e comunicação centralizada (e-mail imprensa, aval de crise), para lidar com instabilidades na infraestrutura, IA, logística ou dados.
+  - *Gatilho para a IA:* Recomende esta tática imediatamente em caso de crises de indisponibilidade de app, bugs expostos, pressão sobre entregadores ou escrutínio sobre os algoritmos do sistema.
+  - *Formatos Entregáveis:* Notas de Posicionamento Técnico Reativo, Media Briefings Executivos de Defesa, Controle e Contenção de Crise.
 
-### 3.4. Matriz de Porta-Vozes (iFood Benefícios)
-- **Arthur Freitas (CEO):** Visão macro, resultados financeiros, modernização do PAT e relacionamento com liderança C-Level.
-- **Daniela Zylberkan (CRMO):** Estratégia de marca, governança corporativa e engajamento B2B.
-- **Ettore Paiola (Head de Produto/Design):** Jornada digital, inovação em UX, eliminação do cartão físico e novas *features*.
-- **Natalia Ubilla (Diretora de RH):** Cultura organizacional, NR-1 e o "RH de Negócios".
-- **Ricardo Petta (Diretor de Vendas e Growth):** ROI do benefício, expansão B2B e grandes contas corporativas.
-- **André Borba (Eventos):** Apoio regional e ativação em fóruns corporativos.
-
----
-
-## 4. FRENTE DE TECNOLOGIA (INOVAÇÃO E TECH) E OPERAÇÕES PR
-Protocolos de operação e gestão para a agência InPress.
-
-### 4.1. Escopo e Governança
-- **Interface e Reporte:** Alinhamento direto com Cecília Ritto (frentes de Inovação, Entregadores e Políticas Públicas), apoiada por Luana e Valdirene.
-- **Pares na Agência:** Vitor Dalseno e coordenação de Gabriela Dobner.
-- **Porta-vozes Tech:** Flávio Stecca (CTO), Isa Piratininga (Diretora de Tech), Jamilson Batista (Logística) e Diego Barreto (CEO, visão de inovação).
-
-### 4.2. Protocolos de Gestão de Imprensa e Crise
-- **Regra de Ouro (Reativos):** Toda demanda de imprensa deve ser sinalizada imediatamente via e-mail central (`imprensa@ifood.com.br`). Respostas devem incluir este e-mail em cópia.
-- **Slack (Comunicação Assíncrona):** 
-  - Projetos proativos e *pitchings* devem ser registrados em `#acoes_de_imprensa`.
-  - Revisão de menções Boxnet centralizada em `#revisão_classificação_matérias_PR`.
-  - Rondas de plantão documentadas em `#comms-institucional-agências` (10h e 17h, finais de semana).
-- **Ferramental PR & IA:**
-  - Utilização mandatória do Toqan (ATLAS) e Comms Lab (Hub de Agentes de IA) para geração de *data-assets* e automação de conteúdo escalável.
-  - Acessos institucionais via contas `@ifood3rd.com`.
-
-### 4.3. Sinergia Customer Experience (CX) e News
-- **iFood News como Hub Resolutivo:** Geração de guias práticos sobre PAT/NR1, segurança digital, fluxo de caixa e otimização de maquineta para mitigação preventiva de demandas. Links destes materiais devem integrar respostas oficiais em plataformas de defesa do consumidor (ex: Reclame Aqui).
+- **Automação de Inteligência e Escala (ATLAS e Comms Lab):** Aplicação obrigatória do Hub de Agentes de IA e do sistema Toqan na esteira diária para mineração de tendências, extração de dados e automação de posicionamento de rede.
+  - *Gatilho para a IA:* Recomende esta tática ao necessitar escalar narrativas técnicas em múltiplas frentes simultâneas ou mapear respostas baseadas em grande volume de dados de maneira rápida.
+  - *Formatos Entregáveis:* Automação de Conteúdo em Rede, Geração Instantânea de Data-Assets Analíticos, Reporte Preditivo de Cenário.
