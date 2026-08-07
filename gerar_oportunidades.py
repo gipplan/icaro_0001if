@@ -1,6 +1,5 @@
 import os
 import json
-import re
 from datetime import datetime
 from google import genai
 from google.genai import types
@@ -67,7 +66,7 @@ def executar_varredura():
       }}
     ]
 
-    ATENÇÃO: Responda APENAS com o código JSON válido, sem marcadores ```json ou textos externos.
+    ATENÇÃO: Responda APENAS com o código JSON válido.
     """
 
     response = client.models.generate_content(
@@ -80,7 +79,43 @@ def executar_varredura():
     )
 
     texto_resposta = response.text.strip()
-    # Limpeza de possíveis marcadores Markdown que o modelo possa inserir por engano
-    texto_resposta = re.sub(r'^```json\s*', '', texto_resposta)
-    texto_resposta = re.sub(r'^```\s*', '', texto_resposta)
-    texto_resposta = re.sub(r'\s*
+    
+    # Limpeza segura sem uso de expressões regulares propensas a erro
+    if texto_resposta.startswith("```json"):
+        texto_resposta = texto_resposta[7:]
+    elif texto_resposta.startswith("```"):
+        texto_resposta = texto_resposta[3:]
+
+    if texto_resposta.endswith("```"):
+        texto_resposta = texto_resposta[:-3]
+
+    texto_resposta = texto_resposta.strip()
+
+    try:
+        novas_pautas = json.loads(texto_resposta)
+    except json.JSONDecodeError as e:
+        print("Erro ao decodificar JSON retornado pelo Gemini:", e)
+        print("Conteúdo recebido:")
+        print(texto_resposta)
+        return
+
+    pautas_existentes = carregar_oportunidades_existentes()
+    titulos_existentes = {p.get("titulo", "").strip().lower() for p in pautas_existentes}
+    
+    pautas_adicionadas = 0
+    for pauta in novas_pautas:
+        titulo_limpo = pauta.get("titulo", "").strip().lower()
+        if titulo_limpo not in titulos_existentes:
+            pautas_existentes.insert(0, pauta)
+            titulos_existentes.add(titulo_limpo)
+            pautas_adicionadas += 1
+
+    pautas_finais = pautas_existentes[:50]
+
+    with open("oportunidades.json", "w", encoding="utf-8") as f:
+        json.dump(pautas_finais, f, ensure_ascii=False, indent=2)
+
+    print(f"Sucesso! Varredura web concluída. {pautas_adicionadas} novas pautas adicionadas.")
+
+if __name__ == "__main__":
+    executar_varredura()
