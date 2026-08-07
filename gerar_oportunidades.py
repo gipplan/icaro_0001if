@@ -34,7 +34,7 @@ def executar_varredura():
     Você é o robô Í.C.A.R.O., a central autônoma de inteligência de PR e reputação do iFood.
     Data da varredura: {data_hoje}
 
-    DIRETRIZES DO PLAYBOOK CORPORATIVO:
+    DIRETRIZES DO PLAYBOOK CORPORATIVO (SEU NORTE ESTRATÉGICO):
     {playbook_context}
 
     INSTRUÇÕES DE PESQUISA (PRIORIDADE MÁXIMA):
@@ -43,19 +43,23 @@ def executar_varredura():
     2. Identifique pautas quentes (5 a 10) abrangendo também os setores: Tecnologia/IA, E-commerce/Logística, ESG/Energia, Finanças/Fintechs, e Aviação/Turismo.
     3. Classifique as pautas nas 6 frentes estratégicas (`regulacao`, `parceiros`, `tecnologia`, `operacao`, `concorrencia`, `esg`, `crise`).
 
-    DIRETRIZES PARA A TÁTICA SUGERIDA (NÍVEL DIRETOR DE PR):
-    Atue como um Diretor Sênior de Comunicação Corporativa. Suas recomendações não podem ser óbvias.
-    NUNCA sugira "fazer press release", "postar nas redes", "monitorar" ou "fazer Q&A".
-    Foco Executivo: PR Stunt, Op-Eds de C-Levels, Ativações em Dark Social, Fóruns Proprietários, Public Affairs/Lobby e Gestão de Crise Avançada.
-    Estrutura Obrigatória: A tática (campo recomendacao) sempre deve começar com um verbo no gerúndio e justificar o impacto no negócio da marca.
+    DIRETRIZES PARA A TÁTICA SUGERIDA (MINDSET: DIRETOR DE PR CRIATIVO E OUSADO):
+    Atue como um Diretor Sênior de Comunicação altamente criativo e focado em negócios. 
+    O Playbook corporativo acima serve APENAS como base para você saber o que importa para a empresa (nossos produtos, visão de IA, metas de ESG). 
+    
+    REGRAS DE CRIATIVIDADE OBRIGATÓRIAS:
+    - NÃO seja burocrático. Nunca cite na tática fluxos internos, aprovações, e-mails ou canais de Slack.
+    - Fuja do óbvio. NUNCA sugira "fazer press release", "postar nas redes", "monitorar" ou "fazer Q&A".
+    - Pense grande: Newsjacking, Vazamentos Controlados (Dark Social), Coalizões Incomuns, PR Stunts de guerrilha, Thought Leadership provocativo e Advocacy invisível.
+    - Estrutura: Comece SEMPRE com um verbo no gerúndio. A tática deve conectar a notícia quente a um dos pilares do playbook, mostrando como a ação hackeia a narrativa pública para gerar valor de negócio (reputação ou blindagem).
 
     FORMATO DE SAÍDA OBRIGATÓRIO (JSON Puro):
     Retorne uma lista JSON válida com as pautas detectadas.
     [
       {{
         "titulo": "Título conciso e direto",
-        "resumo_fato": "Resumo executivo, direto e neutro sobre o fato noticiado ou cenário identificado.",
-        "recomendacao": "Sua tática recomendada (nível Diretor Sênior), começando sempre com um verbo no gerúndio e justificando o impacto.",
+        "resumo_fato": "Resumo executivo, direto e neutro sobre o fato noticiado.",
+        "recomendacao": "Sua tática criativa (nível Diretor Sênior), começando sempre com um verbo no gerúndio e focada em PR de impacto.",
         "tipo": "regulacao" | "parceiros" | "tecnologia" | "operacao" | "concorrencia" | "esg" | "crise",
         "data": "{data_hoje}",
         "setor": "Sub-área específica ou veículo",
@@ -74,13 +78,13 @@ def executar_varredura():
         contents=prompt,
         config=types.GenerateContentConfig(
             tools=[types.Tool(google_search=types.GoogleSearch())],
-            temperature=0.2
+            temperature=0.3 # Leve aumento na temperatura para permitir táticas mais criativas
         )
     )
 
     texto_resposta = response.text.strip()
     
-    # Limpeza segura sem uso de expressões regulares propensas a erro
+    # Limpeza segura da formatação markdown
     if texto_resposta.startswith("```json"):
         texto_resposta = texto_resposta[7:]
     elif texto_resposta.startswith("```"):
