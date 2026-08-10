@@ -79,7 +79,8 @@
                     <span>Radar de Reputação & Inteligência de PR</span>
                 </div>
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-                    Visão 360° de PR para o <span class="text-ifood-red">iFood</span>
+                    Visão 360° de PR
+                    <br><span class="text-ifood-red">iFood</span>
                 </h1>
                 <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
                     Monitoramento contínuo de STF, Restaurantes PMEs, Governança Algorítmica, Operações de Praça, Concorrência e Agenda ESG.
@@ -275,7 +276,10 @@
                 const resposta = await fetch(`oportunidades.json?t=${Date.now()}`);
                 if (!resposta.ok) throw new Error('Arquivo não encontrado.');
                 
-                todasOportunidades = await resposta.json();
+                const jsonCru = await resposta.json();
+                
+                // Força a ordenação do array do mais recente para o mais antigo (baseado na data)
+                todasOportunidades = jsonCru.sort((a, b) => parseDataBR(b.data) - parseDataBR(a.data));
 
                 atualizarKPIs();
                 renderizarCards();
@@ -480,4 +484,4 @@
         document.addEventListener('DOMContentLoaded', carregarOportunidades);
     </script>
 </body>
-</html>Ftoken
+</html>
