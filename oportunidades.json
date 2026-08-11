@@ -1,5 +1,159 @@
 [
   {
+    "titulo": "Presidente da Voepass nega conhecimento de falhas antes de acidente aéreo",
+    "resumo_fato": "O diretor-presidente da Voepass, José Luiz Felício Filho, indiciado pela Polícia Federal, declarou em sua defesa que não tinha conhecimento de falhas específicas na aeronave que antecederam a queda do voo em Vinhedo. O caso reacende discussões sobre governança corporativa e responsabilidade civil de executivos no setor de transportes.",
+    "recomendacao": "Fortalecendo a governança corporativa e os manuais de segurança logística do iFood a partir dos aprendizados de responsabilização executiva observados no setor de aviação, blindando preventivamente a liderança da empresa contra riscos operacionais e assegurando a integridade da marca perante investidores e reguladores.",
+    "tipo": "crise",
+    "data": "11/08/2026",
+    "setor": "Aviação / Turismo",
+    "marcas": [
+      "Voepass",
+      "Polícia Federal"
+    ],
+    "produtos": [
+      "Controle e Contenção de Crise",
+      "Media Briefings Executivos de Defesa"
+    ],
+    "link_noticia": "https://tribunadonorte.com.br/brasil/presidente-da-voepass-afirma-que-nao-sabia-de-falhas-que-antecederam-acidente-em-vinhedo/",
+    "imagem": ""
+  },
+  {
+    "titulo": "Primeiro data center de IA na Amazônia gera debate ambiental por risco de calor",
+    "resumo_fato": "O projeto BEL1, primeiro data center voltado para Inteligência Artificial na Amazônia, tornou-se alvo de inquérito civil do Ministério Público do Pará. Especialistas alertam para o risco de formação de 'ilhas de calor' e o alto consumo de energia, acendendo o debate sobre a falta de regulamentações ambientais específicas para data centers no Brasil.",
+    "recomendacao": "Antecipando-se aos debates sobre a pegada ecológica da infraestrutura tecnológica no Brasil através da promoção de um painel institucional privado com reguladores e acadêmicos, demonstrando o compromisso do iFood com algoritmos verdes e eficiência energética em nossa infraestrutura de nuvem, fortalecendo nossa agenda ESG.",
+    "tipo": "esg",
+    "data": "11/08/2026",
+    "setor": "ESG / Energia",
+    "marcas": [
+      "iFood",
+      "Elea Data Centers",
+      "Ministério Público do Pará"
+    ],
+    "produtos": [
+      "Painéis Institucionais Privados",
+      "Advocacy Invisível",
+      "Artigos Assinados"
+    ],
+    "link_noticia": "https://g1.globo.com/pa/para/noticia/2026/08/09/primeiro-data-center-de-ia-na-amazonia-gera-debate-por-risco-de-calor.ghtml",
+    "imagem": ""
+  },
+  {
+    "titulo": "E-commerce brasileiro fatura R$ 125 bilhões no primeiro semestre de 2026",
+    "resumo_fato": "O comércio eletrônico no Brasil registrou um faturamento de R$ 125 bilhões nos primeiros seis meses de 2026, representando uma alta de 24,37% em relação ao mesmo período do ano anterior. O crescimento foi impulsionado pela consolidação das compras online e pelo fortalecimento da infraestrutura logística nacional.",
+    "recomendacao": "Aproveitando o forte crescimento do e-commerce nacional para lançar um Whitepaper proprietário com insights sobre o comportamento de consumo no varejo de conveniência, provando o ROI de parceiros que utilizam a inteligência logística do iFood para capturar essa expansão de mercado e atraindo novas marcas para o ecossistema.",
+    "tipo": "parceiros",
+    "data": "11/08/2026",
+    "setor": "E-commerce / Logística",
+    "marcas": [
+      "iFood",
+      "ABIACOM"
+    ],
+    "produtos": [
+      "Whitepapers Corporativos",
+      "Pautas de Tendências de Consumo",
+      "Índice Analítico de Retenção"
+    ],
+    "link_noticia": "https://www.ecommercebrasil.com.br/noticias/e-commerce-registra-r-125-bilhoes-em-vendas-no-primeiro-semestre",
+    "imagem": ""
+  },
+  {
+    "titulo": "Brasil lidera adoção de IA corporativa, mas falhas de governança provocam recuos",
+    "resumo_fato": "Uma pesquisa recente aponta que o Brasil lidera o uso de agentes de IA em produção (76%), superando os EUA. No entanto, 80% das empresas brasileiras relataram ter interrompido ou revertido implementações devido a problemas de governança e vazamento de dados, evidenciando a necessidade de maior controle e segurança.",
+    "recomendacao": "Consolidando a liderança do iFood em governança de inteligência artificial através da promoção de um Tech Showcase focado no Projeto Agilito/Ailton, demonstrando a CHROs de grandes corporações como escalamos a automação de processos de RH com segurança de dados e conformidade regulatória, gerando atração de novas contas corporativas para o iFood Benefícios.",
+    "tipo": "tecnologia",
+    "data": "11/08/2026",
+    "setor": "Tecnologia / IA",
+    "marcas": [
+      "iFood"
+    ],
+    "produtos": [
+      "Tech Showcases",
+      "Fóruns Proprietários B2B (Insight Experience)",
+      "Keynote Executivo do CTO"
+    ],
+    "link_noticia": "https://www.istoedinheiro.com.br/brasil-assume-lideranca-em-uso-de-ia-mas-governanca-nao-acompanha-o-ritmo/",
+    "imagem": ""
+  },
+  {
+    "titulo": "Stone lança campanha nacional focada em se consolidar como banco para PMEs",
+    "resumo_fato": "A Stone lançou a campanha nacional 'Nasceu pra Empreender', marcando seu posicionamento definitivo como banco voltado a pequenos e médios empreendedores. A empresa busca expandir sua atuação para além das maquininhas de cartões, oferecendo serviços financeiros integrados, crédito e ferramentas de gestão.",
+    "recomendacao": "Contrabalançando a ofensiva de adquirência da Stone e sua nova campanha de banco para PMEs através do lançamento estratégico do Índice iFood Pago/FIPE de Saúde Financeira, pautando a imprensa de negócios com dados proprietários que comprovam que parceiros que utilizam o crédito do iFood possuem inadimplência controlada e evolução de faturamento superior, protegendo nossa fatia de mercado.",
+    "tipo": "concorrencia",
+    "data": "11/08/2026",
+    "setor": "Finanças / Fintechs",
+    "marcas": [
+      "Stone",
+      "iFood Pago",
+      "FIPE"
+    ],
+    "produtos": [
+      "Relatório de Original Insights",
+      "Coluna Fixa em Veículos de Negócios (Exame)",
+      "Op-Ed Híbrido C-Level"
+    ],
+    "link_noticia": "https://propmark.com.br/anunciantes/stone-lanca-campanha-para-reforcar-apoio-a-empreendedores/",
+    "imagem": ""
+  },
+  {
+    "titulo": "Instabilidade temporária afeta usuários do iFood",
+    "resumo_fato": "Usuários do iFood relataram dificuldades para acessar o aplicativo e finalizar pedidos. O pico de reclamações foi registrado em plataformas de monitoramento de instabilidades como o DownDetector, gerando repercussão imediata de consumidores.",
+    "recomendacao": "Ativando o protocolo de contenção de crise e blindagem algorítmica por meio de notas técnicas reativas centralizadas, mitigando o impacto reputacional junto a restaurantes parceiros e usuários finais ao esclarecer a rápida resolução da instabilidade e evitar a perda de transações na plataforma.",
+    "tipo": "crise",
+    "data": "11/08/2026",
+    "setor": "Tecnologia / Operações",
+    "marcas": [
+      "iFood",
+      "DownDetector"
+    ],
+    "produtos": [
+      "Notas de Posicionamento Técnico Reativo",
+      "Media Briefings Executivos de Defesa",
+      "Controle e Contenção de Crise"
+    ],
+    "link_noticia": "https://designtaxi.com/news/428564/Is-iFood-down-August-7-2026/",
+    "imagem": ""
+  },
+  {
+    "titulo": "Anvisa revoga restrições e libera venda de medicamentos por iFood, Rappi e Mercado Livre",
+    "resumo_fato": "A Anvisa revogou resoluções e medidas preventivas que proibiam a comercialização e propaganda de medicamentos em plataformas de entrega e e-commerce. A decisão abre caminho definitivo para que farmácias e drogarias licenciadas utilizem esses canais para a logística e entrega de medicamentos ao consumidor.",
+    "recomendacao": "Posicionando o iFood como o principal parceiro de aceleração digital das grandes redes farmacêuticas do país, articulando um Op-Ed exclusivo do nosso CEO no Valor Econômico para demonstrar como a nossa malha logística de ultra-conveniência reduz o CAC do setor de saúde e impulsiona o GMV de novos entrantes na plataforma.",
+    "tipo": "concorrencia",
+    "data": "11/08/2026",
+    "setor": "E-commerce / Saúde",
+    "marcas": [
+      "iFood",
+      "Anvisa",
+      "Rappi",
+      "Mercado Livre"
+    ],
+    "produtos": [
+      "Entrevistas Exclusivas de Perfil",
+      "Thought Leadership Automatizado",
+      "Conteúdo Patrocinado B2B"
+    ],
+    "link_noticia": "https://soubrasilia.com/saude/anvisa-libera-venda-de-remedios-por-ifood-rappi-e-mercado-livre/",
+    "imagem": ""
+  },
+  {
+    "titulo": "iFood e Caixa lançam parceria inédita para facilitar acesso de entregadores ao financiamento de veículos",
+    "resumo_fato": "O iFood e a Caixa Econômica Federal anunciaram uma parceria estratégica para ampliar o acesso ao crédito para entregadores parceiros. A iniciativa permite o compartilhamento autorizado do histórico de ganhos na plataforma para facilitar a análise de crédito da Caixa na aquisição de motos e bicicletas elétricas zero km.",
+    "recomendacao": "Capitalizando a parceria estratégica com a Caixa Econômica Federal para pautar de forma republicana o debate sobre regulação do trabalho plataformizado no STF, demonstrando empiricamente que a portabilidade de dados de ganhos promove inclusão financeira real e emancipação econômica dos entregadores sem a necessidade de engessamento do vínculo CLT, blindando a reputação institucional da marca.",
+    "tipo": "regulacao",
+    "data": "11/08/2026",
+    "setor": "Finanças / Políticas Públicas",
+    "marcas": [
+      "iFood",
+      "Caixa Econômica Federal"
+    ],
+    "produtos": [
+      "Advocacy Invisível",
+      "Notas de Posicionamento Oficial",
+      "Painéis Institucionais Privados"
+    ],
+    "link_noticia": "https://news.ifood.com.br/ifood-e-caixa-lancam-parceria-inedita-para-facilitar-acesso-de-entregadores-ao-financiamento-de-veiculos",
+    "imagem": ""
+  },
+  {
     "titulo": "E-commerce brasileiro acelera ocupação logística e projeta faturamento recorde em 2026",
     "resumo_fato": "O faturamento do e-commerce no Brasil deve atingir R$ 259 bilhões em 2026, impulsionando a ocupação de galpões logísticos de alto padrão e reduzindo a vacância no Sudeste. O setor de transporte e digital fulfillment já representa 65% do total de áreas locadas.",
     "recomendacao": "Mitigando riscos de percepção pública sobre gargalos logísticos e inflação de fretes no e-commerce nacional, evidenciando a eficiência da inteligência logística e da blindagem algorítmica do iFood para garantir entregas rápidas e seguras sem repassar custos abusivos aos consumidores e parceiros.",
