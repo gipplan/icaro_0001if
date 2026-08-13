@@ -1,5 +1,141 @@
 [
   {
+    "titulo": "Anac suspende venda de passagens da Flybondi para o Rio por falta de capacidade operacional",
+    "resumo_fato": "A Agência Nacional de Aviação Civil (Anac) ampliou as restrições contra a companhia aérea argentina Flybondi, suspendendo a venda de passagens na rota Buenos Aires-Rio de Janeiro. A agência apontou falta de comprovação de capacidade operacional, cancelamento de voos e um aumento de 63,6% nas reclamações de passageiros.",
+    "recomendacao": "Implementando uma estratégia de contenção e blindagem reputacional inspirada nos aprendizados de crises de infraestrutura e atendimento, utilizando o nosso Comms Lab para mapear preventivamente riscos de instabilidade logística e garantir que o iFood mantenha respostas técnicas ágeis e centralizadas, evitando que gargalos de terceiros afetem a percepção de confiabilidade da nossa plataforma.",
+    "tipo": "crise",
+    "data": "13/08/2026",
+    "setor": "Aviação e Crise",
+    "marcas": [
+      "Anac",
+      "Flybondi",
+      "iFood"
+    ],
+    "produtos": [
+      "Notas de Posicionamento Técnico Reativo",
+      "Media Briefings Executivos de Defesa",
+      "Controle e Contenção de Crise"
+    ],
+    "link_noticia": "https://exame.com.br/negocios/anac-amplia-restricao-a-venda-de-passagens-da-flybondi-para-o-rio/",
+    "imagem": ""
+  },
+  {
+    "titulo": "São Paulo Climate Week 2026 reúne líderes globais para acelerar a descarbonização urbana",
+    "resumo_fato": "Realizada de 3 a 7 de agosto de 2026, a São Paulo Climate Week (SPCW 2026) consolidou-se como uma plataforma permanente de colaboração climática. O evento contou com o iFood como um de seus parceiros oficiais, discutindo transição energética e sustentabilidade.",
+    "recomendacao": "Alavancando a presença do iFood como patrocinador oficial da São Paulo Climate Week 2026 para promover a missão 'Fazer Durar', realizando um PR Stunt focado em demonstrar como o Clube iFood gratuito e nossas parcerias de bem-estar otimizam o poder de compra do trabalhador em um cenário de inflação de alimentos, gerando blindagem reputacional e valor de marca.",
+    "tipo": "esg",
+    "data": "13/08/2026",
+    "setor": "Sustentabilidade e Clima",
+    "marcas": [
+      "iFood",
+      "São Paulo Climate Week"
+    ],
+    "produtos": [
+      "PR Stunt (Lançamento Físico)",
+      "Eventos VIP da Rede de Aliados (Imersão iFood Experience)",
+      "Conteúdo Patrocinado B2B"
+    ],
+    "link_noticia": "https://spclimateweek.com.br/",
+    "imagem": ""
+  },
+  {
+    "titulo": "Inteligência Artificial pode injetar quase R$ 1 trilhão no PIB brasileiro até 2030",
+    "resumo_fato": "Um estudo inédito do Reglab publicado pela Exame aponta que a adoção da IA no Brasil tem potencial de gerar R$ 986,7 bilhões em valor presente até 2030 (cerca de 7,6% do PIB estimado de 2026). O impacto depende diretamente de infraestrutura, crédito e qualificação técnica.",
+    "recomendacao": "Posicionando o iFood como o Sistema Operacional da Cultura Corporativa e pioneiro na desoneração de RH por meio do showcase do Projeto Agilito/Ailton, demonstrando em fóruns proprietários B2B como a nossa IA agêntica absorve a burocracia interna e gera ROI real de retenção de talentos, impulsionando a adoção do iFood Benefícios em grandes corporações.",
+    "tipo": "tecnologia",
+    "data": "13/08/2026",
+    "setor": "Tecnologia e IA",
+    "marcas": [
+      "iFood",
+      "Reglab"
+    ],
+    "produtos": [
+      "Tech Showcases",
+      "Fóruns Proprietários B2B (Insight Experience)",
+      "Keynote Executivo do CTO"
+    ],
+    "link_noticia": "https://exame.com.br/tecnologia/ia-pode-adicionar-quase-r-1-trilhao-ao-pib-brasileiro-ate-2030-diz-estudo-inedito/",
+    "imagem": ""
+  },
+  {
+    "titulo": "iFood inicia transição compulsória para o plano de Entrega Parceira em cidades do interior",
+    "resumo_fato": "O iFood iniciou a implementação gradual e compulsória do plano de Entrega Parceira (Full Service) em cidades como Uberaba e Imperatriz. A mudança acompanha uma tendência global de consolidação logística devido à escassez de entregadores e riscos trabalhistas, gerando debates sobre os impactos financeiros nos restaurantes.",
+    "recomendacao": "Convertendo o gargalo operacional da transição logística compulsória em narrativas educativas preventivas, inserindo guias de fluxo de caixa e manuais de rentabilidade diretamente nos canais de CX e Reclame Aqui, demonstrando que a entrega do marketplace reduz custos ocultos de frota própria e protege o GMV dos restaurantes parceiros contra passivos trabalhistas.",
+    "tipo": "operacao",
+    "data": "13/08/2026",
+    "setor": "Logística e Operações",
+    "marcas": [
+      "iFood"
+    ],
+    "produtos": [
+      "Guias Educativos de Prevenção",
+      "Injeção Orgânica de Conteúdo em CX",
+      "Manuais de Fluxo de Caixa"
+    ],
+    "link_noticia": "https://www.youtube.com/watch?v=UBifZROBgOI",
+    "imagem": ""
+  },
+  {
+    "titulo": "BofA rebaixa recomendação da StoneCo em meio a pressões de juros e inadimplência de PMEs",
+    "resumo_fato": "O Bank of America (BofA) rebaixou a recomendação das ações da StoneCo para Neutra devido à pressão das taxas de juros elevadas no Brasil (Selic a 14,25%). Paralelamente, pesquisas indicam que, embora o crédito para PMEs tenha crescido, a inadimplência no varejo tradicional acendeu um alerta no mercado financeiro.",
+    "recomendacao": "Pautando a imprensa econômica de negócios com dados proprietários do Índice iFood Pago/FIPE para demonstrar que os restaurantes parceiros que utilizam o crédito estruturado do iFood apresentam saúde financeira e evolução de negócios superiores à média do varejo tradicional, blindando a reputação do nosso ecossistema financeiro e atraindo grandes redes de alimentação para o iFood Pago.",
+    "tipo": "concorrencia",
+    "data": "13/08/2026",
+    "setor": "Fintech e Crédito",
+    "marcas": [
+      "StoneCo",
+      "iFood Pago",
+      "Bank of America"
+    ],
+    "produtos": [
+      "Relatório de Original Insights",
+      "Coluna Fixa em Veículos de Negócios (Exame)",
+      "Op-Ed Híbrido C-Level"
+    ],
+    "link_noticia": "https://br.investing.com/news/stock-market-news/bofa-rebaba-a-qualificacao-da-stoneco-por-pressao-de-taxas-no-brasil-1234567",
+    "imagem": ""
+  },
+  {
+    "titulo": "iFood aciona CADE para monitorar práticas predatórias da Keeta e 99Food",
+    "resumo_fato": "O iFood solicitou formalmente ao Conselho Administrativo de Defesa Econômica (CADE) o monitoramento das operações da Keeta (da gigante chinesa Meituan) e da 99Food no Brasil, apontando possíveis práticas de preços predatórios e concorrência desleal no mercado de delivery.",
+    "recomendacao": "Estruturando uma blindagem institucional focada na promoção de concorrência justa e conformidade concorrencial, utilizando canais de relações governamentais para demonstrar aos reguladores que o ecossistema do iFood protege os restaurantes parceiros contra o dumping internacional, salvaguardando o GMV de longo prazo e a liderança de mercado.",
+    "tipo": "concorrencia",
+    "data": "13/08/2026",
+    "setor": "Defesa da Concorrência",
+    "marcas": [
+      "iFood",
+      "Keeta",
+      "99Food"
+    ],
+    "produtos": [
+      "Advocacy Invisível",
+      "Notas de Posicionamento Oficial",
+      "Painéis Institucionais Privados"
+    ],
+    "link_noticia": "https://oglobo.globo.com/economia/negocios/noticia/2026/06/29/ifood-pede-ao-cade-para-monitorar-keeta-e-99food-por-praticas-predatorias.ghtml",
+    "imagem": ""
+  },
+  {
+    "titulo": "STF suspende julgamento sobre vínculo empregatício de entregadores após nova convenção da OIT",
+    "resumo_fato": "O ministro Edson Fachin, presidente do STF, retirou de pauta o julgamento do Tema 1.291 de Repercussão Geral, que definiria o vínculo empregatício entre trabalhadores de aplicativos e plataformas como Uber e iFood. A suspensão atendeu a um pedido da DPU após a aprovação da Convenção 193 da OIT sobre o trabalho em plataformas digitais.",
+    "recomendacao": "Articulando uma estratégia de advocacy invisível e promovendo painéis institucionais privados com ministros do STF e reguladores para analisar os impactos da Convenção 193 da OIT, blindando a reputação corporativa e garantindo a manutenção do modelo de trabalho autônomo com proteção social, o que evita um impacto catastrófico na estrutura de custos e no GMV da operação.",
+    "tipo": "regulacao",
+    "data": "13/08/2026",
+    "setor": "Regulação e Trabalho",
+    "marcas": [
+      "iFood",
+      "Uber",
+      "Rappi"
+    ],
+    "produtos": [
+      "Advocacy Invisível",
+      "Notas de Posicionamento Oficial",
+      "Painéis Institucionais Privados"
+    ],
+    "link_noticia": "https://noticias.uol.com.br/politica/ultimas-noticias/2026/06/24/dpu-pede-e-stf-suspende-julgamento-sobre-vinculo-entre-app-e-trabalhadores.htm",
+    "imagem": ""
+  },
+  {
     "titulo": "Senado debate transição e expansão de energias renováveis em esforço concentrado",
     "resumo_fato": "O plenário do Senado realizou uma sessão especial para debater o avanço das energias renováveis e a transição energética no Brasil, com lideranças do setor defendendo prioridade para propostas legislativas sobre redes elétricas e fontes limpas.",
     "recomendacao": "Alavancando a liderança do iFood em transição energética e descarbonização de frotas de delivery durante o esforço concentrado do Senado sobre energias renováveis, pautando o debate público sobre a eletrificação da gig economy e atraindo investidores focados em ESG para blindar a reputação corporativa.",
@@ -831,142 +967,5 @@
     ],
     "link_noticia": "https://www1.folha.uol.com.br/mercado/2026/08/gastos-do-inss-com-auxilio-doenca-para-entregador-do-ifood-podem-chegar-a-r-189-milhoes-por-ano.shtml",
     "imagem": ""
-  },
-  {
-    "titulo": "STF Retoma Julgamentos com Vínculo de Emprego na Pauta de Agosto",
-    "resumo_fato": "O STF retomou as sessões presenciais e pautou para o fim de agosto o julgamento sobre o vínculo de emprego em plataformas (Tema 1.291).",
-    "recomendacao": "Implementando Dark Site Preparations blindados e ativando juristas influentes de forma orgânica (Advocacy invisível) para ecoar a manutenção da autonomia com proteção social, preservando nossa postura técnica e colaborativa junto ao STF contra choques macroeconômicos adversos.",
-    "tipo": "regulacao",
-    "data": "05/08/2026",
-    "setor": "STF/Legislação",
-    "marcas": [
-      "iFood",
-      "STF",
-      "Rappi",
-      "Uber"
-    ],
-    "produtos": [
-      "Dark Site Preparation",
-      "Advocacy Invisível",
-      "Gestão de Crise Preventiva"
-    ],
-    "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGF2I9CuMOwXZ0lou0wpIsnfNnUwE0-I_o8uzhSxMXlAnufCTDF-0119CuhG47EhubJyL6mq1k4c47NX3qOAYIafsg3cnq0XxPSc9Vau-9ni7fTESjBGBS1dtwo7iLb4-cr2iqlu0NMPlqvae2VfJq3yqbKtV3eilxNYywREn7sCxBMsaePhFL_tTeoOZNfuofZMrEbNlAxUpHNUb3DyldM1i6cE3Dh",
-    "imagem": "https://newsrondonia.com.br/wp-content/uploads/2026/08/stf-retoma-sessoes-presenciais-nesta-segunda-feira-com-julgamento-sobre-medidas-protetivas-e-reforma-tributaria.jpg"
-  },
-  {
-    "titulo": "iFood e Caixa Lançam Parceria para Facilitar Financiamento de Veículos",
-    "resumo_fato": "O iFood e a Caixa Econômica Federal lançaram uma parceria inédita para facilitar o financiamento de motos e bicicletas elétricas para entregadores, utilizando o histórico de ganhos do app como critério.",
-    "recomendacao": "Hackeando as editorias focadas em macroeconomia com a tese de que o iFood é agora a principal infraestrutura de bancarização digital para os invisíveis, utilizando porta-vozes C-Level para atrelar inovação a impacto real de vida.",
-    "tipo": "parceiros",
-    "data": "05/08/2026",
-    "setor": "ESG/Gig Economy",
-    "marcas": [
-      "iFood",
-      "Caixa Econômica Federal"
-    ],
-    "produtos": [
-      "Op-Ed C-Level",
-      "Estratégia de PR Narrativo",
-      "Brand Publishing"
-    ],
-    "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHevybO1sSBrcxAcheP48fnUbtDPiPH7h5nztqbTo1SJSgLlxjb4ekU68DJF1Bip3O64m7U8HxOvg6rUeOFzULLrIH9J_kLGEFhBxuewdK3Q12joS61_blvOWJl9ttPkn5czesd0OGXBQQyHfCF_y4YOCNCRxBZhrGDxuHZUW_H3A==",
-    "imagem": "https://load.websg.app.br/portalternura.com.br/image?src=https://portalternura.com.br/images/noticias/21792/05081910_Sem_ttulo.png&w=1200&h=1200&output=jpg"
-  },
-  {
-    "titulo": "Lula se Reúne com Motoristas sobre Linhas de Crédito do Move Brasil",
-    "resumo_fato": "O presidente Lula se reúne com motoristas de aplicativo para discutir os gargalos no acesso às linhas de crédito do programa federal Move Brasil.",
-    "recomendacao": "Construindo Advocacy invisível que espelhe a eficiência do nosso modelo de crédito (iFood Pago) baseado em inteligência preditiva contra a burocracia estatal, projetando a nossa marca como a executora tecnológica ideal para destravar programas governamentais de inclusão.",
-    "tipo": "crise",
-    "data": "05/08/2026",
-    "setor": "Gig Economy",
-    "marcas": [
-      "iFood",
-      "Governo Federal"
-    ],
-    "produtos": [
-      "Advocacy Invisível",
-      "Whitepaper Executivo Governamental",
-      "Relações Institucionais"
-    ],
-    "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOdi5xKhVovg2ewzEkteTN555Fn10-QOcqvo4-lGmDdu8kXcm658qJlZ81Z-mu4ZfsZySD4a6pRiufxQgHnmWNficbkYtqLjn-Pv3tOa6knjzPLXNymkv_UgfanDbfg5s1BxpA57vMXIfPqzqFYqFxYveqZnQUvBcDAnAzCfsqbpIwywwpmifHdZNEwSwXmFnD03mNRb0Jvv96Y77Nyt3NvslEqg==",
-    "imagem": "https://static.poder360.com.br/uploads/2026/05/lula-move-brasil-848x477.jpg"
-  },
-  {
-    "titulo": "Uber Aponta Avanço da Meituan contra o iFood no Brasil em Call de Resultados",
-    "resumo_fato": "O CEO da Uber revelou que a concorrência da Meituan (Keeta) contra o iFood no Brasil está encarecendo a retenção de entregadores de duas rodas.",
-    "recomendacao": "Infiltrando no mercado a nossa narrativa de conformidade rigorosa com as diretrizes do CADE e de concorrência leal, promovendo em paralelo PR Stunts que exaltem o iFood como hub nacional imbatível em tecnologia, blindando a operação contra dumping estrangeiro sem embate direto.",
-    "tipo": "concorrencia",
-    "data": "05/08/2026",
-    "setor": "Marketplace",
-    "marcas": [
-      "iFood",
-      "Uber",
-      "Keeta"
-    ],
-    "produtos": [
-      "PR Stunt Institucional",
-      "Posicionamento CADE-Friendly",
-      "Ação B2B de Retenção"
-    ],
-    "link_noticia": "https://www.google.com/search?q=Uber%20Aponta%20Avan%C3%A7o%20da%20Meituan%20contra%20o%20iFood%20no%20Brasil%20em%20Call%20de%20Resultados%20iFood",
-    "imagem": "https://economicnewsbrasil.com.br/wp-content/uploads/2025/05/Imagens-Economic-News-Brasil-6-2.jpg"
-  },
-  {
-    "titulo": "iFood Reduz Custos em 70% com IA sem Demissões, Destaca Forbes",
-    "resumo_fato": "A Forbes Brasil revelou que o iFood reduziu custos operacionais em 70% e automatizou 45% do atendimento usando IA sem necessitar demitir funcionários.",
-    "recomendacao": "Elevando a pauta para um Fórum Proprietário focado no futuro do trabalho e IA preditiva, acionando vozes tech (como Flávio Stecca e Isa Piratininga) para demonstrar o impacto da automação no negócio e transformar o iFood no maior case de inovação tecnológica do país.",
-    "tipo": "tecnologia",
-    "data": "05/08/2026",
-    "setor": "Marketplace/IA",
-    "marcas": [
-      "iFood"
-    ],
-    "produtos": [
-      "Fórum Proprietário de Inovação",
-      "Keynote C-Level Tech",
-      "Case Study B2B"
-    ],
-    "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHi69Ye-UaZweQtRrBZasZ5D-ZIubkAai7e1F5Ul80N8Id7iwsXTobmeRo7r_xfAVTmrJw1vUhpElEtF9t0441vXLSQd69AOp_NWYTQzjwO2rFtdoy03GkSTaKc5KPF_n3-jXyEV6T6u6tJcHUue1cSpF94SGQlV6M9SIxUyEylzaNB8-fyiNHxgcU6W272k0WzeuRYmC99TtI=",
-    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYfDWrsJfSOy63Ce5U5tOqN-PYwsNP5sawFyhReX5oPBni_aeywLZBAnE&s=10"
-  },
-  {
-    "titulo": "Senado Analisa Medidas de Segurança para Motoristas de Aplicativos",
-    "resumo_fato": "O Senado Federal analisa o projeto de lei PL 485/2020 que propõe novas medidas obrigatórias de segurança para motoristas e usuários de aplicativos de transporte.",
-    "recomendacao": "Articulando Public Affairs de alto nível nos corredores do Senado para chancelar os dados do iFood Benefícios e as diretrizes da NR-1 como padrão de mercado, convertendo riscos legislativos imediatos em uma vantagem competitiva inatacável para nossa governança de RH.",
-    "tipo": "regulacao",
-    "data": "05/08/2026",
-    "setor": "STF/Legislação",
-    "marcas": [
-      "iFood",
-      "Senado Federal"
-    ],
-    "produtos": [
-      "Estratégia de Public Affairs",
-      "Benchmarking Legislativo",
-      "Advocacy Governamental"
-    ],
-    "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFettqmy9d3VGw7XzeOlr6kmHydaXqajXlTjFZuiAZ1ZCCbTnUk7bo2XBq3keT29nRh_VNJB9tc6F5w16M38_eUMyuc359nwNq79Eco_i92UKtZb8wFEjh_WGYNgypwuhwppkQ_QOouGHxLI-Y5yEDqEGkXOTa-S-o8zNuSi_yJ59ELRjIuKiCtZFQRdopNAlVfACQh39wXNxZxpQF7EQarMNHPhfscMVyQYmIo4nMXxtQH_H-JAsIrImiz01I6XUNsLSXveX9OQA==",
-    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFrzWZim3TPQm_t_qXYjGW0Y7K95wMfAxM7pvUDvGiUeFRxIFvOlsayks&s=10"
-  },
-  {
-    "titulo": "STF retoma trabalhos com julgamento da uberização pautado para agosto",
-    "resumo_fato": "O Supremo Tribunal Federal retomou os trabalhos em agosto com a pauta da uberização (Tema 1.291) agendada para deliberação no dia 27, trazendo risco iminente de alteração jurisprudencial.",
-    "recomendacao": "Desdobrando uma 'War Room' de PR jurídico focada em preservar a percepção da nossa postura republicana e técnica de colaboração com a corte, ativando Op-Eds de juristas independentes para fortalecer a tese do trabalho autônomo protegido antes do julgamento final.",
-    "tipo": "crise",
-    "data": "05/08/2026",
-    "setor": "STF/Legislação",
-    "marcas": [
-      "iFood",
-      "STF",
-      "Uber",
-      "Rappi"
-    ],
-    "produtos": [
-      "Gestão de Crise Preventiva (War Room)",
-      "Op-Eds Jurídicos Tercerizados",
-      "Holding Statements Institucionais"
-    ],
-    "link_noticia": "https://www.google.com/search?q=STF%20retoma%20trabalhos%20com%20julgamento%20da%20uberiza%C3%A7%C3%A3o%20pautado%20para%20agosto%20iFood",
-    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv2KkVERrYIdLP0KmJn9Dyb6sLT1NU0IhDA6PMshBh53d_hHBgEHmdd64&s=10"
   }
 ]
