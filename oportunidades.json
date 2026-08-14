@@ -1,5 +1,44 @@
 [
   {
+    "titulo": "Associação processa iFood, Uber e 99 por infraestrutura de apoio a entregadores em SP",
+    "resumo_fato": "Uma associação do setor acionou a Justiça contra iFood, Uber e 99Food exigindo a melhoria e ampliação de pontos de apoio físicos para entregadores em São Paulo, incluindo água, sanitários e áreas cobertas. O iFood informou que planeja expandir sua rede para 72 pontos de apoio em 20 cidades até o final de 2026.",
+    "recomendacao": "Mitigando os riscos reputacionais e jurídicos da ação civil por meio de uma resposta ágil e centralizada (Comms Lab), que posicione proativamente o plano de expansão de infraestrutura física do iFood (meta de 72 pontos até o fim de 2026) como referência de acolhimento e conformidade, neutralizando narrativas de negligência e blindando a imagem institucional.",
+    "tipo": "crise",
+    "data": "14/08/2026",
+    "setor": "E-commerce/Logística",
+    "marcas": [
+      "iFood",
+      "Uber",
+      "99Food"
+    ],
+    "produtos": [
+      "Notas de Posicionamento Técnico Reativo",
+      "Media Briefings Executivos de Defesa",
+      "Controle e Contenção de Crise"
+    ],
+    "link_noticia": "https://www1.folha.uol.com.br/mercado/2026/08/associacao-processa-ifood-uber-e-99food-por-apoio-a-entregadores-em-sp.shtml",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-8o8zY7xsLjeUmdR4qLD0l1O9Zn9jF2IAnHL1NpKfu19lsGA-OvENuJM&s=10"
+  },
+  {
+    "titulo": "CEO do iFood Pago destaca R$ 3 bilhões em crédito para PMEs na Forbes",
+    "resumo_fato": "Em entrevista exclusiva à Forbes, Bruno Henriques, CEO do iFood Pago, revelou que a fintech já concedeu mais de R$ 3 bilhões em crédito para restaurantes. O executivo destacou que cerca de 60% dos parceiros da base não tinham acesso ao crédito bancário tradicional, reforçando o papel de inclusão financeira da plataforma.",
+    "recomendacao": "Alavancando o posicionamento de liderança do CEO do iFood Pago em veículos Tier 1 para consolidar a autoridade da marca em inclusão financeira digital, utilizando agentes de IA (Toqan) para automatizar e escalar as mensagens-chave de crédito B2B nas redes sociais dos demais executivos, atraindo grandes redes de alimentação e impulsionando o GMV de novos parceiros.",
+    "tipo": "parceiros",
+    "data": "14/08/2026",
+    "setor": "Finanças/Fintechs",
+    "marcas": [
+      "iFood",
+      "iFood Pago"
+    ],
+    "produtos": [
+      "Entrevistas Exclusivas de Perfil",
+      "Thought Leadership Automatizado",
+      "Coluna Fixa (HSM/Fast Company)"
+    ],
+    "link_noticia": "https://forbes.com.br/forbes-money/2026/08/continuo-empreendendo-dentro-do-ifood-diz-ceo-do-ifood-pago-que-ja-emprestou-r-3-bilhoes/",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYTBJUT4WPIc64cyXTf3pobMWL0GpHiq1mROBOo4qWkQ&s=10"
+  },
+  {
     "titulo": "Campanha de Lula defende investimentos em IA, mas aponta divergências no Marco Legal",
     "resumo_fato": "O coordenador da agenda digital da campanha de Lula, Ricardo Bimbo, afirmou que o governo pretende ampliar os investimentos em inteligência artificial (citando os R$ 23 bilhões do PBIA), mas admitiu divergências internas sobre o projeto do Marco Legal da IA (PL 2.338/2023), especialmente no que tange à regulação e fiscalização de infraestruturas tecnológicas.",
     "recomendacao": "Atuando de forma consultiva e republicana junto aos formuladores de políticas públicas e parlamentares para subsidiar o debate sobre o Marco Legal da IA (PL 2.338/2023), defendendo uma regulação equilibrada que fomente a inovação sem asfixiar o ecossistema de tecnologia nacional, garantindo a segurança jurídica para as operações e algoritmos do iFood.",
@@ -16,7 +55,7 @@
       "Painéis Fechados com C-Levels e CHROs"
     ],
     "link_noticia": "https://www.poder360.com.br/governo/lula-quer-brasil-na-era-da-ia-mas-campanha-ve-divergencias-no-marco/",
-    "imagem": ""
+    "imagem": "https://static.poder360.com.br/uploads/2026/07/lula-palacio-do-planalto-27-jul-2026-min-848x477.jpg"
   },
   {
     "titulo": "IA pode adicionar R$ 1 trilhão ao PIB do Brasil até 2030, aponta estudo da OpenAI",
@@ -35,26 +74,7 @@
       "Keynote Executivo do CTO"
     ],
     "link_noticia": "https://g1.globo.com/tecnologia/noticia/2026/08/13/openai-do-chatgpt-diz-que-ia-pode-adicionar-r-1-trilhao-ao-pib-do-brasil-em-tres-anos.ghtml",
-    "imagem": ""
-  },
-  {
-    "titulo": "iFood e Caixa lançam parceria inédita para financiar veículos de entregadores",
-    "resumo_fato": "O iFood e a Caixa Econômica Federal anunciaram uma parceria para facilitar o financiamento de motos e bicicletas elétricas para entregadores parceiros. A iniciativa inovadora permite o compartilhamento autorizado do histórico de ganhos e engajamento na plataforma para subsidiar a análise de crédito do banco, superando barreiras tradicionais de comprovação de renda.",
-    "recomendacao": "Alavancando a parceria estratégica com a Caixa como um case de vanguarda em ESG e inclusão financeira, demonstrando como o uso ético de dados de engajamento dos entregadores funciona como ponte para a mobilidade limpa e autonomia profissional, neutralizando críticas sobre precarização e fortalecendo a reputação institucional do iFood.",
-    "tipo": "esg",
-    "data": "05/08/2026",
-    "setor": "Finanças/Fintechs",
-    "marcas": [
-      "iFood",
-      "Caixa Econômica Federal"
-    ],
-    "produtos": [
-      "PR Stunt (Lançamento Físico)",
-      "Conteúdo Patrocinado B2B",
-      "Eventos VIP da Rede de Aliados"
-    ],
-    "link_noticia": "https://news.ifood.com.br/ifood-e-caixa-lancam-parceria-inedita-para-facilitar-acesso-de-entregadores-ao-financiamento-de-veiculos/",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNj71YkcBjqMKWtgRg-6Am_M8X7E6spUhqymDst9N83m_wSlo4XyDkdLrM&s=10"
   },
   {
     "titulo": "StoneCo apresenta resultados mistos no 2T26 com pressão em margens e alta no crédito",
@@ -76,65 +96,6 @@
     "imagem": ""
   },
   {
-    "titulo": "Anvisa revoga proibições e abre caminho para entrega de remédios por aplicativos",
-    "resumo_fato": "A Anvisa revogou as medidas preventivas que proibiam a comercialização, distribuição e propaganda de medicamentos em plataformas digitais como iFood e Rappi. A decisão alinha-se à Lei nº 15.357/2026, mas a agência alerta que a venda ainda dependerá de regulamentação específica e cumprimento de regras sanitárias pelas farmácias parceiras.",
-    "recomendacao": "Posicionando o iFood na vanguarda regulatória do setor de health delivery por meio de um advocacy institucional colaborativo junto à Anvisa para a co-criação das regras específicas, demonstrando que nossa infraestrutura logística garante total conformidade sanitária e segurança, acelerando a atração de grandes redes farmacêuticas para expandir o GMV da vertical de farmácia.",
-    "tipo": "regulacao",
-    "data": "11/08/2026",
-    "setor": "Tecnologia/IA",
-    "marcas": [
-      "iFood",
-      "Anvisa",
-      "Rappi"
-    ],
-    "produtos": [
-      "Advocacy Invisível",
-      "Notas de Posicionamento Oficial",
-      "Painéis Institucionais Privados"
-    ],
-    "link_noticia": "https://g1.globo.com/saude/noticia/2026/08/11/anvisa-libera-venda-de-remedios-por-aplicativos.ghtml",
-    "imagem": ""
-  },
-  {
-    "titulo": "Associação processa iFood, Uber e 99 por infraestrutura de apoio a entregadores em SP",
-    "resumo_fato": "Uma associação do setor acionou a Justiça contra iFood, Uber e 99Food exigindo a melhoria e ampliação de pontos de apoio físicos para entregadores em São Paulo, incluindo água, sanitários e áreas cobertas. O iFood informou que planeja expandir sua rede para 72 pontos de apoio em 20 cidades até o final de 2026.",
-    "recomendacao": "Mitigando os riscos reputacionais e jurídicos da ação civil por meio de uma resposta ágil e centralizada (Comms Lab), que posicione proativamente o plano de expansão de infraestrutura física do iFood (meta de 72 pontos até o fim de 2026) como referência de acolhimento e conformidade, neutralizando narrativas de negligência e blindando a imagem institucional.",
-    "tipo": "crise",
-    "data": "14/08/2026",
-    "setor": "E-commerce/Logística",
-    "marcas": [
-      "iFood",
-      "Uber",
-      "99Food"
-    ],
-    "produtos": [
-      "Notas de Posicionamento Técnico Reativo",
-      "Media Briefings Executivos de Defesa",
-      "Controle e Contenção de Crise"
-    ],
-    "link_noticia": "https://www1.folha.uol.com.br/mercado/2026/08/associacao-processa-ifood-uber-e-99food-por-apoio-a-entregadores-em-sp.shtml",
-    "imagem": ""
-  },
-  {
-    "titulo": "CEO do iFood Pago destaca R$ 3 bilhões em crédito para PMEs na Forbes",
-    "resumo_fato": "Em entrevista exclusiva à Forbes, Bruno Henriques, CEO do iFood Pago, revelou que a fintech já concedeu mais de R$ 3 bilhões em crédito para restaurantes. O executivo destacou que cerca de 60% dos parceiros da base não tinham acesso ao crédito bancário tradicional, reforçando o papel de inclusão financeira da plataforma.",
-    "recomendacao": "Alavancando o posicionamento de liderança do CEO do iFood Pago em veículos Tier 1 para consolidar a autoridade da marca em inclusão financeira digital, utilizando agentes de IA (Toqan) para automatizar e escalar as mensagens-chave de crédito B2B nas redes sociais dos demais executivos, atraindo grandes redes de alimentação e impulsionando o GMV de novos parceiros.",
-    "tipo": "parceiros",
-    "data": "14/08/2026",
-    "setor": "Finanças/Fintechs",
-    "marcas": [
-      "iFood",
-      "iFood Pago"
-    ],
-    "produtos": [
-      "Entrevistas Exclusivas de Perfil",
-      "Thought Leadership Automatizado",
-      "Coluna Fixa (HSM/Fast Company)"
-    ],
-    "link_noticia": "https://forbes.com.br/forbes-money/2026/08/continuo-empreendendo-dentro-do-ifood-diz-ceo-do-ifood-pago-que-ja-emprestou-r-3-bilhoes/",
-    "imagem": ""
-  },
-  {
     "titulo": "Anac suspende venda de passagens da Flybondi para o Rio por falta de capacidade operacional",
     "resumo_fato": "A Agência Nacional de Aviação Civil (Anac) ampliou as restrições contra a companhia aérea argentina Flybondi, suspendendo a venda de passagens na rota Buenos Aires-Rio de Janeiro. A agência apontou falta de comprovação de capacidade operacional, cancelamento de voos e um aumento de 63,6% nas reclamações de passageiros.",
     "recomendacao": "Implementando uma estratégia de contenção e blindagem reputacional inspirada nos aprendizados de crises de infraestrutura e atendimento, utilizando o nosso Comms Lab para mapear preventivamente riscos de instabilidade logística e garantir que o iFood mantenha respostas técnicas ágeis e centralizadas, evitando que gargalos de terceiros afetem a percepção de confiabilidade da nossa plataforma.",
@@ -152,7 +113,7 @@
       "Controle e Contenção de Crise"
     ],
     "link_noticia": "https://exame.com.br/negocios/anac-amplia-restricao-a-venda-de-passagens-da-flybondi-para-o-rio/",
-    "imagem": ""
+    "imagem": "https://agenciainfra.com/blog/wp-content/uploads/2023/07/flybondi-foto-divulgacao.jpg"
   },
   {
     "titulo": "São Paulo Climate Week 2026 reúne líderes globais para acelerar a descarbonização urbana",
@@ -171,26 +132,7 @@
       "Conteúdo Patrocinado B2B"
     ],
     "link_noticia": "https://spclimateweek.com.br/",
-    "imagem": ""
-  },
-  {
-    "titulo": "Inteligência Artificial pode injetar quase R$ 1 trilhão no PIB brasileiro até 2030",
-    "resumo_fato": "Um estudo inédito do Reglab publicado pela Exame aponta que a adoção da IA no Brasil tem potencial de gerar R$ 986,7 bilhões em valor presente até 2030 (cerca de 7,6% do PIB estimado de 2026). O impacto depende diretamente de infraestrutura, crédito e qualificação técnica.",
-    "recomendacao": "Posicionando o iFood como o Sistema Operacional da Cultura Corporativa e pioneiro na desoneração de RH por meio do showcase do Projeto Agilito/Ailton, demonstrando em fóruns proprietários B2B como a nossa IA agêntica absorve a burocracia interna e gera ROI real de retenção de talentos, impulsionando a adoção do iFood Benefícios em grandes corporações.",
-    "tipo": "tecnologia",
-    "data": "13/08/2026",
-    "setor": "Tecnologia e IA",
-    "marcas": [
-      "iFood",
-      "Reglab"
-    ],
-    "produtos": [
-      "Tech Showcases",
-      "Fóruns Proprietários B2B (Insight Experience)",
-      "Keynote Executivo do CTO"
-    ],
-    "link_noticia": "https://exame.com.br/tecnologia/ia-pode-adicionar-quase-r-1-trilhao-ao-pib-brasileiro-ate-2030-diz-estudo-inedito/",
-    "imagem": ""
+    "imagem": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1200,height=630/uploads/64/1cd6af95-63b2-4187-add0-d5fa9bdcd3d7.jpg"
   },
   {
     "titulo": "iFood inicia transição compulsória para o plano de Entrega Parceira em cidades do interior",
@@ -248,7 +190,7 @@
       "Painéis Institucionais Privados"
     ],
     "link_noticia": "https://oglobo.globo.com/economia/negocios/noticia/2026/06/29/ifood-pede-ao-cade-para-monitorar-keeta-e-99food-por-praticas-predatorias.ghtml",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJzaKOCUBgyHAhJdKtJ4Ol2A2qY8KzuN-SeCM7IfKYSZEtaV6yMzc2Fm4&s=10"
   },
   {
     "titulo": "STF suspende julgamento sobre vínculo empregatício de entregadores após nova convenção da OIT",
@@ -287,7 +229,7 @@
       "PR Stunt (Lançamento Físico)"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFCVPPeQ_ryqHarkSULXfU0rzW0_guHmNIB2lDbAsLGqpi04kaqwpBXCKZ8JLd0W82kN6UOZKraMD3DW_UejzUCiTC06_TXMcdL2p_ObiOj4fUGfbcLhxXUO_BiHzOqFXf6Bsq5etcWeh8hHDZunmKfrj84WmTXU6_qX6iDmL3GTNmKaIjKtrgseKDBUwqIjyLyW7_-s9kVhHpGAjSh8JKDptitUma9o1h07HudgqWixU=",
-    "imagem": ""
+    "imagem": "https://www12.senado.leg.br/noticias/materias/2026/08/11/debate-no-plenario-aponta-gargalos-para-expansao-de-energias-renovaveis/20260811_00177e.jpg/mural/imagem_materia"
   },
   {
     "titulo": "Guerra no Oriente Médio encarece combustível de aviação e gera R$ 5,2 bilhões em custos extras para aéreas",
@@ -329,7 +271,7 @@
       "Advocacy Local B2B"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2H_Rs89lnKHCtwlDHNeKkx4Uy3Xa0WMj8kVTXmq6lxaRga8kCV_0BSQRgcihTFifMUPZmjWPpJ0NPUiIjE5zxuKpYgFnqL6mYvKeSrGbOCuLleqxXfiVNNvzT-Z7STwNnRIcWD7RdUGY5w4TkzMTXZtn7XWk5oC7wSzN1QNWkTeseS8SKmHgFBsB8X0w_ILGiXTUc-7iipKi1aSlzid8YLsbUvCDiylbfkgu7xaZccmxXHx3sFtcdtOU=",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFpUvxN5KGqnVIH7lFg5ayQ5J7PQTafwoPxF2ssi_SAWfqIkXDr-zTq0oO&s=10"
   },
   {
     "titulo": "Lula convoca reunião ministerial e declara que o Brasil vai entrar definitivamente na era da IA",
@@ -388,7 +330,7 @@
       "Advocacy Invisível"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHusjUEQC6iJgE2Of-VuCKgGljplPGUAnhE5RzqllUDX0v93QCf1YQ-PqE0WADv0nfEzHFsh3evc8NKbHLlQCOmlbfMTrMRJBfhRt1ZTUBK1PPSjnL8y-sNTJdMFxrg7EsqEL9JpOPpmpIm-abHOqA0oW71myH_hEaKiJn9wsOJQseDpismQrBjxdrJOydrsR8my5yrlBAJAwqsxCDiby5uOn1eQDSR02xRUI0zKLU4pOr9M_5cCCtjq3o-kNZErBbbWIiLpsNo9lmU",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzOqsRzuypt9BUgA0YtiXs8g3yuL2Z3uxlTaq_I2dwnw&s"
   },
   {
     "titulo": "Presidente da Voepass nega conhecimento de falhas antes de acidente aéreo",
@@ -406,7 +348,7 @@
       "Media Briefings Executivos de Defesa"
     ],
     "link_noticia": "https://tribunadonorte.com.br/brasil/presidente-da-voepass-afirma-que-nao-sabia-de-falhas-que-antecederam-acidente-em-vinhedo/",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTSkc_7CdbqXTbZQZNOybcvShiiA5fgXV0MNVFLYCE5yilWMks1yVAfwg&s=10"
   },
   {
     "titulo": "Primeiro data center de IA na Amazônia gera debate ambiental por risco de calor",
@@ -426,7 +368,7 @@
       "Artigos Assinados"
     ],
     "link_noticia": "https://g1.globo.com/pa/para/noticia/2026/08/09/primeiro-data-center-de-ia-na-amazonia-gera-debate-por-risco-de-calor.ghtml",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUqPvvH4tkTT-JIEEL_GsTUdt2C1HE-heiVtyJPIiNOXsU1OxvMeo71t8B&s=10"
   },
   {
     "titulo": "E-commerce brasileiro fatura R$ 125 bilhões no primeiro semestre de 2026",
@@ -486,25 +428,6 @@
     "imagem": ""
   },
   {
-    "titulo": "Instabilidade temporária afeta usuários do iFood",
-    "resumo_fato": "Usuários do iFood relataram dificuldades para acessar o aplicativo e finalizar pedidos. O pico de reclamações foi registrado em plataformas de monitoramento de instabilidades como o DownDetector, gerando repercussão imediata de consumidores.",
-    "recomendacao": "Ativando o protocolo de contenção de crise e blindagem algorítmica por meio de notas técnicas reativas centralizadas, mitigando o impacto reputacional junto a restaurantes parceiros e usuários finais ao esclarecer a rápida resolução da instabilidade e evitar a perda de transações na plataforma.",
-    "tipo": "crise",
-    "data": "11/08/2026",
-    "setor": "Tecnologia / Operações",
-    "marcas": [
-      "iFood",
-      "DownDetector"
-    ],
-    "produtos": [
-      "Notas de Posicionamento Técnico Reativo",
-      "Media Briefings Executivos de Defesa",
-      "Controle e Contenção de Crise"
-    ],
-    "link_noticia": "https://designtaxi.com/news/428564/Is-iFood-down-August-7-2026/",
-    "imagem": ""
-  },
-  {
     "titulo": "Anvisa revoga restrições e libera venda de medicamentos por iFood, Rappi e Mercado Livre",
     "resumo_fato": "A Anvisa revogou resoluções e medidas preventivas que proibiam a comercialização e propaganda de medicamentos em plataformas de entrega e e-commerce. A decisão abre caminho definitivo para que farmácias e drogarias licenciadas utilizem esses canais para a logística e entrega de medicamentos ao consumidor.",
     "recomendacao": "Posicionando o iFood como o principal parceiro de aceleração digital das grandes redes farmacêuticas do país, articulando um Op-Ed exclusivo do nosso CEO no Valor Econômico para demonstrar como a nossa malha logística de ultra-conveniência reduz o CAC do setor de saúde e impulsiona o GMV de novos entrantes na plataforma.",
@@ -523,62 +446,7 @@
       "Conteúdo Patrocinado B2B"
     ],
     "link_noticia": "https://soubrasilia.com/saude/anvisa-libera-venda-de-remedios-por-ifood-rappi-e-mercado-livre/",
-    "imagem": ""
-  },
-  {
-    "titulo": "iFood e Caixa lançam parceria inédita para facilitar acesso de entregadores ao financiamento de veículos",
-    "resumo_fato": "O iFood e a Caixa Econômica Federal anunciaram uma parceria estratégica para ampliar o acesso ao crédito para entregadores parceiros. A iniciativa permite o compartilhamento autorizado do histórico de ganhos na plataforma para facilitar a análise de crédito da Caixa na aquisição de motos e bicicletas elétricas zero km.",
-    "recomendacao": "Capitalizando a parceria estratégica com a Caixa Econômica Federal para pautar de forma republicana o debate sobre regulação do trabalho plataformizado no STF, demonstrando empiricamente que a portabilidade de dados de ganhos promove inclusão financeira real e emancipação econômica dos entregadores sem a necessidade de engessamento do vínculo CLT, blindando a reputação institucional da marca.",
-    "tipo": "regulacao",
-    "data": "11/08/2026",
-    "setor": "Finanças / Políticas Públicas",
-    "marcas": [
-      "iFood",
-      "Caixa Econômica Federal"
-    ],
-    "produtos": [
-      "Advocacy Invisível",
-      "Notas de Posicionamento Oficial",
-      "Painéis Institucionais Privados"
-    ],
-    "link_noticia": "https://news.ifood.com.br/ifood-e-caixa-lancam-parceria-inedita-para-facilitar-acesso-de-entregadores-ao-financiamento-de-veiculos",
-    "imagem": ""
-  },
-  {
-    "titulo": "E-commerce brasileiro acelera ocupação logística e projeta faturamento recorde em 2026",
-    "resumo_fato": "O faturamento do e-commerce no Brasil deve atingir R$ 259 bilhões em 2026, impulsionando a ocupação de galpões logísticos de alto padrão e reduzindo a vacância no Sudeste. O setor de transporte e digital fulfillment já representa 65% do total de áreas locadas.",
-    "recomendacao": "Mitigando riscos de percepção pública sobre gargalos logísticos e inflação de fretes no e-commerce nacional, evidenciando a eficiência da inteligência logística e da blindagem algorítmica do iFood para garantir entregas rápidas e seguras sem repassar custos abusivos aos consumidores e parceiros.",
-    "tipo": "operacao",
-    "data": "20/07/2026",
-    "setor": "E-commerce / Logística",
-    "marcas": [
-      "iFood"
-    ],
-    "produtos": [
-      "Notas de Posicionamento Técnico Reativo",
-      "Media Briefings Executivos de Defesa",
-      "Controle e Contenção de Crise"
-    ],
-    "link_noticia": "https://www.seudinheiro.com.br/2026/empreendedorismo/e-commerce-bate-recorde-com-faturamento-de-r-2956-bilhoes-no-brasil-e-os-pequenos-negocios-estao-roubando-a-cena-g6f/",
-    "imagem": ""
-  },
-  {
-    "titulo": "Brasil lidera crescimento global de viagens corporativas em 2026",
-    "resumo_fato": "O Brasil deve registrar um crescimento de 13,8% no segmento de turismo de negócios em 2026, liderando o ranking global entre os 15 maiores mercados do mundo. Os gastos corporativos no setor devem alcançar US$ 35,8 bilhões até o fim do ano.",
-    "recomendacao": "Aproveitando o boom histórico das viagens corporativas no Brasil para pautar CHROs e CFOs com insights exclusivos sobre a flexibilidade de gastos de colaboradores em trânsito, demonstrando o ROI do iFood Benefícios como ferramenta indispensável de retenção de talentos e bem-estar corporativo.",
-    "tipo": "parceiros",
-    "data": "09/08/2026",
-    "setor": "Turismo / Negócios",
-    "marcas": [
-      "iFood"
-    ],
-    "produtos": [
-      "Whitepapers Corporativos",
-      "Pautas de Tendências de Consumo",
-      "Índice Analítico de Retenção"
-    ],
-    "link_noticia": "https://www.portalbaladain.com.br/relevancia-economica/brasil-lidera-crescimento-global-das-viagens-corporativas-e-deve-movimentar-us-358-bilhoes-em-2026/",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjyEA7HHCbIF3ZtaReEhXAMUiW2yu-etjCsvqiaGIBfP94mSXUTMWpd54&s=10"
   },
   {
     "titulo": "Brasil lidera adoção de IA corporativa, mas 80% das empresas enfrentam rollbacks por governança",
@@ -596,65 +464,6 @@
       "Keynote Executivo do CTO"
     ],
     "link_noticia": "https://www.istoedinheiro.com.br/brasil-assume-lideranca-em-uso-de-ia-mas-governanca-nao-acompanha-o-ritmo/",
-    "imagem": ""
-  },
-  {
-    "titulo": "StoneCo registra lucro de R$ 549 milhões no 1T26 mas enfrenta pressão por provisões",
-    "resumo_fato": "A StoneCo divulgou lucro líquido ajustado de R$ 549,1 milhões no primeiro trimestre de 2026, uma alta de 3,5% anual, mas com queda em relação ao trimestre anterior devido ao aumento de provisões para perdas de crédito e custos operacionais em sua transição para plataforma financeira completa.",
-    "recomendacao": "Contrabalançando a pressão competitiva da Stone no varejo físico e digital por meio do lançamento de dados proprietários que comprovam a superioridade e a menor inadimplência do ecossistema de crédito do iFood Pago, atraindo grandes redes de alimentação e impulsionando o GMV dos parceiros.",
-    "tipo": "concorrencia",
-    "data": "14/05/2026",
-    "setor": "Finanças / Fintechs",
-    "marcas": [
-      "Stone",
-      "StoneCo"
-    ],
-    "produtos": [
-      "Relatório de Original Insights",
-      "Coluna Fixa em Veículos de Negócios (Exame)",
-      "Op-Ed Híbrido C-Level"
-    ],
-    "link_noticia": "https://www.infomoney.com.br/mercados/stone-registra-lucro-liquido-ajustado-de-r-5491-milhoes-no-1o-trimestre/",
-    "imagem": ""
-  },
-  {
-    "titulo": "STF retoma pauta sobre vínculo empregatício em aplicativos de transporte e entrega",
-    "resumo_fato": "O Supremo Tribunal Federal retomou as sessões presenciais em agosto com processos de grande impacto na pauta, incluindo a discussão sobre a existência de vínculo de emprego entre motoristas/entregadores e as plataformas digitais (Tema 1.291 de Repercussão Geral).",
-    "recomendacao": "Blindando institucionalmente o iFood frente ao julgamento do Tema 1.291 no STF, articulando um advocacy invisível focado na defesa do trabalho autônomo com proteção social e mitigando riscos estruturais que poderiam impactar severamente o custo logístico e o GMV da operação.",
-    "tipo": "regulacao",
-    "data": "03/08/2026",
-    "setor": "Jurídico / Trabalho",
-    "marcas": [
-      "iFood",
-      "STF",
-      "Uber",
-      "Rappi"
-    ],
-    "produtos": [
-      "Advocacy Invisível",
-      "Notas de Posicionamento Oficial",
-      "Painéis Institucionais Privados"
-    ],
-    "link_noticia": "https://www.migalhas.com.br/quentes/412534/stf-tem-jogos-de-azar-uberizacao-e-justica-gratuita-na-pauta-de-agosto",
-    "imagem": ""
-  },
-  {
-    "titulo": "iFood e Caixa lançam parceria para financiar veículos elétricos para entregadores",
-    "resumo_fato": "O iFood e a Caixa Econômica Federal anunciaram uma parceria inédita para facilitar o acesso ao crédito de entregadores que desejam comprar motos e bicicletas elétricas. A iniciativa utiliza o histórico de ganhos na plataforma como comprovante financeiro para viabilizar juros reduzidos e financiamento de longo prazo.",
-    "recomendacao": "Promovendo a sustentabilidade social e a transição para a frota elétrica de entregadores parceiros, fortalecendo a imagem ESG do iFood e mitigando riscos regulatórios de vínculo empregatício ao demonstrar apoio ativo à autonomia financeira e ao bem-estar da categoria.",
-    "tipo": "esg",
-    "data": "05/08/2026",
-    "setor": "ESG / Finanças",
-    "marcas": [
-      "iFood",
-      "Caixa Econômica Federal"
-    ],
-    "produtos": [
-      "PR Stunt (Lançamento Físico)",
-      "Eventos VIP da Rede de Aliados (Imersão iFood Experience)",
-      "Conteúdo Patrocinado B2B"
-    ],
-    "link_noticia": "https://news.ifood.com.br/ifood-e-caixa-lancam-parceria-inedita-para-facilitar-acesso-de-entregadores-ao-financiamento-de-veiculos/",
     "imagem": ""
   },
   {
@@ -679,6 +488,24 @@
     "imagem": ""
   },
   {
+    "titulo": "Brasil lidera crescimento global de viagens corporativas em 2026",
+    "resumo_fato": "O Brasil deve registrar um crescimento de 13,8% no segmento de turismo de negócios em 2026, liderando o ranking global entre os 15 maiores mercados do mundo. Os gastos corporativos no setor devem alcançar US$ 35,8 bilhões até o fim do ano.",
+    "recomendacao": "Aproveitando o boom histórico das viagens corporativas no Brasil para pautar CHROs e CFOs com insights exclusivos sobre a flexibilidade de gastos de colaboradores em trânsito, demonstrando o ROI do iFood Benefícios como ferramenta indispensável de retenção de talentos e bem-estar corporativo.",
+    "tipo": "parceiros",
+    "data": "09/08/2026",
+    "setor": "Turismo / Negócios",
+    "marcas": [
+      "iFood"
+    ],
+    "produtos": [
+      "Whitepapers Corporativos",
+      "Pautas de Tendências de Consumo",
+      "Índice Analítico de Retenção"
+    ],
+    "link_noticia": "https://www.portalbaladain.com.br/relevancia-economica/brasil-lidera-crescimento-global-das-viagens-corporativas-e-deve-movimentar-us-358-bilhoes-em-2026/",
+    "imagem": "https://img.portalmarcossantos.com.br/wp-content/uploads/2024/11/10170355/Aeroporto.jpg"
+  },
+  {
     "titulo": "Neoenergia Cosern investe R$ 4,1 bilhões em energias renováveis e infraestrutura no RN",
     "resumo_fato": "A Neoenergia Cosern anunciou um plano histórico de investimentos de R$ 4,1 bilhões até 2030 no Rio Grande do Norte para preparar a rede elétrica para novos empreendimentos de energias renováveis, hidrogênio verde e data centers.",
     "recomendacao": "Fortalecendo o posicionamento ESG do iFood ao estruturar parcerias estratégicas de fornecimento de energia limpa para a infraestrutura de servidores e frotas elétricas regionais, gerando valor de marca e blindagem reputacional frente a investidores globais focados em descarbonização.",
@@ -694,7 +521,7 @@
       "Advocacy Local B2B"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwDcSRGj1j4hKU4gXQuws-0ukjnh-mlLJYOYrjZVCwGNSNgU2cn83eJgMe0GYpErbjWNM_NxF54qI4i3FMKlbGjB6BPTySMKR9llItqaIAJmMh_I1RuuHjvtllax0QdDYNpzMWYojCIsQHVmIf8dTKpXkAIe_wWBUH7BgN7mW2spv2RmixajWvbzm689sFSAxCc5eEDoIkQ8nMG3HN5AuHzlQ329SvdhOhD_EfriaA44FVrqbjE8ytk0H_ARfShTY=",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQubbha96YkEKT88iY_rIB7JBiu_O7YmdueKc29bdpCnlkvjtttdRliMO0&s=10"
   },
   {
     "titulo": "EBITDA do iFood cresce 40% impulsionado por fintech e novas categorias",
@@ -714,7 +541,7 @@
       "Índice Analítico de Retenção"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnJ5mpqApAg529mMJmoRdCHj8mMBUz6Zo7PHYYf0QQC2kvuFvgNGmYlCud2z14l4YrInpYBWZKVLKqXP8e3yb1lhcFZEZTWWVViSr0Lb6ZkQ5HhXe9OI1xEyYm0mBrWExVcoViAcmBrwSyPL46mNUD-MJBIRYJsZIrXNYns_7BdUe5YRGbq0Cv6oOG2GqkhqrI",
-    "imagem": ""
+    "imagem": "https://braziljournal.com/wp-content/uploads/2026/06/iFood-2-857x482.png?x85156"
   },
   {
     "titulo": "Governo prioriza regulação do CADE para economia digital em 2026",
@@ -733,7 +560,7 @@
       "Painéis Institucionais Privados"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2u5Dwf5PTh1zx_mtHVvtKGaY9UG_F6OFWj2Kd8T_aRZqlg5M11aF7vgxU4NYtB-WJKDy0V_ESqrkwWnD48GGsLo28uDLb_eTp_fd65zpbzRHRVPkFuMT0FTp_xelUhJR3_ux8PvF-RGgiEkQ9QZyUNDM88nFd",
-    "imagem": ""
+    "imagem": "https://www.demarest.com.br/wp-content/uploads/2024/02/cade-fachada-2021.jpg"
   },
   {
     "titulo": "Paralisação de entregadores do iFood contra o programa '+Entregas'",
@@ -751,7 +578,7 @@
       "Controle e Contenção de Crise"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAbcXlqu_pACZoPUuaFbOBEJ6u6u1_zQdN8J3obs65nsxV3sYffkQciZZKEKssmRqbC7W-TrTNPXPfgeJdupuMLgsRqkIk_6oTeaeuUyxRlmkYS-g6MXjINWxl4m-oAhrLKzKNd3nFGwX3DOLz3j3e5MhiZf903bfSSbl49F7Rmn9VjbZgCCle-1tcGu4qxFZJ_UzetswrNovMeMIYM8fM-vTI",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaqT_TPJuruMqUOn84B1rY510nrL6XdvUXTEkjes5QecgcvYYZ3Jb0nzwD&s=10"
   },
   {
     "titulo": "Stone e PagBank enfrentam trimestre pressionado por crédito e avanço do Pix",
@@ -771,26 +598,7 @@
       "Op-Ed Híbrido C-Level"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfkKsQDKF_fNWgXZaA0zhPvkrizqC3WCTDhoxQURZw2nPn-PNJeO_owXWWA_9e_l1qHHeObv1kJThaURu8dex95hOm4VcaRfIoxP4OlV5OOT7C3WLSRlUqQdq2-CJq0QRd7hKWUlXAqoelYK2sluvB9Oxzy0FgLgQI6q0nR9R2",
-    "imagem": ""
-  },
-  {
-    "titulo": "Alerta sobre endividamento com 1,3 milhão de pedidos parcelados no iFood",
-    "resumo_fato": "O iFood registrou mais de 1,3 milhão de pedidos parcelados nos primeiros dois meses de funcionamento da modalidade de crédito, acendendo o alerta de especialistas sobre o endividamento das famílias para compra de alimentos de consumo imediato.",
-    "recomendacao": "Convertendo o pico de menções negativas sobre endividamento em uma narrativa educativa de planejamento financeiro familiar, utilizando o Hub Resolutivo iFood News para publicar guias de fluxo de caixa doméstico e injetar organicamente conteúdos de CX que demonstrem que o parcelamento é uma ferramenta de conveniência e flexibilidade, blindando a reputação do ecossistema financeiro iFood Pago.",
-    "tipo": "crise",
-    "data": "09/08/2026",
-    "setor": "Finanças / Economia Doméstica",
-    "marcas": [
-      "iFood",
-      "iFood Pago"
-    ],
-    "produtos": [
-      "Guias Educativos de Prevenção",
-      "Injeção Orgânica de Conteúdo em CX",
-      "Manuais de Fluxo de Caixa"
-    ],
-    "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUzGrOb-blP-RGebWlLZGxXkZH8ydMQMNNEXQUwEh3HVmVZnjJezfOpZxdKxx89DvKJTypiDJXRyFcjGWyriqTJfK5mxqG_mI_DwB-BaibjiMs4GXO2hyten9UDdIJDy1c",
-    "imagem": ""
+    "imagem": "https://portal.euqueroinvestir.com/wp-content/uploads/2026/07/stone-pagbank-btg.webp"
   },
   {
     "titulo": "STF adia julgamento sobre vínculo de aplicativos para analisar Convenção 193 da OIT",
@@ -810,7 +618,7 @@
       "Painéis Institucionais Privados"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnNXDdEnwvfS8RmXQp1VORItNUKwwRNoeh_f18aaw9gb28hZmDBTXc46BC7BoT1rHSc1nN_GGSHWprWQ9juLqh88g96IhiA8AzMo_Q9u8uVJ87sNYxg3GRN0448LFDnN_85-A4RAB4rFEp7aEH15QF0LPpBu65Vpn1yqjV_B3aoIbtxHH9RbvMb-UlL3srPJjj5ClyIqe4JUHxk53jzixqnRs6vJmnSTuOT_hMeLaz",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrbKJgnly_y4eDIAxJWXh_19ZPlwMWC7vOfIuyLtysm3ktxSm5mOhumrr&s=10"
   },
   {
     "titulo": "Brasil é o quarto país que mais expandiu o turismo internacional no mundo, aponta OCDE",
@@ -829,7 +637,7 @@
       "Eventos Itinerantes de PR"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPrspM6aLO_NdQImIQRleAcXUlK8eDl1kRAFoBAmau0sB5fPw3ovAPYK0JPcN6zPtBuh1tpkX8nnttIkXuPDMYlo6szrXhGXqFgSvlKfYK-KVvWLNbPMo5gs6hp4WYjz5K53p9H1OVldY59szQGbFCLPB42Q6ioWL6-lXst410GpSjuDCyQgWTau7GO0oBu71cS-uYZTeyKF-UrB5xfNnaO1vd1ocNpEo5p-PS5U82XukOJj3QCkB3xeD2KMcdnkr0cLZ0xGvEYO5KojKLBEXVCmevZT7mn4mIemZyTRBVVUO9BXQ",
-    "imagem": ""
+    "imagem": "https://aredacao.com.br/wp-content/uploads/2026/08/1101813-tmz_abr_151217_2405_1.jpg"
   },
   {
     "titulo": "Setor de logística envia carta aberta com propostas de competitividade a presidenciáveis",
@@ -848,7 +656,7 @@
       "Advocacy Invisível"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExoDiH14XyzX7hAMM_BWlzc-spfBMwAa60jRqiZBqYtEIkQxqVtESDioJDT2FPSoTIFhXnTr3B--vHrwmr8sLGYMmJVRJbBOOYOTRNenf-oVBrFs8yU6KA0gvs0dx2xDReOwOKJ4gsGdaEjPm_xQm5cF_pV2u6zvgV3z2rhGMzq1DS6LsoojAxSbYVZ3txusHyuMFhOA5KaKZ5uK7YtndH4k4_Qlus52zrCtMaLSZ49RMfTABMgoxhPNTIIDo",
-    "imagem": ""
+    "imagem": "https://midias.correiobraziliense.com.br/_midias/jpg/2026/08/07/1200x801/1_x-67365943.jpeg"
   },
   {
     "titulo": "Pacto Global lança manual e inteligência artificial 'anti-washing' para orientar empresas",
@@ -867,7 +675,7 @@
       "Artigos Assinados (MIT Sloan / HSM Management)"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHv_OLQK7D8It7OycNui2n-u0y_LkXj2oPx2rCuCzoBvqmoT58nbfytoNMeUHui8avzJBt-G11G-rMYkezICeS3JvZQeBxVfv0yNjjTKi84pwFYUZKqEPfinioyhoqYsZ_hzz-EukspGzmo6j3VNXvu60pcgcrHDRWwLvvHwDbixNURFObSHtxtmX_O6VMFz8OAtdtUHEJpN9Rf9IGcYy5fg",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLFQ1f8YZxWM-7wTIBRnArhVf9NeTTdKXoqxpb-YxgBtpLDCv3DMRr-qvv&s=10"
   },
   {
     "titulo": "SP2B 2026 reúne gigantes da tecnologia no Ibirapuera para debater IA e o futuro do trabalho",
@@ -888,7 +696,7 @@
       "Fóruns Proprietários B2B (Insight Experience)"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVR7XEKA_utLIA-A02K7m7c7cU2IwV5RFfG2LRz1owFjlknJi2lEuFsBioqKA_629AA7fSIqPpdA1bcri1wI7U8gU2jJfsVejpzoxHnshvg6JEUv4Weto61OG4VM3zPNUtfM8aKK0H19g5EZgudx7ysl5BTYZq4yDyjmMT4sGvRu9HnrMzuw",
-    "imagem": ""
+    "imagem": "https://cidadedesaopaulo.com/wp-content/uploads/2026/06/SP2B.webp"
   },
   {
     "titulo": "StoneCo reorganiza liderança com Mateus Scherer como CEO em meio a pressões de margem",
@@ -907,7 +715,7 @@
       "Relatório de Original Insights"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFR8hi5yptg8-qxRSuYPb6AhoPB-X7oJ8RDDaLrHQ9WoqiS1VUae47nodHOBAkIHQBNlxJABy5dF66nk70bHBZVY4q0zq6PQwB9afynKcgXUgl5UWJjo1O0Ei4WlTpH47c58J6dMYnR_hjd06hvKgYTN-ZTbEwF45uTLnBB21Ot1-kyir9qPseApn5pk2qYF5vEfNl6sGMGRKJtbYnvOlPMpiQW0va0b5FKRV_Q7zmdys",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4UoXc2Se1ONbm9YNNH5BlrPq3jifaAueRUcZH75krn-sAms3A6tmRT8c&s=10"
   },
   {
     "titulo": "Gastos do INSS com auxílio-doença para entregadores de app acendem debate regulatório",
@@ -925,7 +733,7 @@
       "Painéis Institucionais Privados"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnhJzXCiqZskjoubtJLrwtbJUZTnAvqYYhnMS0vavGV50qIoFTsDBa-PHhGzUA2gLJAlzHtxA6_uMjnLPw-NATufBmmSk-3f7rxuwpjYPxGG9-dvgUTabW5t1gwYfllr7jE6jhrVhyQzf8JVG0eai98EyPOYtTvdodgLiY-c3HNpMN8QNKJpMTG-tC7Yvg9NqHcW2292Nl98kiiECagV-Qq-zy554mssVmWnNa1SvOBVdxpkCeqVPWw_7hoTFFzwcbHjwit6KolerN",
-    "imagem": ""
+    "imagem": "https://mellofurtado.adv.br/wp-content/uploads/2025/11/INSS-vai-receber-224-milhoes.jpg"
   },
   {
     "titulo": "Alerta sobre endividamento: iFood registra 1,3 milhão de pedidos parcelados em dois meses",
@@ -944,7 +752,7 @@
       "Manuais de Fluxo de Caixa"
     ],
     "link_noticia": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOuACcSz-BuQddE3-ELYSMWCeljLiwCV3wRGfx71dEzYM8z3FBOH__oQrLLx626XYf8WF2tJoHMb4fpQGpMazFSwVTb1ubahp3vN-R_pzv-C1vbVWqA15PEzH_6ZCKFSVe",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7m4GYRVBSFtqZM6FQ-UnZ4Nq5cwH0TqdvHUoZUDGhZurh6r8bVJIqXu4&s=10"
   },
   {
     "titulo": "Alta do Querosene de Aviação (QAV) Impacta Custos de Azul, Gol e Latam",
@@ -965,6 +773,83 @@
       "Brand Publishing Executivo"
     ],
     "link_noticia": "https://www1.folha.uol.com.br/colunas/monicabergamo/2026/08/azul-gol-e-latam-gastaram-r-52-bi-por-conta-da-guerra.shtml",
-    "imagem": ""
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRytXgjF61O-fkcnlQB7Y50vIK2w_949e3B5fptRtjAyWlkjw9n8Gf2s3K&s=10"
+  },
+  {
+    "titulo": "iFood e Caixa lançam parceria inédita para financiar veículos de entregadores",
+    "resumo_fato": "O iFood e a Caixa Econômica Federal anunciaram uma parceria para facilitar o financiamento de motos e bicicletas elétricas para entregadores parceiros. A iniciativa inovadora permite o compartilhamento autorizado do histórico de ganhos e engajamento na plataforma para subsidiar a análise de crédito do banco, superando barreiras tradicionais de comprovação de renda.",
+    "recomendacao": "Alavancando a parceria estratégica com a Caixa como um case de vanguarda em ESG e inclusão financeira, demonstrando como o uso ético de dados de engajamento dos entregadores funciona como ponte para a mobilidade limpa e autonomia profissional, neutralizando críticas sobre precarização e fortalecendo a reputação institucional do iFood.",
+    "tipo": "esg",
+    "data": "05/08/2026",
+    "setor": "Finanças/Fintechs",
+    "marcas": [
+      "iFood",
+      "Caixa Econômica Federal"
+    ],
+    "produtos": [
+      "PR Stunt (Lançamento Físico)",
+      "Conteúdo Patrocinado B2B",
+      "Eventos VIP da Rede de Aliados"
+    ],
+    "link_noticia": "https://news.ifood.com.br/ifood-e-caixa-lancam-parceria-inedita-para-facilitar-acesso-de-entregadores-ao-financiamento-de-veiculos/",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-hd7GDZIIaF0R6K5oiGOMbVzhUxqJxnSLLQZsUesqYSs8im0mW_Xz_QQ&s=10"
+  },
+  {
+    "titulo": "STF retoma pauta sobre vínculo empregatício em aplicativos de transporte e entrega",
+    "resumo_fato": "O Supremo Tribunal Federal retomou as sessões presenciais em agosto com processos de grande impacto na pauta, incluindo a discussão sobre a existência de vínculo de emprego entre motoristas/entregadores e as plataformas digitais (Tema 1.291 de Repercussão Geral).",
+    "recomendacao": "Blindando institucionalmente o iFood frente ao julgamento do Tema 1.291 no STF, articulando um advocacy invisível focado na defesa do trabalho autônomo com proteção social e mitigando riscos estruturais que poderiam impactar severamente o custo logístico e o GMV da operação.",
+    "tipo": "regulacao",
+    "data": "03/08/2026",
+    "setor": "Jurídico / Trabalho",
+    "marcas": [
+      "iFood",
+      "STF",
+      "Uber",
+      "Rappi"
+    ],
+    "produtos": [
+      "Advocacy Invisível",
+      "Notas de Posicionamento Oficial",
+      "Painéis Institucionais Privados"
+    ],
+    "link_noticia": "https://www.migalhas.com.br/quentes/412534/stf-tem-jogos-de-azar-uberizacao-e-justica-gratuita-na-pauta-de-agosto",
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoDT2uIO0oSjRJ-3L2G5VyP9Opnq8s-GqvsEtTybqKsTCm1tKIZkYkKjJH&s=10"
+  },
+  {
+    "titulo": "E-commerce brasileiro acelera ocupação logística e projeta faturamento recorde em 2026",
+    "resumo_fato": "O faturamento do e-commerce no Brasil deve atingir R$ 259 bilhões em 2026, impulsionando a ocupação de galpões logísticos de alto padrão e reduzindo a vacância no Sudeste. O setor de transporte e digital fulfillment já representa 65% do total de áreas locadas.",
+    "recomendacao": "Mitigando riscos de percepção pública sobre gargalos logísticos e inflação de fretes no e-commerce nacional, evidenciando a eficiência da inteligência logística e da blindagem algorítmica do iFood para garantir entregas rápidas e seguras sem repassar custos abusivos aos consumidores e parceiros.",
+    "tipo": "operacao",
+    "data": "20/07/2026",
+    "setor": "E-commerce / Logística",
+    "marcas": [
+      "iFood"
+    ],
+    "produtos": [
+      "Notas de Posicionamento Técnico Reativo",
+      "Media Briefings Executivos de Defesa",
+      "Controle e Contenção de Crise"
+    ],
+    "link_noticia": "https://www.seudinheiro.com.br/2026/empreendedorismo/e-commerce-bate-recorde-com-faturamento-de-r-2956-bilhoes-no-brasil-e-os-pequenos-negocios-estao-roubando-a-cena-g6f/",
+    "imagem": "https://static.ecommercebrasil.com.br/wp-content/uploads/2024/12/41-e-commerce.jpg.webp"
+  },
+  {
+    "titulo": "StoneCo registra lucro de R$ 549 milhões no 1T26 mas enfrenta pressão por provisões",
+    "resumo_fato": "A StoneCo divulgou lucro líquido ajustado de R$ 549,1 milhões no primeiro trimestre de 2026, uma alta de 3,5% anual, mas com queda em relação ao trimestre anterior devido ao aumento de provisões para perdas de crédito e custos operacionais em sua transição para plataforma financeira completa.",
+    "recomendacao": "Contrabalançando a pressão competitiva da Stone no varejo físico e digital por meio do lançamento de dados proprietários que comprovam a superioridade e a menor inadimplência do ecossistema de crédito do iFood Pago, atraindo grandes redes de alimentação e impulsionando o GMV dos parceiros.",
+    "tipo": "concorrencia",
+    "data": "14/05/2026",
+    "setor": "Finanças / Fintechs",
+    "marcas": [
+      "Stone",
+      "StoneCo"
+    ],
+    "produtos": [
+      "Relatório de Original Insights",
+      "Coluna Fixa em Veículos de Negócios (Exame)",
+      "Op-Ed Híbrido C-Level"
+    ],
+    "link_noticia": "https://www.infomoney.com.br/mercados/stone-registra-lucro-liquido-ajustado-de-r-5491-milhoes-no-1o-trimestre/",
+    "imagem": "https://www.infomoney.com.br/wp-content/uploads/2022/03/f654f3ea-b2d6-5c80-2d9a-5cf71e3f006f.jpg?fit=855%2C481&quality=50&strip=all"
   }
 ]
