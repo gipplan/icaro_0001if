@@ -1,5 +1,140 @@
 [
   {
+    "titulo": "Campanha de Lula defende investimentos em IA, mas aponta divergências no Marco Legal",
+    "resumo_fato": "O coordenador da agenda digital da campanha de Lula, Ricardo Bimbo, afirmou que o governo pretende ampliar os investimentos em inteligência artificial (citando os R$ 23 bilhões do PBIA), mas admitiu divergências internas sobre o projeto do Marco Legal da IA (PL 2.338/2023), especialmente no que tange à regulação e fiscalização de infraestruturas tecnológicas.",
+    "recomendacao": "Atuando de forma consultiva e republicana junto aos formuladores de políticas públicas e parlamentares para subsidiar o debate sobre o Marco Legal da IA (PL 2.338/2023), defendendo uma regulação equilibrada que fomente a inovação sem asfixiar o ecossistema de tecnologia nacional, garantindo a segurança jurídica para as operações e algoritmos do iFood.",
+    "tipo": "regulacao",
+    "data": "13/08/2026",
+    "setor": "Tecnologia/IA",
+    "marcas": [
+      "Governo Federal",
+      "iFood"
+    ],
+    "produtos": [
+      "Public Affairs Invisível",
+      "Artigos Assinados (MIT Sloan / HSM Management)",
+      "Painéis Fechados com C-Levels e CHROs"
+    ],
+    "link_noticia": "https://www.poder360.com.br/governo/lula-quer-brasil-na-era-da-ia-mas-campanha-ve-divergencias-no-marco/",
+    "imagem": ""
+  },
+  {
+    "titulo": "IA pode adicionar R$ 1 trilhão ao PIB do Brasil até 2030, aponta estudo da OpenAI",
+    "resumo_fato": "Um estudo realizado pelo centro de pesquisas Reglab e financiado pela OpenAI estima que a inteligência artificial generativa pode acrescentar R$ 986,7 bilhões ao PIB brasileiro até 2030. O ganho de produtividade será impulsionado principalmente pela maior eficiência da força de trabalho (65%) e otimização de processos e máquinas (35%).",
+    "recomendacao": "Capitalizando sobre o otimismo macroeconômico da IA no PIB para posicionar o iFood como o principal hub de inovação agêntica do país, demonstrando na prática como nossas ferramentas de IA (como o projeto Ailton) desoneram a burocracia corporativa e elevam a produtividade real, transformando o iFood no 'Sistema Operacional da Cultura Corporativa' para CHROs e CFOs.",
+    "tipo": "tecnologia",
+    "data": "13/08/2026",
+    "setor": "Tecnologia/IA",
+    "marcas": [
+      "OpenAI",
+      "iFood"
+    ],
+    "produtos": [
+      "Tech Showcases",
+      "Fóruns Proprietários B2B (Insight Experience)",
+      "Keynote Executivo do CTO"
+    ],
+    "link_noticia": "https://g1.globo.com/tecnologia/noticia/2026/08/13/openai-do-chatgpt-diz-que-ia-pode-adicionar-r-1-trilhao-ao-pib-do-brasil-em-tres-anos.ghtml",
+    "imagem": ""
+  },
+  {
+    "titulo": "iFood e Caixa lançam parceria inédita para financiar veículos de entregadores",
+    "resumo_fato": "O iFood e a Caixa Econômica Federal anunciaram uma parceria para facilitar o financiamento de motos e bicicletas elétricas para entregadores parceiros. A iniciativa inovadora permite o compartilhamento autorizado do histórico de ganhos e engajamento na plataforma para subsidiar a análise de crédito do banco, superando barreiras tradicionais de comprovação de renda.",
+    "recomendacao": "Alavancando a parceria estratégica com a Caixa como um case de vanguarda em ESG e inclusão financeira, demonstrando como o uso ético de dados de engajamento dos entregadores funciona como ponte para a mobilidade limpa e autonomia profissional, neutralizando críticas sobre precarização e fortalecendo a reputação institucional do iFood.",
+    "tipo": "esg",
+    "data": "05/08/2026",
+    "setor": "Finanças/Fintechs",
+    "marcas": [
+      "iFood",
+      "Caixa Econômica Federal"
+    ],
+    "produtos": [
+      "PR Stunt (Lançamento Físico)",
+      "Conteúdo Patrocinado B2B",
+      "Eventos VIP da Rede de Aliados"
+    ],
+    "link_noticia": "https://news.ifood.com.br/ifood-e-caixa-lancam-parceria-inedita-para-facilitar-acesso-de-entregadores-ao-financiamento-de-veiculos/",
+    "imagem": ""
+  },
+  {
+    "titulo": "StoneCo apresenta resultados mistos no 2T26 com pressão em margens e alta no crédito",
+    "resumo_fato": "A StoneCo reportou receita de R$ 3,59 bilhões no segundo trimestre de 2026, abaixo das expectativas de mercado, com queda de 2,6% no lucro líquido ajustado. Por outro lado, a carteira de crédito da companhia cresceu 107,5% na comparação anual, atingindo R$ 3,75 bilhões, o que gerou preocupações em analistas devido à exposição ao cenário de juros altos (Selic a 14%).",
+    "recomendacao": "Pautando a imprensa de negócios com dados proprietários do Índice iFood Pago/FIPE para contrapor a volatilidade dos concorrentes tradicionais (como a Stone), demonstrando numericamente que o modelo de crédito contextualizado e integrado ao ecossistema do iFood possui menor inadimplência e maior conversão para PMEs, consolidando nossa liderança em inteligência de dados financeiros.",
+    "tipo": "concorrencia",
+    "data": "13/08/2026",
+    "setor": "Finanças/Fintechs",
+    "marcas": [
+      "StoneCo",
+      "iFood Pago"
+    ],
+    "produtos": [
+      "Relatório de Original Insights",
+      "Coluna Fixa em Veículos de Negócios (Exame)",
+      "Op-Ed Híbrido C-Level"
+    ],
+    "link_noticia": "https://br.investing.com/news/stock-market-news/por-que-as-acoes-da-stoneco-estao-caindo-hoje-1423456",
+    "imagem": ""
+  },
+  {
+    "titulo": "Anvisa revoga proibições e abre caminho para entrega de remédios por aplicativos",
+    "resumo_fato": "A Anvisa revogou as medidas preventivas que proibiam a comercialização, distribuição e propaganda de medicamentos em plataformas digitais como iFood e Rappi. A decisão alinha-se à Lei nº 15.357/2026, mas a agência alerta que a venda ainda dependerá de regulamentação específica e cumprimento de regras sanitárias pelas farmácias parceiras.",
+    "recomendacao": "Posicionando o iFood na vanguarda regulatória do setor de health delivery por meio de um advocacy institucional colaborativo junto à Anvisa para a co-criação das regras específicas, demonstrando que nossa infraestrutura logística garante total conformidade sanitária e segurança, acelerando a atração de grandes redes farmacêuticas para expandir o GMV da vertical de farmácia.",
+    "tipo": "regulacao",
+    "data": "11/08/2026",
+    "setor": "Tecnologia/IA",
+    "marcas": [
+      "iFood",
+      "Anvisa",
+      "Rappi"
+    ],
+    "produtos": [
+      "Advocacy Invisível",
+      "Notas de Posicionamento Oficial",
+      "Painéis Institucionais Privados"
+    ],
+    "link_noticia": "https://g1.globo.com/saude/noticia/2026/08/11/anvisa-libera-venda-de-remedios-por-aplicativos.ghtml",
+    "imagem": ""
+  },
+  {
+    "titulo": "Associação processa iFood, Uber e 99 por infraestrutura de apoio a entregadores em SP",
+    "resumo_fato": "Uma associação do setor acionou a Justiça contra iFood, Uber e 99Food exigindo a melhoria e ampliação de pontos de apoio físicos para entregadores em São Paulo, incluindo água, sanitários e áreas cobertas. O iFood informou que planeja expandir sua rede para 72 pontos de apoio em 20 cidades até o final de 2026.",
+    "recomendacao": "Mitigando os riscos reputacionais e jurídicos da ação civil por meio de uma resposta ágil e centralizada (Comms Lab), que posicione proativamente o plano de expansão de infraestrutura física do iFood (meta de 72 pontos até o fim de 2026) como referência de acolhimento e conformidade, neutralizando narrativas de negligência e blindando a imagem institucional.",
+    "tipo": "crise",
+    "data": "14/08/2026",
+    "setor": "E-commerce/Logística",
+    "marcas": [
+      "iFood",
+      "Uber",
+      "99Food"
+    ],
+    "produtos": [
+      "Notas de Posicionamento Técnico Reativo",
+      "Media Briefings Executivos de Defesa",
+      "Controle e Contenção de Crise"
+    ],
+    "link_noticia": "https://www1.folha.uol.com.br/mercado/2026/08/associacao-processa-ifood-uber-e-99food-por-apoio-a-entregadores-em-sp.shtml",
+    "imagem": ""
+  },
+  {
+    "titulo": "CEO do iFood Pago destaca R$ 3 bilhões em crédito para PMEs na Forbes",
+    "resumo_fato": "Em entrevista exclusiva à Forbes, Bruno Henriques, CEO do iFood Pago, revelou que a fintech já concedeu mais de R$ 3 bilhões em crédito para restaurantes. O executivo destacou que cerca de 60% dos parceiros da base não tinham acesso ao crédito bancário tradicional, reforçando o papel de inclusão financeira da plataforma.",
+    "recomendacao": "Alavancando o posicionamento de liderança do CEO do iFood Pago em veículos Tier 1 para consolidar a autoridade da marca em inclusão financeira digital, utilizando agentes de IA (Toqan) para automatizar e escalar as mensagens-chave de crédito B2B nas redes sociais dos demais executivos, atraindo grandes redes de alimentação e impulsionando o GMV de novos parceiros.",
+    "tipo": "parceiros",
+    "data": "14/08/2026",
+    "setor": "Finanças/Fintechs",
+    "marcas": [
+      "iFood",
+      "iFood Pago"
+    ],
+    "produtos": [
+      "Entrevistas Exclusivas de Perfil",
+      "Thought Leadership Automatizado",
+      "Coluna Fixa (HSM/Fast Company)"
+    ],
+    "link_noticia": "https://forbes.com.br/forbes-money/2026/08/continuo-empreendendo-dentro-do-ifood-diz-ceo-do-ifood-pago-que-ja-emprestou-r-3-bilhoes/",
+    "imagem": ""
+  },
+  {
     "titulo": "Anac suspende venda de passagens da Flybondi para o Rio por falta de capacidade operacional",
     "resumo_fato": "A Agência Nacional de Aviação Civil (Anac) ampliou as restrições contra a companhia aérea argentina Flybondi, suspendendo a venda de passagens na rota Buenos Aires-Rio de Janeiro. A agência apontou falta de comprovação de capacidade operacional, cancelamento de voos e um aumento de 63,6% nas reclamações de passageiros.",
     "recomendacao": "Implementando uma estratégia de contenção e blindagem reputacional inspirada nos aprendizados de crises de infraestrutura e atendimento, utilizando o nosso Comms Lab para mapear preventivamente riscos de instabilidade logística e garantir que o iFood mantenha respostas técnicas ágeis e centralizadas, evitando que gargalos de terceiros afetem a percepção de confiabilidade da nossa plataforma.",
@@ -830,142 +965,6 @@
       "Brand Publishing Executivo"
     ],
     "link_noticia": "https://www1.folha.uol.com.br/colunas/monicabergamo/2026/08/azul-gol-e-latam-gastaram-r-52-bi-por-conta-da-guerra.shtml",
-    "imagem": ""
-  },
-  {
-    "titulo": "Setor de Energias Renováveis Lança Carta de Intenções para Eleições 2026",
-    "resumo_fato": "Entidades do setor de energias renováveis lançaram um documento conjunto defendendo que a transição energética seja o eixo central do desenvolvimento econômico do Brasil, propondo expansão de infraestrutura e segurança regulatória.",
-    "recomendacao": "Capitaneando o debate de transição energética por meio de um Op-Ed provocativo assinado pelo CEO em veículos Tier 1, firmando o compromisso inegociável do iFood com metas ambientais e de logística verde, enquanto articulamos Lobby invisível para transformar nossa infraestrutura em padrão regulatório governamental.",
-    "tipo": "esg",
-    "data": "07/08/2026",
-    "setor": "Energia / ESG",
-    "marcas": [
-      "Global Renewables Alliance",
-      "iFood"
-    ],
-    "produtos": [
-      "Op-Ed C-Level",
-      "Advocacy Invisível",
-      "Posicionamento de Liderança"
-    ],
-    "link_noticia": "https://www.abrage.com.br/",
-    "imagem": ""
-  },
-  {
-    "titulo": "iFood Salão Impulsiona Vendas Físicas e Digitalização de PMEs",
-    "resumo_fato": "O iFood expande sua suíte de ferramentas 'iFood Salão' (incluindo Totem, garçom digital e CRM), ajudando restaurantes parceiros a aumentarem suas vendas presenciais em média 2,5 vezes e fortalecendo a digitalização de pequenos e médios estabelecimentos.",
-    "recomendacao": "Infiltrando 'cases' de crescimento acelerado em grupos de Dark Social formados por donos de restaurantes para gerar senso de urgência, conectando o sucesso do Salão à adoção da nossa Conta Digital e maquineta, fortalecendo nossa posição como a 'fintech de quem entende de restaurante'.",
-    "tipo": "parceiros",
-    "data": "07/08/2026",
-    "setor": "Restaurantes / PMEs",
-    "marcas": [
-      "iFood",
-      "Abrasel"
-    ],
-    "produtos": [
-      "Estratégia de Dark Social",
-      "Growth Hacking B2B",
-      "Estudo de Caso Descentralizado"
-    ],
-    "link_noticia": "https://news.ifood.com.br/",
-    "imagem": ""
-  },
-  {
-    "titulo": "MCTI Defende Treinamento de Modelos de IA no Brasil para Proteger Dados Nacionais",
-    "resumo_fato": "O secretário de ciência e tecnologia do MCTI defende que o treinamento de modelos de inteligência artificial brasileiros deve ocorrer dentro do país para garantir a soberania de dados e proteger as bases nacionais contra jurisdições estrangeiras.",
-    "recomendacao": "Articulando um Fórum Proprietário e ações de Public Affairs junto ao MCTI para blindar nossos agentes autônomos de IA contra restrições estrangeiras, posicionando nossa inteligência preditiva como patrimônio de inovação do Brasil e pavimentando caminho seguro para nossa estratégia IA-First.",
-    "tipo": "tecnologia",
-    "data": "07/08/2026",
-    "setor": "Tecnologia / IA",
-    "marcas": [
-      "MCTI",
-      "iFood"
-    ],
-    "produtos": [
-      "Fórum Proprietário Institucional",
-      "Estratégia de Public Affairs",
-      "Keynote de Inovação Soberana"
-    ],
-    "link_noticia": "https://www.mobiletime.com.br/noticias/06/08/2026/brasil-precisa-treinar-seus-modelos-de-ia-no-pais-defende-secretario-do-mcti/",
-    "imagem": ""
-  },
-  {
-    "titulo": "StoneCo Divulga Resultados do 2T26 sob Expectativa de Transição de Liderança",
-    "resumo_fato": "A StoneCo anunciará seus resultados financeiros do segundo trimestre de 2026 em 13 de agosto, em meio a um período de transição após o anúncio da saída do CEO Pedro Zinner e ascensão do CFO Mateus Scherer, enquanto o mercado avalia os riscos de crédito e inadimplência.",
-    "recomendacao": "Aproveitando a fragilidade de percepção da concorrência para orquestrar vazamentos controlados sobre a saúde de crédito do iFood Pago, alavancando os dados de TPV e a expansão acelerada de contas digitais para atrair investidores e grandes parceiros B2B para o nosso ecossistema seguro.",
-    "tipo": "concorrencia",
-    "data": "07/08/2026",
-    "setor": "Finanças / Fintechs",
-    "marcas": [
-      "StoneCo",
-      "iFood Pago"
-    ],
-    "produtos": [
-      "Vazamento Controlado (Dark Social)",
-      "Relações com Investidores (Ataque)",
-      "Pitch Analítico Financeiro"
-    ],
-    "link_noticia": "https://investors.stone.co/",
-    "imagem": ""
-  },
-  {
-    "titulo": "Alerta sobre Endividamento por Parcelamento de Alimentos no Delivery",
-    "resumo_fato": "O iFood registrou mais de 1,3 milhão de pedidos parcelados nos primeiros dois meses de funcionamento do recurso, acendendo um alerta entre especialistas financeiros sobre o risco de endividamento das famílias brasileiras para consumo imediato.",
-    "recomendacao": "Desarmando a narrativa de superendividamento por meio de Brand Publishing agressivo, ancorado no CEO Bruno Henriques, que rotacione o debate público para a inclusão financeira digital e o empoderamento econômico do consumidor gerado pelas nossas soluções.",
-    "tipo": "crise",
-    "data": "07/08/2026",
-    "setor": "Finanças / Consumo",
-    "marcas": [
-      "iFood",
-      "iFood Pago"
-    ],
-    "produtos": [
-      "Brand Publishing de Impacto",
-      "Op-Ed C-Level",
-      "Advocacy Educacional"
-    ],
-    "link_noticia": "https://news.ifood.com.br/parcelamento-no-cartao-de-credito-veja-como-funciona-nos-pedidos-do-ifood/",
-    "imagem": ""
-  },
-  {
-    "titulo": "Parceria iFood e Caixa para Financiamento de Veículos Elétricos",
-    "resumo_fato": "iFood e Caixa Econômica Federal anunciam parceria inédita para facilitar o acesso ao crédito para entregadores adquirirem motos e bicicletas elétricas, utilizando o histórico de ganhos na plataforma como comprovação financeira.",
-    "recomendacao": "Convertendo o anúncio operacional em um marco de Thought Leadership focado no compromisso ESG do iFood, mobilizando formadores de opinião para amplificar como a IA do nosso app viabiliza a transição logística limpa e destrava o crédito para a base da pirâmide.",
-    "tipo": "operacao",
-    "data": "07/08/2026",
-    "setor": "Finanças / Sustentabilidade",
-    "marcas": [
-      "iFood",
-      "Caixa Econômica Federal"
-    ],
-    "produtos": [
-      "Thought Leadership",
-      "Ativação de Key Opinion Leaders",
-      "Estratégia de Reputação ESG"
-    ],
-    "link_noticia": "https://news.ifood.com.br/ifood-e-caixa-lancam-parceria-inedita-para-facilitar-acesso-de-entregadores-ao-financiamento-de-veiculos/",
-    "imagem": ""
-  },
-  {
-    "titulo": "Impacto Previdenciário dos Entregadores de Aplicativo no INSS",
-    "resumo_fato": "Estudo aponta que os gastos do INSS com auxílio-doença para entregadores do iFood podem atingir R$ 189 milhões por ano, gerando debates sobre a replicabilidade dessa decisão para outras plataformas de delivery e o custeio da previdência.",
-    "recomendacao": "Estruturando uma frente avançada de Lobby Institucional nos bastidores de Brasília, chancelando nossa postura estritamente favorável à proteção social dos autônomos, e isolando plataformas rivais ao nos posicionarmos como solucionadores do custeio sustentável do INSS.",
-    "tipo": "regulacao",
-    "data": "07/08/2026",
-    "setor": "Previdência / Trabalho",
-    "marcas": [
-      "iFood",
-      "INSS",
-      "99Food",
-      "Rappi",
-      "Keeta"
-    ],
-    "produtos": [
-      "Lobby Institucional (Governo)",
-      "Coalizão de Public Affairs",
-      "Nota Oficial Blindada"
-    ],
-    "link_noticia": "https://www1.folha.uol.com.br/mercado/2026/08/gastos-do-inss-com-auxilio-doenca-para-entregador-do-ifood-podem-chegar-a-r-189-milhoes-por-ano.shtml",
     "imagem": ""
   }
 ]
