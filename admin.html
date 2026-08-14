@@ -183,16 +183,23 @@
             default: 'https://institucional.ifood.com.br/wp-content/uploads/2023/12/banner-1024x611-1.jpg'
         };
 
+        // Funções MODERNAS e corrigidas para lidar com Base64 e acentos (UTF-8)
         function b64DecodeUnicode(str) {
-            return decodeURIComponent(atob(str).split('').map(function(c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
+            const binString = atob(str);
+            const bytes = new Uint8Array(binString.length);
+            for (let i = 0; i < binString.length; i++) {
+                bytes[i] = binString.charCodeAt(i);
+            }
+            return new TextDecoder('utf-8').decode(bytes);
         }
 
         function b64EncodeUnicode(str) {
-            return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function match(p1) {
-                return String.fromCharCode('0x' + p1);
-            }));
+            const bytes = new TextEncoder().encode(str);
+            let binString = '';
+            for (let i = 0; i < bytes.byteLength; i++) {
+                binString += String.fromCharCode(bytes[i]);
+            }
+            return btoa(binString);
         }
 
         function parseDataBR(dataStr) {
