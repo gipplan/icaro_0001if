@@ -1,5 +1,6 @@
 import os
 import json
+import difflib
 from datetime import datetime
 from google import genai
 from google.genai import types
@@ -21,6 +22,13 @@ def carregar_oportunidades_existentes():
             return []
     return []
 
+def sao_similares(texto1, texto2, limite=0.70):
+    """
+    Motor anti-repetição: Calcula a similaridade entre duas strings.
+    Se forem mais de 70% iguais, consideramos como a mesma notícia.
+    """
+    return difflib.SequenceMatcher(None, texto1, texto2).ratio() > limite
+
 def executar_varredura():
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
@@ -28,11 +36,12 @@ def executar_varredura():
 
     client = genai.Client(api_key=api_key)
     playbook_context = carregar_playbook()
-    data_hoje = datetime.now().strftime("%d/%m/%Y")
+    hoje = datetime.now()
+    data_hoje_str = hoje.strftime("%d/%m/%Y")
 
     prompt = f"""
     Você é o robô Í.C.A.R.O., a central autônoma de inteligência de PR e reputação do iFood.
-    Data da varredura: {data_hoje}
+    Data da varredura: {data_hoje_str}
 
     DIRETRIZES DO PLAYBOOK CORPORATIVO (SEU CÉREBRO TÁTICO):
     {playbook_context}
@@ -41,7 +50,8 @@ def executar_varredura():
     Faça uma busca na web por notícias recentes no Brasil.
     1. É OBRIGATÓRIO incluir resultados recentes para iFood e Stone. Caso a varredura inicial geral não identifique fatos relevantes sobre elas, execute uma busca adicional e direcionada exclusivamente para estas duas marcas. O JSON final DEVE conter pautas para iFood e Stone.
     2. Identifique pautas quentes (5 a 10) abrangendo também os setores: Tecnologia/IA, E-commerce/Logística, ESG/Energia, Finanças/Fintechs, e Aviação/Turismo.
-    3. Classifique as pautas nas 6 frentes estratégicas (`regulacao`, `parceiros`, `tecnologia`, `operacao`, `concorrencia`, `esg`, `crise`).
+    3. REGRA DE OURO DA DIVERSIDADE: NUNCA repita o mesmo evento ou fato noticioso com títulos diferentes. Cada pauta no JSON deve tratar de um assunto completamente distinto da outra.
+    4. Classifique as pautas nas 6 frentes estratégicas (`regulacao`, `parceiros`, `tecnologia`, `operacao`, `concorrencia`, `esg`, `crise`).
 
     DIRETRIZES PARA A TÁTICA SUGERIDA (COMO LER O PLAYBOOK):
     Atue como um Diretor Sênior de Comunicação criativo e focado em negócios. 
@@ -61,7 +71,7 @@ def executar_varredura():
         "resumo_fato": "Resumo executivo, direto e neutro sobre o fato noticiado.",
         "recomendacao": "Sua tática estratégica baseada nos gatilhos (começando com verbo no gerúndio).",
         "tipo": "regulacao" | "parceiros" | "tecnologia" | "operacao" | "concorrencia" | "esg" | "crise",
-        "data": "{data_hoje}",
+        "data": "{data_hoje_str}",
         "setor": "Sub-área específica ou veículo",
         "marcas": ["Marcas envolvidas"],
         "produtos": ["Entregáveis recomendados inspirados no playbook"],
@@ -78,7 +88,7 @@ def executar_varredura():
         contents=prompt,
         config=types.GenerateContentConfig(
             tools=[types.Tool(google_search=types.GoogleSearch())],
-            temperature=0.3
+            temperature=0.4 # Temperatura levemente aumentada para ajudar na diversidade
         )
     )
 
@@ -103,22 +113,20 @@ def executar_varredura():
         return
 
     pautas_existentes = carregar_oportunidades_existentes()
-    titulos_existentes = {p.get("titulo", "").strip().lower() for p in pautas_existentes}
     
-    pautas_adicionadas = 0
-    for pauta in novas_pautas:
-        titulo_limpo = pauta.get("titulo", "").strip().lower()
-        if titulo_limpo not in titulos_existentes:
-            pautas_existentes.insert(0, pauta)
-            titulos_existentes.add(titulo_limpo)
-            pautas_adicionadas += 1
-
-    pautas_finais = pautas_existentes[:50]
-
-    with open("oportunidades.json", "w", encoding="utf-8") as f:
-        json.dump(pautas_finais, f, ensure_ascii=False, indent=2)
-
-    print(f"Sucesso! Varredura web concluída. {pautas_adicionadas} novas pautas adicionadas.")
-
-if __name__ == "__main__":
-    executar_varredura()
+    # ---------------------------------------------------------
+    # MOTOR DE BLOQUEIO POR SIMILARIDADE COM JANELA DE 75 DIAS
+    # ---------------------------------------------------------
+    textos_recentes = []
+    for p in pautas_existentes:
+        texto_limpo = f"{p.get('titulo', '')} {p.get('resumo_fato', '')}".strip().lower()
+        data_str = p.get("data", "")
+        
+        try:
+            # Converte a data da pauta salva e calcula a diferença de dias
+            data_pauta = datetime.strptime(data_str, "%d/%m/%Y")
+            diff_dias = (hoje - data_pauta).days
+            
+            # Se for menor ou igual a 75 dias, entra na lista restritiva
+            if diff_dias <= 75:
+                textos_recentes.append(texto_
