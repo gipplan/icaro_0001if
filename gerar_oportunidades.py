@@ -142,4 +142,22 @@ def executar_varredura():
         # Compara a nova pauta APENAS com as pautas dos últimos 75 dias
         for txt_ext in textos_recentes:
             if sao_similares(texto_novo, txt_ext, limite=0.70):
-                eh_duplicada =
+                eh_duplicada = True
+                print(f"Pauta bloqueada por similaridade (>70% nos últimos 75 dias): {pauta.get('titulo')}")
+                break
+                
+        if not eh_duplicada:
+            pautas_existentes.insert(0, pauta)
+            # Adiciona o texto novo na lista recente para impedir que a IA repita a mesma pauta no mesmo dia
+            textos_recentes.append(texto_novo)
+            pautas_adicionadas += 1
+
+    pautas_finais = pautas_existentes[:50]
+
+    with open("oportunidades.json", "w", encoding="utf-8") as f:
+        json.dump(pautas_finais, f, ensure_ascii=False, indent=2)
+
+    print(f"Sucesso! Varredura web concluída. {pautas_adicionadas} novas pautas exclusivas adicionadas.")
+
+if __name__ == "__main__":
+    executar_varredura()
