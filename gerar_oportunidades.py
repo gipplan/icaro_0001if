@@ -51,7 +51,7 @@ def executar_varredura():
     1. É OBRIGATÓRIO incluir resultados recentes para iFood e Stone. Caso a varredura inicial geral não identifique fatos relevantes sobre elas, execute uma busca adicional e direcionada exclusivamente para estas duas marcas. O JSON final DEVE conter pautas para iFood e Stone.
     2. Identifique pautas quentes (5 a 10) abrangendo também os setores: Tecnologia/IA, E-commerce/Logística, ESG/Energia, Finanças/Fintechs, e Aviação/Turismo.
     3. REGRA DE OURO DA DIVERSIDADE: NUNCA repita o mesmo evento ou fato noticioso com títulos diferentes. Cada pauta no JSON deve tratar de um assunto completamente distinto da outra.
-    4. Classifique as pautas nas 6 frentes estratégicas (`regulacao`, `parceiros`, `tecnologia`, `operacao`, `concorrencia`, `esg`, `crise`).
+    4. Classifique as pautas nas frentes estratégicas (`regulacao`, `parceiros`, `tecnologia`, `operacao`, `concorrencia`, `esg`, `crise`).
 
     DIRETRIZES PARA A TÁTICA SUGERIDA (COMO LER O PLAYBOOK):
     Atue como um Diretor Sênior de Comunicação criativo e focado em negócios. 
@@ -88,7 +88,7 @@ def executar_varredura():
         contents=prompt,
         config=types.GenerateContentConfig(
             tools=[types.Tool(google_search=types.GoogleSearch())],
-            temperature=0.4 # Temperatura levemente aumentada para ajudar na diversidade
+            temperature=0.4 
         )
     )
 
@@ -129,4 +129,17 @@ def executar_varredura():
             
             # Se for menor ou igual a 75 dias, entra na lista restritiva
             if diff_dias <= 75:
-                textos_recentes.append(texto_
+                textos_recentes.append(texto_limpo)
+        except ValueError:
+            # Se a data estiver corrompida, adiciona na restrição por segurança
+            textos_recentes.append(texto_limpo)
+
+    pautas_adicionadas = 0
+    for pauta in novas_pautas:
+        texto_novo = f"{pauta.get('titulo', '')} {pauta.get('resumo_fato', '')}".strip().lower()
+        
+        eh_duplicada = False
+        # Compara a nova pauta APENAS com as pautas dos últimos 75 dias
+        for txt_ext in textos_recentes:
+            if sao_similares(texto_novo, txt_ext, limite=0.70):
+                eh_duplicada =
