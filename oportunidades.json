@@ -1,5 +1,157 @@
 [
   {
+    "titulo": "CEOs de companhias aéreas recorrem à tecnologia para mitigar alta de custos",
+    "resumo_fato": "Diante da alta dos combustíveis e pressões inflacionárias em 2026, executivos de companhias aéreas buscam na inteligência artificial e na automação ferramentas para otimizar a eficiência operacional e reduzir custos.",
+    "recomendacao": "Cruzando a necessidade de eficiência de custos em grandes corporações de aviação com o iFood Benefícios, propondo parcerias estratégicas de 'alimentação corporativa inteligente' e otimização de benefícios de viagem/alimentação para tripulações, gerando novas linhas de receita B2B.",
+    "tipo": "operacao",
+    "data": "09/09/2026",
+    "setor": "Aviação / Turismo",
+    "marcas": [
+      "Companhias Aéreas",
+      "iFood Benefícios"
+    ],
+    "produtos": [
+      "Whitepapers Corporativos",
+      "Pautas de Tendências de Consumo",
+      "Índice Analítico de Retenção"
+    ],
+    "link_noticia": "https://timesbrasil.com.br/empresas-negocios/ceos-de-companhias-aereas-miram-tecnologia-para-enfrentar-custos-maiores/",
+    "imagem": ""
+  },
+  {
+    "titulo": "América Latina acelera adoção de IA agêntica com liderança do Brasil",
+    "resumo_fato": "O mercado de IA na América Latina deve atingir US$ 22,9 bilhões em 2026. O Brasil lidera a adoção regional, com 67% das empresas utilizando ou implementando projetos de inteligência artificial agêntica e automação.",
+    "recomendacao": "Capitalizando a onda de IA agêntica no Brasil para realizar um Tech Showcase exclusivo (Insight Experience), demonstrando como os agentes virtuais do iFood (como o Ailton) desoneram o RH e transformam a gestão de benefícios em uma experiência preditiva e de alto ROI.",
+    "tipo": "tecnologia",
+    "data": "09/09/2026",
+    "setor": "Inteligência Artificial / Tecnologia da Informação",
+    "marcas": [
+      "UiPath",
+      "iFood Benefícios"
+    ],
+    "produtos": [
+      "Tech Showcases",
+      "Fóruns Proprietários B2B (Insight Experience)",
+      "Keynote Executivo do CTO"
+    ],
+    "link_noticia": "https://radardigitalbrasilia.com.br/noticias-corporativas/america-latina-acelera-adocao-de-ia-agentica/",
+    "imagem": ""
+  },
+  {
+    "titulo": "Banco Central prepara regras para conter abusos na oferta de crédito digital",
+    "resumo_fato": "O Banco Central do Brasil está elaborando normas para coibir abusos na oferta de crédito por canais digitais, visando conter o endividamento recorde das famílias, enquanto fintechs como o Mercado Pago mantêm otimismo na emissão de cartões.",
+    "recomendacao": "Antecipando-se às novas diretrizes do Banco Central contra abusos no crédito digital por meio de um Op-Ed assinado pelo C-Level do iFood Pago na Exame, defendendo a concessão responsável de crédito baseada em dados reais de transações (e não em superendividamento), blindando a operação de futuras restrições regulatórias.",
+    "tipo": "regulacao",
+    "data": "09/09/2026",
+    "setor": "Finanças / Regulação Bancária",
+    "marcas": [
+      "Banco Central",
+      "Mercado Pago",
+      "iFood Pago"
+    ],
+    "produtos": [
+      "Public Affairs Invisível",
+      "Artigos Assinados (MIT Sloan / HSM Management)",
+      "Painéis Fechados com C-Levels e CHROs"
+    ],
+    "link_noticia": "https://www1.folha.uol.com.br/mercado/2026/09/banco-central-prepara-normas-para-coibir-abusos-na-oferta-digital-de-credito.shtml",
+    "imagem": ""
+  },
+  {
+    "titulo": "TAG, controlada pela Stone, sofre tentativa de fraude de R$ 350 milhões",
+    "resumo_fato": "A registradora de recebíveis TAG, controlada pela Stone, identificou uma tentativa de fraude de R$ 350 milhões envolvendo recebíveis de empresas como Uber e Netflix, sem impacto financeiro ou vazamento de dados.",
+    "recomendacao": "Aproveitando a vulnerabilidade reputacional da concorrência e o reposicionamento deles para pautar a imprensa de negócios com o Índice iFood Pago/FIPE, demonstrando a robustez e a segurança do ecossistema financeiro integrado do iFood Pago para PMEs.",
+    "tipo": "concorrencia",
+    "data": "09/09/2026",
+    "setor": "Fintechs / Meios de Pagamento",
+    "marcas": [
+      "Stone",
+      "TAG",
+      "iFood Pago"
+    ],
+    "produtos": [
+      "Relatório de Original Insights",
+      "Coluna Fixa em Veículos de Negócios (Exame)",
+      "Op-Ed Híbrido C-Level"
+    ],
+    "link_noticia": "https://www1.folha.uol.com.br/mercado/2026/08/empresa-da-stone-e-alvo-de-tentativa-de-fraude-de-r-350-milhoes-em-pagamentos-de-cartao.shtml",
+    "imagem": ""
+  },
+  {
+    "titulo": "iFood oferece 16 mil licenças de educação gratuita para entregadores e familiares",
+    "resumo_fato": "Em parceria com a Unico Skill, o iFood anunciou a oferta de 16 mil licenças de educação ilimitada, abrangendo desde o ensino básico até pós-graduação, para entregadores parceiros e suas famílias.",
+    "recomendacao": "Transformando a iniciativa de educação em um ativo de atração e retenção de entregadores por meio de um PR Stunt focado em histórias reais de mobilidade social, neutralizando narrativas de precarização do trabalho e fortalecendo a reputação ESG.",
+    "tipo": "esg",
+    "data": "09/09/2026",
+    "setor": "Responsabilidade Social / Educação",
+    "marcas": [
+      "iFood",
+      "Unico Skill"
+    ],
+    "produtos": [
+      "PR Stunt (Lançamento Físico)",
+      "Conteúdo Patrocinado B2B",
+      "Imersão iFood Experience"
+    ],
+    "link_noticia": "https://radardigitalbrasilia.com.br/noticias-corporativas/ifood-oferece-educacao-para-16-mil-entregadores-e-familiares/",
+    "imagem": ""
+  },
+  {
+    "titulo": "iFood é finalista internacional no Business Culture Awards 2026",
+    "resumo_fato": "O iFood é a única empresa da América Latina finalista no Business Culture Awards 2026, no Reino Unido, concorrendo com o case de sua Mandala de Cultura e o Jeito iFood de Trabalhar (JIT) como alavancas de crescimento sustentável.",
+    "recomendacao": "Posicionando o iFood como o 'Sistema Operacional da Cultura Corporativa' na América Latina através de uma campanha de C-Level Advocacy em veículos Tier 1 de negócios, conectando o prêmio internacional à eficiência de gestão de pessoas e à transição para uma cultura AI-first.",
+    "tipo": "tecnologia",
+    "data": "09/09/2026",
+    "setor": "Recursos Humanos / Cultura Corporativa",
+    "marcas": [
+      "iFood"
+    ],
+    "produtos": [
+      "Entrevistas Exclusivas de Perfil",
+      "Coluna Fixa (HSM/Fast Company)",
+      "Thought Leadership Automatizado"
+    ],
+    "link_noticia": "https://55content.com.br/ifood-e-unica-empresa-da-america-latina-finalista-em-duas-categorias-do-business-culture-awards-2026/",
+    "imagem": ""
+  },
+  {
+    "titulo": "iFood Move 2026 expande atuação para o varejo e lança edição regionalizada no Nordeste",
+    "resumo_fato": "O iFood Move 2026 amplia seu escopo para além de restaurantes, integrando mercados, farmácias e pet shops em sua terceira edição. Paralelamente, o iFood Move+ estreia em Salvador para discutir desafios regionais do Nordeste.",
+    "recomendacao": "Alavancando a expansão regional do iFood Move+ no Nordeste para introduzir soluções de adquirência física (a 'Maquinona') e crédito B2B para o varejo de vizinhança, impulsionando a penetração financeira fora do eixo Rio-SP e elevando o GMV regional.",
+    "tipo": "parceiros",
+    "data": "09/09/2026",
+    "setor": "Food Service / Varejo",
+    "marcas": [
+      "iFood"
+    ],
+    "produtos": [
+      "Campanhas de Áudio Regionalizadas (Rádio Release)",
+      "Advocacy Local B2B",
+      "Eventos Itinerantes de PR"
+    ],
+    "link_noticia": "https://www.sindrio.com.br/ifood-move-2026-amplia-horizontes-e-chega-ao-varejo/",
+    "imagem": ""
+  },
+  {
+    "titulo": "Resposta do iFood ao governo sobre remuneração mínima de entregadores",
+    "resumo_fato": "O iFood enviou documento oficial à Secretaria-Geral da Presidência da República rebatendo questionamentos do ministro Guilherme Boulos, afirmando que nenhum entregador recebe menos que o salário mínimo por hora trabalhada e detalhando que o ganho médio da categoria superou o mínimo nacional.",
+    "recomendacao": "Desdobrando a defesa institucional em fóruns técnicos fechados com o Ministério do Trabalho e a Secretaria-Geral da Presidência para consolidar a segurança jurídica do modelo de trabalho autônomo, blindando o GMV de potenciais passivos regulatórios.",
+    "tipo": "regulacao",
+    "data": "09/09/2026",
+    "setor": "Public Affairs / Regulação",
+    "marcas": [
+      "iFood",
+      "Governo Federal"
+    ],
+    "produtos": [
+      "Advocacy Invisível",
+      "Nota de Posicionamento Oficial",
+      "Painéis Institucionais Privados"
+    ],
+    "link_noticia": "https://www1.folha.uol.com.br/mercado/2026/08/ifood-rebate-governo-e-afirma-que-entregadores-nao-recebem-menos-do-que-o-salario-minimo.shtml",
+    "imagem": ""
+  },
+  {
     "titulo": "Pesquisa Ipsos indica que 73% dos brasileiros apoiam o fim da escala de trabalho 6x1",
     "resumo_fato": "O estudo 'Percepções da Economia Brasileira' revelou que a grande maioria dos brasileiros, independentemente de espectro político ou ideológico, apoia a extinção da escala de trabalho 6x1, evidenciando um forte consenso social sobre a flexibilização e qualidade de vida.",
     "recomendacao": "Conduzindo um debate republicano e colaborativo por meio de Painéis Institucionais Privados com parlamentares e líderes sindicais, apresentando dados proprietários sobre a flexibilidade do trabalho plataformizado como uma alternativa viável e sustentável de geração de renda que respeita o bem-estar do trabalhador, blindando o modelo de negócios do iFood contra pressões legislativas de vínculo empregatício rígido.",
